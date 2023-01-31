@@ -1,0 +1,14 @@
+{
+  "name": "imtiaz",
+  "version": "1.0.0",
+  "description": "this is backend for my website",
+  "main": "app.js",
+  "repository": "none",
+  "author": "imtiaz nayeem shawon",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.9.0",
+    "moongose": "^1.0.0"
+  }
+}
