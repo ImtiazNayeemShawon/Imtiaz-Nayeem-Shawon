@@ -6,9 +6,13 @@
   "repository": "none",
   "author": "imtiaz nayeem shawon",
   "license": "MIT",
+  "scripts": {
+    
+    "start": "node app"
+  },
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^6.9.0",
-    "moongose": "^1.0.0"
+    "mongoose": "^6.9.0"
+    
   }
 }
