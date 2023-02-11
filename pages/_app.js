@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Navigation from "./Navbar";
 import Footer from "./Footer";
+import "../styles/important.css";
 
 function MyApp({ Component, pageProps }) {
   return (

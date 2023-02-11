@@ -1,6 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
-import Effect from "../public/effect.png";
 import SmallIntro from "./SmallIntro";
 import Clients from "./Clients";
 import Brands from "./brands";
@@ -20,7 +18,7 @@ export default function App() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       </div>
-      <div className="mx-20  max-sm:mx-5">
+      <div className="mx-20  max-sm:mx-5 ">
         <Home />
         <Clients />
         <SmallIntro />

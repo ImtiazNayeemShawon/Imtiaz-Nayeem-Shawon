@@ -94,7 +94,7 @@ export default function Clients() {
           <SwiperSlide>
             <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
             <Image src={Margine} alt="Margine"/>
-              <h1 className="text-2xl font-bold">Margine</h1>
+              <h1 className="text-2xl font-bold">Ascend</h1>
             </div>
           </SwiperSlide>
           <SwiperSlide>
@@ -116,7 +116,7 @@ export default function Clients() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
-              <h1 className="text-2xl font-bold">Agri assist</h1>
+              <h1 className="text-2xl font-bold">Mental healtch care BD</h1>
             </div>
           </SwiperSlide>
         </div>
