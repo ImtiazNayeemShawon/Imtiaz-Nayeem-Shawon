@@ -1,51 +1,42 @@
 [
-    {
-        "title": "front-end developer",
-        "time": "aug 2022- Present",
-        "orgname": "Bangladesh Space Research Society",
-        "location":"Dhaka,Bangladesh",
-        "position":"web developer as volunteer",
-        "body": "Bangladesh space research society is a non profit organization. I joined in BSRS as front-end developer My Responsibilities: I create website for manage there event management like participant registration ,login The best non profit organization I have work ever."
-      },
-      {
-        "title": "Web developer",
-        "time": "january 2023- Present",
-        "orgname": "Mental healtch care BD",
-        "location":"Dhaka,Bangladesh",
-        "position":"web developer as volunteer",
-        "body": "Bangladesh space research society is a non profit organization. I joined in BSRS as front-end developer My Responsibilities: I create website for manage there event management like participant registration ,login The best non profit organization I have work ever."
-      },
-      {
-        "title": "front-end developer",
-        "time": "Feb 2022 - Aug 2022 ",
-        "orgname": "Aruddho Ekattor ",
-        "location":"Comilla Chattogram Bangladesh",
-        "position":"Internship",
-        "body": ""
-      },
-      {
-        "title": "Junior web developer",
-        "time": "Dec 2021 - Jun 2022",
-        "orgname": "Quanta Robotics  ",
-        "location":"Comilla Chattogram Bangladesh",
-        "position":"Internship",
-        "body": ""
-      },
-      {
-        "title": "Blog writter",
-        "time": "Dec 2021 - Jun 2022",
-        "orgname": "Cyber teens ",
-        "location":"Dhaka,Bangladesh",
-        "position":"Internship",
-        "body": ""
-      },
-      {
-        "title": "MERN stack web developer",
-        "time": "Dec 2023 - Present",
-        "orgname": "Ascend  ",
-        "location":"Comilla Chattogram Bangladesh",
-        "position":"Founder,CTO",
-        "body": ""
-      }
+  {
+    "title": "front-end developer",
+    "time": "aug 2022- Present",
+    "orgname": "Bangladesh Space Research Society",
+    "location": "Dhaka,Bangladesh",
+    "position": "web developer as volunteer",
+    "body": "Bangladesh space research society is a non profit organization. I joined in BSRS as front-end developer My Responsibilities: I create website for manage there event management like participant registration ,login The best non profit organization I have work ever."
+  },
+  {
+    "title": "Web developer",
+    "time": "january 2023- Present",
+    "orgname": "Mental healtch care BD",
+    "location": "Dhaka,Bangladesh",
+    "position": "web developer as volunteer",
+    "body": "Mental Health Care is a non-profit organization, and I am proud to have joined them as a MERN stack developer. My responsibilities include creating and managing their website for event registration and participant login. Working with Mental Health Care has been one of the best experiences I've had with a non-profit organization"
+  },
+  {
+    "title": "front-end developer",
+    "time": "Feb 2022 - Aug 2022 ",
+    "orgname": "Aruddho Ekattor ",
+    "location": "Comilla Chattogram Bangladesh",
+    "position": "Internship",
+    "body": "Aruddho ekattor is an organization committed to the development of underprivileged communities, and I have had the pleasure of joining them as a front-end developer. My role involves creating and managing their website for events such as participant registration and login. Working with Aruddho 71 has been an inspiring experience and I am grateful to be a part of their efforts to make a positive impact in our communities"
+  },
+  {
+    "title": "Junior web developer",
+    "time": "Dec 2021 - Jun 2022",
+    "orgname": "Quanta Robotics  ",
+    "location": "Comilla Chattogram Bangladesh",
+    "position": "Internship",
+    "body": "Quanta Robotics is an innovative technology company, and I am thrilled to have joined them as a front-end developer. My responsibilities include creating and managing their website, ensuring that it represents their cutting-edge technology and sophisticated products. Working with Quanta Robotics has been a great opportunity to learn and grow in the field of technology, and I look forward to contributing to their mission of advancing the field of robotics."
+  },
+  {
+    "title": "Blog writter",
+    "time": "Dec 2021 - Jun 2022",
+    "orgname": "Cyber teens ",
+    "location": "Dhaka,Bangladesh",
+    "position": "Vo0lunter",
+    "body": "ybeer Teens is an online platform dedicated to providing education and resources on cybersecurity for young people, and I am excited to have joined them as a blog writer. My role involves crafting engaging and informative content for their website, aimed at educating and raising awareness about cybersecurity. Working with Cybeer Teens has been a fantastic opportunity to utilize my writing skills while contributing to their mission of promoting safe and responsible use of technology among young people."
+  }
 ]
-

@@ -15,12 +15,10 @@ import School from "../public/school.png";
 import BSRS from "../public/bsrs.png";
 import Quanta from "../public/quanta.png";
 import Nababs from "../public/nabab.png";
-import Margine from "../public/margin.png";
 import Cyber from "../public/cyber.png";
 import Artas from '../public/artas.png'; 
-import Softulas from '../public/softulas.png'; 
 import BS from "../public/bs.png"
-
+import Mhc from "../public/mhc.png";
 
 
 
@@ -61,12 +59,7 @@ export default function Clients() {
               
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
-            <Image src={Softulas} alt="Softulas"/>
-              <h1 className="text-2xl font-bold">Softulas</h1>
-            </div>
-          </SwiperSlide>
+         
           <SwiperSlide>
             <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
             <Image src={BSRS} alt="BSRS"/>
@@ -87,16 +80,17 @@ export default function Clients() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
-            <Image  src={BS} alt="BS"/>
-              <h1 className="text-2xl font-bold">Behind the study</h1>
+            <Image src={Mhc} width="200" height="200" alt="mhc"/>
+              <h1 className="text-2xl font-bold">MHC </h1>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
-            <Image src={Margine} alt="Margine"/>
-              <h1 className="text-2xl font-bold">Ascend</h1>
+            <Image  src={BS} alt="BS"/>
+              <h1 className="text-2xl font-bold">Behind the study</h1>
             </div>
           </SwiperSlide>
+          
           <SwiperSlide>
             <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
             <Image src={School} alt="School"/>
@@ -109,16 +103,8 @@ export default function Clients() {
               <h1 className="text-2xl font-bold">Nababs dine</h1>
             </div>
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
-              <h1 className="text-2xl font-bold">Boi bodol</h1>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="p-9 rounded-lg h-32 bg-red-200 shadow-sm flex space-x-4">
-              <h1 className="text-2xl font-bold">Mental healtch care BD</h1>
-            </div>
-          </SwiperSlide>
+          
+
         </div>
       </Swiper>
     </div>
