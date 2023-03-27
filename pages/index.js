@@ -6,7 +6,6 @@ import Experince from "./experince";
 import Home from "./Home";
 import WhatIDo from "./WhatIDo";
 
-
 export default function App() {
   return (
     <>
