@@ -4,7 +4,7 @@ import Imtiaz from "../public/imti.png";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bghome">
       <div className="grid grid-cols-2 mt-40 max-sm:grid-cols-1 max-sm:mt-20 place-items-center mx-20  max-sm:mx-5 ">
         <div className="mt-0">
           
