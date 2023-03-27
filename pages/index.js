@@ -1,6 +1,6 @@
 import Head from "next/head";
 import SmallIntro from "./SmallIntro";
-import Clients from "./Clients";
+//import Clients from "./Clients";
 import Brands from "./brands";
 import Experince from "./experince";
 import Home from "./Home";
@@ -18,9 +18,8 @@ export default function App() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       </div>
-      <div className="mx-20  max-sm:mx-5 ">
+      <div className=" ">
         <Home />
-        <Clients />
         <SmallIntro />
         <Brands />
         <WhatIDo/>

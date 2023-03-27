@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function brands() {
   return (
-    <div className="mt-44 max-sm:mt-20">
+    <div className="mt-44 max-sm:mt-20 mx-20  max-sm:mx-5 ">
       <div className="grid grid-cols-2 place-items-center gap-8 max-sm:grid-cols-1">
         <div>
           <h1 className="text-4xl font-sans font-semibold text-gray-800 text-left max-sm:text-center">

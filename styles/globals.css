@@ -1,5 +1,9 @@
 
-
+.bghome{
+  background-image: url("https://images.wondershare.com/pixcut/assets/images2022/pixcut-2022/part1-icon1.png");
+  background-position: center;
+  backface-visibility: var(20);
+}
 
 :root {
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",

@@ -8,7 +8,7 @@ import App from "../public/app.png";
 
 export default function WhatIDo() {
   return (
-    <div className="mt-44 max-sm:mt-20">
+    <div className="mt-44 max-sm:mt-20  max-sm:mx-5 mx-20">
       <h1 className="text-4xl text-center capitalize	font-bold text-gray-800">
         what I do?
       </h1>

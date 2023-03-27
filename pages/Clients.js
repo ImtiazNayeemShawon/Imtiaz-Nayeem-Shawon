@@ -25,7 +25,7 @@ import Mhc from "../public/mhc.png";
 export default function Clients() {
   return (
 
-    <div className="mt-40 opacity-75 flex justify-around max-sm:hidden">
+    <div className="mt-40 opacity-75 flex justify-around max-sm:hidden mx-20">
       <Swiper
         slidesPerView={4}
         spaceBetween={30}

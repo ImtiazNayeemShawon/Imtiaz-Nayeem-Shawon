@@ -3,7 +3,7 @@ import Data from "./api/data.json";
 
 export default function Experince() {
   return (
-    <div className="mt-44 ">
+    <div className="mt-44 mx-20  max-sm:mx-5 ">
       <h1 className="text-4xl font-semibold text-gray-900 font-sans text-center p-5">
         My Experinces{" "}
       </h1>
