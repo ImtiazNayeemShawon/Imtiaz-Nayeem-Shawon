@@ -5,6 +5,7 @@ import Brands from "./brands";
 import Experince from "./experince";
 import Home from "./Home";
 import WhatIDo from "./WhatIDo";
+import Ex from "./testmonials"
 
 export default function App() {
   return (
@@ -17,12 +18,13 @@ export default function App() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       </div>
-      <div className=" ">
+      <div>
         <Home />
         <SmallIntro />
         <Brands />
-        <WhatIDo/>
+        <WhatIDo />
         <Experince />
+        <Ex/>
       </div>
     </>
   );

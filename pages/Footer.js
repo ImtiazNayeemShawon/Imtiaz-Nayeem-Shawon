@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="mb-6 md:mb-0">
           <Link href="/" className="flex items-center">
             <Image className="w-12 rounded-md" src={Logo} alt="logo" />
-            <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-red-600">
+            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white text-red-600">
               This site is under construction
             </span>
           </Link>

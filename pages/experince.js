@@ -8,8 +8,8 @@ export default function Experince() {
         My Experinces{" "}
       </h1>
       <p className="text-center text-sm text-gray-700">
-        I am working on many non profit orgnazation as web developer blog
-        writter i describe my all Experince below
+        I am working on many non profit orgnazation as web developer 
+        i describe my all Experince below
       </p>
     
 

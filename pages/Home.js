@@ -4,15 +4,15 @@ import Imtiaz from "../public/imti.png";
 
 export default function Home() {
   return (
-    <div className="bghome">
-      <div className="grid grid-cols-2 mt-40 max-sm:grid-cols-1 max-sm:mt-20 place-items-center mx-20  max-sm:mx-5 ">
-        <div className="mt-0">
+    <div className="bghome ">
+      <div className="grid grid-cols-2 max-sm:grid-cols-1  place-items-center mx-20  max-sm:mx-5 ">
+        <div className="mt-20">
           
-          <h1 className="leading-tight text-4xl font-bold  text-gray-700 max-sm:mt-1 max-sm:text-center max-sm:text-xl">
+          <h1 className="leading-tight text-4xl font-bold  mt-10  text-gray-700 max-sm:mt-1 max-sm:text-center max-sm:text-xl">
             It's a pleasure to introduce myself
           </h1>
-          <h1 className="leading-tight text-6xl font-bold uppercase text-blue-700 max-sm:mt-1 max-sm:text-center max-sm:text-4xl">
-            <span className="text-red-500">I'm</span> Imtiaz Nayeem Shawon
+          <h1 className="leading-tight   text-6xl font-bold uppercase text-blue-700 max-sm:mt-1 max-sm:text-center max-sm:text-4xl">
+            <span className="text-red-500  ">I'm</span> Imtiaz Nayeem Shawon
           </h1>
           <div className="">
             <Image
@@ -33,6 +33,10 @@ export default function Home() {
             <button className="mt-6 bg-gray-800  text-white px-7 p-3 rounded-lg uppercase font-semibold hover:bg-white hover:text-gray-800 duration-300 hover:shadow-xl ml-20">
               Contact{" "}
             </button>
+            
+            <p className="self-center text-xl font-semibold whitespace-nowrap dark:text-white text-red-600">
+              This site is under construction
+            </p>
           </div>
         </div>
         <div className="">
