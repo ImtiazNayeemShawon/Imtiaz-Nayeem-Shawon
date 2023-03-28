@@ -1,11 +1,13 @@
 import React from "react";
 import Imtiaz from "../public/imti.png";
 import Image from "next/image";
+import Frontend from "../public/frontend.png";
+import Backend from "../public/backend.png";
 
 export default function About() {
   return (
-    <div className="mx-40 max-sm:mx-5 mt-20 bg-gray-50  rounded-xl">
-      <div className="about grid grid-cols-3 gap-x-8	">
+    <div className="mx-40 max-sm:mx-5 mt-20 bg-gray-50  rounded-xl max-sm:place-items-center">
+      <div className="about grid grid-cols-3 gap-x-8	max-sm:grid-cols-1 max-sm:place-items-center shadow-md rounded-xl">
         <div className="p-4 bg-gray-100 rounded-xl place-items-center	grid">
           <Image src={Imtiaz} alt="me" width={200} height={200} />
           <h2 className="mt-6 font-bold text-gray-800 text-xl uppercase">
@@ -174,8 +176,28 @@ export default function About() {
             designing skills. I am constantly learning and strive to explore new
             things in the field of technology.
           </p>
-          <h1 className="text-2xl font-bold text-gray-600 capitalize mt-20">What I am doing</h1>
-
+          <h1 className="text-2xl font-bold text-gray-600 capitalize mt-20">
+            What I am doing
+          </h1>
+          <div className="grid grid-cols-2 justify-between gap-4 mt-10 max-sm:grid-cols-1">
+            <div className="w-full bg-gray-200 place-items-center grid rounded-xl py-5 px-3 border-2 border-solid	border-inherit shadow-sm ">
+              <Image src={Frontend} />
+              <h1 className="font-semibold capitalize text-lg"> Web design </h1>
+              <p className="font-semibold text-gray-700 text-center text-sm">
+                software like Aldus PageMaker including versions of Lorem Ipsum
+              </p>
+            </div>
+            <div className="w-full bg-gray-200 place-items-center grid rounded-xl py-5 px-3 border-2 border-solid	border-inherit shadow-sm ">
+              <Image src={Backend} />
+              <h1 className="font-semibold capitalize text-lg">
+                {" "}
+                Web development{" "}
+              </h1>
+              <p className="font-semibold text-gray-700 text-center text-sm">
+                software like Aldus PageMaker including versions of Lorem Ipsum
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -34,9 +34,7 @@ export default function Home() {
               Contact{" "}
             </button>
             
-            <p className="self-center text-xl font-semibold whitespace-nowrap dark:text-white text-red-600">
-              This site is under construction
-            </p>
+           
           </div>
         </div>
         <div className="">
