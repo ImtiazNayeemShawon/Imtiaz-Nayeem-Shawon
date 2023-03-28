@@ -5,7 +5,7 @@ import Brands from "./brands";
 import Experince from "./experince";
 import Home from "./Home";
 import WhatIDo from "./WhatIDo";
-import Ex from "./testmonials"
+import Ex from "./testmonials";
 
 export default function App() {
   return (
