@@ -18,13 +18,13 @@ export default function App() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
       </div>
-      <div>
+      <div className="bgi">
         <Home />
         <SmallIntro />
         <Brands />
         <WhatIDo />
         <Experince />
-        <Ex/>
+        <Ex />
       </div>
     </>
   );

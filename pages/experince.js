@@ -1,51 +1,39 @@
 import React from "react";
-import Data from "./api/data.json";
+import Job from "./api/data.json";
+import { useScroll, animated } from '@react-spring/web'
 
-export default function Experince() {
+
+export default function experince() {
+
   return (
-    <div className="mt-44 mx-20  max-sm:mx-5 ">
-      <h1 className="text-4xl font-semibold text-gray-900 font-sans text-center p-5">
-        My Experinces{" "}
-      </h1>
-      <p className="text-center text-sm text-gray-700">
-        I am working on many non profit orgnazation as web developer 
-        i describe my all Experince below
-      </p>
-    
-
-      {Data.map(item => (
-          <div className="mt-10">
-          <div className="grid grid-cols-3 place-items-center gap-0 grid-flow-row-dense max-sm:grid-cols-1">
-             {/* bsrs section */}
-            <div className="bg-gray-100 p-6 pl-10 pr-3 rounded-lg min-w-full">
-              <h1 className="text-xl font-bold text-blue-700 text-left capitalize ">
-               {item.title}
-              </h1>
-              <p className="text-gray-700 font-bold">{item.time} </p>
+    <div className="mx-60 mt-40 max-sm:mx-5 ">
+      <div className="">
+        <h1 className="text- text-4xl text-center font-bold text-cyan-800	normal-case">My experinces </h1>
+        <p className="text-center font-semibold mt-5 normal-case text-lg">I have extensive experience as a web developer, having worked with numerous organizations and gained valuable insights.</p>
+        <div className="w-full bg-pink-300 rounded-xl h-1 mt-6"></div>
+        <div>
+          {Job.map((item) => (
+            <div  className="flex">
+              <div className="h-66 bg-gray-500 w-4 rounded-lg mr-20 mt-20"></div>
+              <div className="mt-20">
+              <div className="w-40 bg-green-300 rounded-xl h-1 mb-6"></div>
+                <h2 className="text-gray-700 text-3xl capitalize font-bold">
+                  {item.position}
+                  <span className="text-teal-400 ml-2">@{item.orgname}</span>
+                </h2>
+                <p className="font-semibold capitalize text-lg">
+                  {item.title} 
+                </p>
+                <p className="font-thin capitalize">
+                  {item.location} | {item.time}
+                </p>
+               
+                <h2 className="text-justify mt-3 normal-case">{item.body}</h2>
+              </div>
             </div>
-            <div className="bg-red-600 text-gray-100 p-4 rounded-3xl font-bold">
-              <p>At</p>{" "}
-            </div>
-  
-            <div className="bg-gray-100 border-1 p-6  rounded-lg min-w-full">
-              <h1 className="text-xl font-bold text-blue-700 capitalize ">
-          {item.orgname}
-              </h1>
-              <p className="text-sm text-gray-800 font-bold">{item.location}</p>
-              <p className="text-gray-900">{item.position}</p>
-              <br />
-  
-              <p className="text-sm text-gray-700 leading-6">
-               {item.body}
-              </p>
-            </div>
-  
-            {/* bsrs section */}
-            
-          </div>
-          
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }

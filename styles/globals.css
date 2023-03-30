@@ -1,5 +1,4 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600&display=swap');
 
 .swiper-slide {
 
@@ -11,14 +10,21 @@
   background-color: #ECF2FF;
 }
 
-
-
-:root {
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+.bgi{
+  background-color: #FAF8F1;
 }
 
+.colorhunt-about-bg{
+  background-color: #FAF8F1;
+}
+.bg-about{
+  background-color: #ECE8DD;
+}
+@media only screen and (max-width: 600px) {
+  .colorhunt-about-bg{
+    background-color: #ECE8DD;
+  }
+}
 @media (prefers-color-scheme: dark) {
 }
 
