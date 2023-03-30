@@ -14,12 +14,12 @@ export default function experince() {
         <div>
           {Job.map((item) => (
             <div  className="flex">
-              <div className="h-66 bg-gray-500 w-4 rounded-lg mr-20 mt-20"></div>
+              <div className="h-66 bg-gray-500 w-4 rounded-lg mr-20 mt-20 max-sm:mr-5"></div>
               <div className="mt-20">
               <div className="w-40 bg-green-300 rounded-xl h-1 mb-6"></div>
                 <h2 className="text-gray-700 text-3xl capitalize font-bold">
                   {item.position}
-                  <span className="text-teal-400 ml-2">@{item.orgname}</span>
+                  <span className="text-teal-400 ml-2 max-sm:ml-0">@{item.orgname}</span>
                 </h2>
                 <p className="font-semibold capitalize text-lg">
                   {item.title} 

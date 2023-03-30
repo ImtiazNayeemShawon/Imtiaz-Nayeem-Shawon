@@ -169,7 +169,7 @@ export default function About() {
         <div className="col-span-2 p-5">
           <h1 className="text-2xl font-bold text-teal-600 ">About me </h1>
           <div className="h-2 w-20 rounded-xl mt-6 mb-6 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700"></div>
-          <p className="text-justify text-sm leading-6	 font-semibold">
+          <p className="text-justify text-sm leading-6  font-semibold">
             My name is Imtiaz Nayeem Shawon, and I am a student of Cumilla
             Modern High School, SSC 23 batch. I am passionate about full-stack
             web development and am also learning AI and data science. My love
