@@ -20,6 +20,7 @@
 .bg-about{
   background-color: #ECE8DD;
 }
+
 @media only screen and (max-width: 600px) {
   .colorhunt-about-bg{
     background-color: #ECE8DD;
