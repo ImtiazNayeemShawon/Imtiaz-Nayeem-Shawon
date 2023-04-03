@@ -1,4 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+
+.mainfont{
+  font-family: 'DM Sans', sans-serif;
+}
+
+*{
+  font-family: 'DM Sans', sans-serif;
+}
+.job::before{
+  position: absolute;
+  content: "";
+  width: 80px;
+  height: 1px;
+  background-color: var(--main-color);
+  left: 0;
+  top: 13px;
+ }
 
 .swiper-slide {
 
@@ -11,7 +29,7 @@
 }
 
 .bgi{
-  background-color: #FAF8F1;
+  background-color: #fcfaf6;
 }
 
 .colorhunt-about-bg{
