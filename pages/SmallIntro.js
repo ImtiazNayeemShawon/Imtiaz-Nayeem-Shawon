@@ -33,7 +33,7 @@ export default function SmallIntro() {
           </div>
         </div>
 
-        <div class="flex mt-0 justify-around max-sm:block max-sm:p-1">
+        <div className="flex mt-0 justify-around max-sm:block max-sm:p-1">
           <div className="grid justify-items-center bg-slate-100 rounded-2xl p-10 m-7 w-96  max-sm:text-center max-sm:w-auto max-sm:m-2 ">
             <Image src={Org} alt="Org" />
             <h1 className="text-xl font-bold text-gray-800 uppercase">

@@ -7,9 +7,9 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 export default function Navbar() {
   return (
     <div className="fixed">
-      <nav class="bg-inherit	 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-0">
-        <div class="container flex  items-right justify-between mx-auto">
-          <span class="">
+      <nav className="bg-inherit	 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-0">
+        <div className="container flex  items-right justify-between mx-auto">
+          <span className="">
             <Image className="w-12 rounded-lg" src={Logo} alt="logo" />
           </span>
 
@@ -38,7 +38,7 @@ export default function Navbar() {
               <a
                 href="https://github.com/ImtiazNayeemShawon"
                 target="_blank"
-                class="text-white bg-gray-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
+                className="text-white bg-gray-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
               >
                 <GitHubIcon /> GitHub
               </a>
