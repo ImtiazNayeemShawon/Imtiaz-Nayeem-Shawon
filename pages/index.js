@@ -24,9 +24,9 @@ export default function App() {
        <div className="bghome">
        <Home />
        <SmallIntro />
-        <Brands />
+        {/* <Brands /> */}
        </div>
-       {/* <WhatIDo /> */}
+      
        
         <Experince />
         <Ex />

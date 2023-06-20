@@ -1,39 +1,41 @@
 import React from "react";
-// import Image from "next/image";
-// import Imtiaz from "../public/imti.png";
+import Image from "next/image";
+import Imtiaz from "../public/imtiazNayeem.png";
 
 export default function Home() {
   return (
     <React.Fragment>
       <div className="bghome">
         <div className="grid grid-cols-2 max-sm:grid-cols-1  place-items-center mx-20  max-sm:mx-5 ">
-          <div className="mt-40">
-            <h1 className="leading-tight text-7xl font-medium capitalize text-black max-sm:mt-1 max-sm:text-center max-sm:text-4xl mainfont">
+          <div className="max-sm:mt-20 md:hidden">
+            <Image
+              className="m-auto  max-sm:block"
+              src={Imtiaz}
+              width={350}
+              alt="imtiaz nayeem shawon"
+            />
+          </div>
+          <div className="mt-40 max-sm:mt-6">
+            <h1 className="leading-tight text-7xl  capitalize text-black max-sm:mt-1 max-sm:text-center max-sm:text-4xl mainfont font-semibold">
               Imtiaz Nayeem
             </h1>
-            <div className="flex justify-content mt-5">
-              <div>
-                {" "}
-                <h2 className="text-2xl mainfont font-semibold capitalize job">
-                  web Developer
-                </h2>
-              </div>
-            </div>
-            <div className="">
-              {/* <Image
-              className="m-auto  hidden max-sm:block"
-              src={Imtiaz}
-              width="500"
-              alt="imtiaz nayeem shawon"
-            /> */}
-            </div>
-            <p className="text-gray-700 leading-10 mr-40 max-sm:mr-0 text-left text-lg  mt-4 max-sm:text-justify font-medium ">
+            <div>
               {" "}
-              I'm web developer based in Bangladesh, and I'm very passionate and
-              dedicated to my work.
+              <h2 className="text-2xl mainfont font-semibold capitalize max-sm:text-center">
+                web Developer
+              </h2>
+            </div>
+
+            <p className="text-gray-700 leading-10 mr-40 max-sm:m-0 text-left text-lg  mt-4 max-sm:text-center font-medium max-sm:text-sm">
+              {" "}
+              Innovate a tapestry of colors, painting nature's masterpiece with
+              creative glow.
             </p>
-            <div className="flex max-sm:justify-around gap-20 mt-10">
-              <button className="mt-6 flex justify-around bg-blue-700 text-xl text-white px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-white hover:text-gray-800 duration-300 hover:shadow-sm">
+            <div className="flex  gap-20 mt-10 max-sm:block">
+              <button
+                className="mt-6 flex justify-around bg-blue-700 text-xl text-white px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-white hover:text-gray-800 duration-300 hover:shadow-sm
+              max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md max-sm:"
+              >
                 Resume{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -50,18 +52,35 @@ export default function Home() {
                   />
                 </svg>
               </button>
-              <button className="mt-6 flex justify-around bg-teal-100  text-xl text-gray-800  px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-blue-700 hover:text-white duration-300 hover:shadow-sm">
+              <button
+                className="mt-6 flex justify-around bg-teal-200  text-xl text-gray-800  px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-blue-700 hover:text-white  duration-300 hover:shadow-sm
+              max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md max-sm:mt-3"
+              >
                 My works
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
+                  />
+                </svg>
               </button>
             </div>
           </div>
           <div className="">
-            {/* <Image
-              className="m-auto  hidden max-sm:block"
+            <Image
+              className="m-auto max-sm:hidden block mt-16"
               src={Imtiaz}
               width="500"
               alt="imtiaz nayeem shawon"
-            /> */}
+            />
           </div>
         </div>
       </div>
