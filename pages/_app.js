@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
 
       <Component {...pageProps} />
       <div className="mt-10">
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

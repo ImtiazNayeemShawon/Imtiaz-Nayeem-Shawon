@@ -5,7 +5,9 @@ import Imtiaz from "../public/imtiazNayeem.png";
 export default function Home() {
   return (
     <React.Fragment>
-      <div className="bghome">
+      <div
+      id="Home"
+      className="bghome">
         <div className="grid grid-cols-2 max-sm:grid-cols-1  place-items-center mx-20  max-sm:mx-5 ">
           <div className="max-sm:mt-20 md:hidden">
             <Image
