@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Imtiaz from "../public/imtiazNayeem.png";
+import { Link } from "react-scroll";
 
 export default function Home() {
   return (
@@ -30,8 +31,7 @@ export default function Home() {
 
             <p className="text-gray-700 leading-10 mr-40 max-sm:m-0 text-left text-lg  mt-4 max-sm:text-center font-medium max-sm:text-sm">
               {" "}
-              Innovate a tapestry of colors, painting nature's masterpiece with
-              creative glow.
+              A self-motivated IT professional with huge knowledge and proficiency in HTML, CSS, JavaScript
             </p>
             <div className="flex  gap-20 mt-10 max-sm:block">
               <button
@@ -54,9 +54,12 @@ export default function Home() {
                   />
                 </svg>
               </button>
-              <button
+              <Link
+              to="Projects"
+              smooth={true}
+              duration={500}
                 className="mt-6 flex justify-around bg-teal-200  text-xl text-gray-800  px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-blue-700 hover:text-white  duration-300 hover:shadow-sm
-              max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md max-sm:mt-3"
+              max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md max-sm:mt-3 cursor-se-resize	"
               >
                 My works
                 <svg
@@ -73,7 +76,7 @@ export default function Home() {
                     d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25"
                   />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
           <div className="">

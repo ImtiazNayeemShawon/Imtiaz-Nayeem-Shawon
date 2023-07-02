@@ -23,7 +23,7 @@ export default function About() {
             <div className="h-1 rounded-2xl bg-yellow-200 w-20 mt-2"></div>{" "}
           </h1>
           <p className="text-white font-light leading-7 mainfont mt-10">
-            With 10 years experience as a professional Web developer, I have
+            With 3 years experience as a professional Web developer, I have
             acquired the skills and knowledge necessary to make your project a
             success. I enjoy every step of the design process, from discussion
             and collaboration.

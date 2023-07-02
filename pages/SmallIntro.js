@@ -17,7 +17,7 @@ export default function SmallIntro() {
               20+Projects
             </h1>
             <p className="text-left text-gray-500 capitalize text-sm leading-7 max-sm:text-center max-sm:leading-5">
-              I am completed 20+ project
+              I am completed 10+ project
             </p>
           </div>
 
@@ -48,7 +48,7 @@ export default function SmallIntro() {
             <Image src={Experince} alt="Experince" />
 
             <h1 className="text-xl font-bold text-gray-800 capitalize max-sm:text-lg">
-              2+ year experince
+              3+ year experince
             </h1>
             <p className="text-left text-gray-500 capitalize text-sm leading-7 max-sm:text-center">
               {" "}
