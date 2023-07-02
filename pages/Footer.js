@@ -4,14 +4,12 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="p-4 bg-white sm:p-6 dark:bg-gray-900 mt-96">
+    <footer className="p-4 bg-white sm:p-6 dark:bg-gray-900 mt-40">
       <div className="md:flex md:justify-between">
         <div className="mb-6 md:mb-0">
           <Link href="/" className="flex items-center">
             <Image className="w-12 rounded-md" src={Logo} alt="logo" />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white text-red-600">
-              This site is under construction
-            </span>
+           
           </Link>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

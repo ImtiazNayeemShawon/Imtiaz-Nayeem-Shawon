@@ -1,0 +1,40 @@
+.Projects {
+  margin-inline: 7rem;
+  padding-bottom: 20rem;
+  margin-top: 10rem;
+}
+
+/* className="rounded-lg hover:scale-105 duration-300 block m-auto " */
+.Showcase {
+  width: fit-content;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+.catagory {
+  display: flex;
+  height: 2.8rem;
+  width: 10rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5755rem;
+  border-radius: 10px;
+  background: #4676fa;
+  color: #fafafa;
+  font-size: 1rem;
+  font-family: "Satoshi";
+  font-weight: bold;
+  line-height: 120%;
+}
+.catagory:focus {
+  background: #98e0c2;
+  transition: 400ms;
+}
+@media only screen and (max-width: 800px) {
+  .Projects {
+    margin-inline: 1rem;
+    padding-bottom: 20rem;
+  }
+  .Projects h1 {
+    margin-top: 5rem;
+  }
+}

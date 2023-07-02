@@ -1,13 +1,9 @@
 import Head from "next/head";
 import SmallIntro from "./SmallIntro";
-//import Clients from "./Clients";
-import Brands from "./brands";
-import Experince from "./experince";
 import Home from "./Home";
-import Ex from "./testmonials";
 import About from "./About";
 import Expertise from "./expertise";
-
+import Projects from "./Projects";
 export default function App() {
   return (
     <>
@@ -22,10 +18,10 @@ export default function App() {
       <div className="bgi">
         <div className="bghome">
           <Home />
-          <About/>
+          <About />
           <SmallIntro />
-          <Expertise/>
-          <Ex />
+          <Expertise />
+          <Projects />
         </div>
       </div>
     </>

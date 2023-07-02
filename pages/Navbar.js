@@ -36,15 +36,17 @@ export default function Navbar() {
                 About
               </Link>
               <Link
-              to="expertise"
-              smooth={true}
-              duration={500}
+                to="expertise"
+                smooth={true}
+                duration={500}
                 className=" text-gray hover:text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-3 text-center duration-300"
               >
                 Expertise
               </Link>
               <Link
-                href="/"
+                to="Projects"
+                smooth={true}
+                duration={500}
                 className=" text-gray hover:text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-3 text-center duration-300"
               >
                 Projects
