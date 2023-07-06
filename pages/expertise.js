@@ -8,6 +8,10 @@ import Next from "../public/next.png";
 import MongoDb from "../public/mongo.png";
 import Express from "../public/express.png";
 import Tailwind from "../public/tailwind.png";
+import Bt from "../public/bootstrap.png";
+import Linux from "../public/linux.png";
+import Figma from "../public/figma.png";
+
 import Data from "./api/data.json";
 
 export default function expertise() {
@@ -17,64 +21,64 @@ export default function expertise() {
     <div className="grid grid-cols-4 max-sm:grid-cols-3 gap-y-20 mt-5 capitalize">
       <div className="block  p-3">
         <Image src={Js} width={50} className=" m-auto block" />
-        <h1 className="text-center">
-          Javascript <b>(80%)</b>
-        </h1>
+        <h1 className="text-center">Javascript</h1>
       </div>
       <div className="block  p-3">
         <Image src={Reactjs} width={50} className=" m-auto block" />
-        <h1 className="text-center">
-          React js <b>(70%)</b>
-        </h1>
+        <h1 className="text-center">React js</h1>
       </div>
       <div className="block  p-3">
         <Image src={Next} width={50} className=" m-auto block" />
-        <h1 className="text-center">
-          Next js <b>(60%)</b>
-        </h1>
+        <h1 className="text-center">Next js</h1>
       </div>
       <div className="block  p-3">
         <Image src={Express} width={50} className=" m-auto block" />
-        <h1 className="text-center">
-          Express js <b>(60%)</b>
-        </h1>
+        <h1 className="text-center">Express js</h1>
       </div>
       <div className="block  p-3">
         <Image src={MongoDb} width={50} className=" m-auto block" />
-        <h1 className="text-center">
-          MongoDb <b>(60%)</b>
-        </h1>
+        <h1 className="text-center">MongoDb</h1>
       </div>
       <div className="block  p-3">
         <Image src={Tailwind} width={50} className=" m-auto block" />
-        <h1 className="text-center">
-          Tailwind CSS <b>(90%)</b>
-        </h1>
+        <h1 className="text-center">Tailwind CSS</h1>
       </div>
       <div className="block  p-3">
         <Image src={CSS} width={50} className=" m-auto block" />
-        <h1 className="text-center">
-          CSS3 <b>(80%)</b>
-        </h1>
+        <h1 className="text-center">CSS3</h1>
       </div>
       <div className="block  p-3">
         <Image src={Ts} width={50} className=" m-auto block" />
-        <h1 className="text-center">
-          Typescript <b>(20%)</b>
-        </h1>
+        <h1 className="text-center">Typescript</h1>
+      </div>
+      <div className="block  p-3">
+        <Image src={Bt} width={50} className=" m-auto block" />
+        <h1 className="text-center">Bootstrap 5</h1>
+      </div>
+      <div className="block  p-3">
+        <Image src={Linux} width={50} className=" m-auto block" />
+        <h1 className="text-center">Linux </h1>
+      </div>
+      <div className="block  p-3">
+        <Image src={Figma} width={50} className=" m-auto block" />
+        <h1 className="text-center">Figma</h1>
       </div>
     </div>
   );
   const experince = (
     <div className="grid grid-cols-2 gap-5">
       {Data?.map((item, index) => (
-        <div className="p-3 mt-10" key={index+1}>
+        <div className="p-3 mt-10" key={index + 1}>
           <h2 className="text-blue-700 text-lg capitalize mainfont">
             {item.time}
           </h2>
-          <p className="text-lg capitalize mainfont mt-2 max-sm:text-sm">{item.orgname}</p>
+          <p className="text-lg capitalize mainfont mt-2 max-sm:text-sm">
+            {item.orgname}
+          </p>
           <hr class="h-px my-4 bg-gray-400 border-0 w-20" />
-          <b className="text-2xl text-gray-900 mt-5 max-sm:text-lg">{item.position}</b>
+          <b className="text-2xl text-gray-900 mt-5 max-sm:text-lg">
+            {item.position}
+          </b>
         </div>
       ))}
     </div>

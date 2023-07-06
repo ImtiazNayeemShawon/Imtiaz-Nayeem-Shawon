@@ -6,9 +6,7 @@ import { Link } from "react-scroll";
 export default function Home() {
   return (
     <React.Fragment>
-      <div
-      id="Home"
-      className="bghome">
+      <div id="Home" className="bghome">
         <div className="grid grid-cols-2 max-sm:grid-cols-1  place-items-center mx-20  max-sm:mx-5 ">
           <div className="max-sm:mt-20 md:hidden">
             <Image
@@ -31,9 +29,10 @@ export default function Home() {
 
             <p className="text-gray-700 leading-10 mr-40 max-sm:m-0 text-left text-lg  mt-4 max-sm:text-center font-medium max-sm:text-sm">
               {" "}
-              A self-motivated IT professional with huge knowledge and proficiency in HTML, CSS, JavaScript
+              A self-motivated IT professional with huge knowledge and
+              proficiency in HTML, CSS, JavaScript
             </p>
-            <div className="flex  gap-20 mt-10 max-sm:block">
+            <div className="flex  gap-20 mt-10 flex-wrap max-sm:gap-5">
               <button
                 className="mt-6 flex justify-around bg-blue-700 text-xl text-white px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-white hover:text-gray-800 duration-300 hover:shadow-sm
               max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md max-sm:"
@@ -55,13 +54,13 @@ export default function Home() {
                 </svg>
               </button>
               <Link
-              to="Projects"
-              smooth={true}
-              duration={500}
-                className="mt-6 flex justify-around bg-teal-200  text-xl text-gray-800  px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-blue-700 hover:text-white  duration-300 hover:shadow-sm
-              max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md max-sm:mt-3 cursor-se-resize	"
+                to="Projects"
+                smooth={true}
+                duration={500}
+                className="mt-6 flex justify-around bg-gray-100 text-xl text-blue-700 px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-white hover:text-gray-800 duration-300 hover:shadow-sm
+                max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md cursor-pointer"
               >
-                My works
+                Projects
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
