@@ -17,7 +17,7 @@ export default function Projects() {
         {/* section 1 */}
         <div className="grid grid-cols-2 gap-5 mt-10  max-sm:grid-cols-1 max-sm:gap-1">
           <div className={Styles.Showcase}>
-            <a href="http://eduthriller.com/" target="_blank">
+            <a href="https://www.eduthriller.com/" target="_blank">
               <Image
                 src="https://i.ibb.co/wLfsTKN/image.png"
                 width={800}

@@ -2,8 +2,13 @@ import React from "react";
 import Image from "next/image";
 import Imtiaz from "../public/imtiazNayeem.png";
 import { Link } from "react-scroll";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const resume=()=>{
+    router.push("/Resume")
+  }
   return (
     <React.Fragment>
       <div id="Home" className="bghome">
@@ -34,6 +39,7 @@ export default function Home() {
             </p>
             <div className="flex  gap-20 mt-10 flex-wrap max-sm:gap-5">
               <button
+              onClick={resume}
                 className="mt-6 flex justify-around bg-blue-700 text-xl text-white px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-white hover:text-gray-800 duration-300 hover:shadow-sm
               max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md max-sm:"
               >
