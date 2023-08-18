@@ -4,6 +4,7 @@ import Home from "./Home";
 import About from "./About";
 import Expertise from "./expertise";
 import Projects from "./Projects";
+import Contactme from "./Contactme";
 export default function App() {
   return (
     <>
@@ -22,6 +23,7 @@ export default function App() {
           <SmallIntro />
           <Expertise />
           <Projects />
+          <Contactme/>
         </div>
       </div>
     </>

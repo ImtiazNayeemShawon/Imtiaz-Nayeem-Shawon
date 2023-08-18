@@ -106,8 +106,10 @@ export default function expertise() {
         <div className="max-sm:mt-7">
           <div className="flex justify-around">
             <button
-              onClick={() => setToggle(!toggle)}
-              className="text-lg mainfont font-semibold bg-gray-100 px-10 py-4 focus:outline  outline-gray-800 outline-1 rounded-lg flex justify-around default:outline"
+              onClick={() => setToggle(true)}
+              className={`text-lg mainfont font-semibold bg-gray-100 px-10 py-4  rounded-lg flex justify-around ${
+                !toggle ? "" : "ring-2"
+              }`}
             >
               Skills
               <svg
@@ -126,8 +128,10 @@ export default function expertise() {
               </svg>
             </button>
             <button
-              onClick={() => setToggle(!toggle)}
-              className="text-lg mainfont font-semibold bg-gray-100 px-10 py-4 focus:outline  outline-gray-800 outline-1 rounded-lg flex justify-around"
+              onClick={() => setToggle(false)}
+              className={`text-lg mainfont font-semibold bg-gray-100 px-10 py-4  rounded-lg flex justify-around ${
+                toggle ? "" : "ring-2"
+              }`}
             >
               Experince
               <svg
@@ -146,7 +150,7 @@ export default function expertise() {
               </svg>
             </button>
           </div>
-          {toggle ? <div>{experince}</div> : <div> {expertise}</div>}
+          {toggle ? <div> {expertise}</div> : <div>{experince}</div>}
         </div>
       </div>
     </React.Fragment>

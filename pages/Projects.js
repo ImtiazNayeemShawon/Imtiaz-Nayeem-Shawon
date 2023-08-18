@@ -53,16 +53,15 @@ export default function Projects() {
                   src="https://i.ibb.co/dK8RbyR/image.png
                "
                   width={400}
-                  height={400}
+                  height={200}
                   className="hover:scale-105 duration-300 cursor-pointer"
                 />
               </a>
             </div>
             <div className={Styles.Showcase}>
-              <a href="https://imtiaztodo.netlify.app/" target="_blank">
+              <a href="https://fate.ae/" target="_blank">
                 <Image
-                  src="https://i.ibb.co/GWhsKHj/image.png
-               "
+                  src="https://i.ibb.co/ZYWFMKP/image.png"
                   width={400}
                   height={400}
                   className="hover:scale-105 duration-300 cursor-pointer"

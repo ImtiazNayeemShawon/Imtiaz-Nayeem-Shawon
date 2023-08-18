@@ -9,19 +9,19 @@ import Image from "next/image";
 export default function SmallIntro() {
   return (
     <div>
-      <div className="shadow-xl bg-slate-200 rounded-2xl mx-44 max-sm:m-0 max-sm:bg-transparent max-sm:shadow-sm">
-        <div class=" mt-44 grid grid-cols-2 max-sm:grid  justify-around max-sm:mt-10">
-          <div className="grid justify-items-center bg-slate-100 rounded-2xl p-10 m-7 w-96 max-sm:text-center  max-sm:m-2 max-sm:w-40 max-sm:p-3">
+      <div className="shadow-xl bg-slate-100 max-sm:bg-slate-50 rounded-2xl mx-44 max-sm:m-0 max-sm:bg-transparent max-sm:shadow-sm">
+        <div class=" mt-44 grid grid-cols-2 max-sm:grid  justify-around max-sm:mt-10 place-items-center">
+          <div className="grid justify-items-center bg-slate-100 max-sm:bg-slate-50 rounded-2xl p-10 m-7 w-96 max-sm:text-center  max-sm:m-2 max-sm:w-40 max-sm:p-3">
             <Image src={Projects} alt="projects" />
             <h1 className="text-xl font-bold text-gray-800 capitalize">
               20+Projects
             </h1>
             <p className="text-left text-gray-500 capitalize text-sm leading-7 max-sm:text-center max-sm:leading-5">
-              I am completed 10+ project
+              I am completed 20+ project
             </p>
           </div>
 
-          <div className="grid justify-items-center bg-slate-100 rounded-2xl p-10 m-7 w-96 max-sm:text-center  max-sm:m-2 max-sm:w-40 max-sm:p-3">
+          <div className="grid justify-items-center bg-slate-100 max-sm:bg-slate-50 rounded-2xl p-10 m-7 w-96 max-sm:text-center  max-sm:m-2 max-sm:w-40 max-sm:p-3">
             <Image src={Client} alt="Client" />
             <h1 className="text-xl font-bold text-gray-800 capitalize">
               11+Client
@@ -33,8 +33,8 @@ export default function SmallIntro() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2  max-sm:p-0">
-          <div className="grid justify-items-center bg-slate-100 rounded-2xl p-10 m-7 w-96 max-sm:p-2 max-sm:text-center  max-sm:m-2 max-sm:w-40">
+        <div className="grid grid-cols-2  max-sm:p-0 place-items-center">
+          <div className="grid justify-items-center bg-slate-100 max-sm:bg-slate-50 rounded-2xl p-10 m-7 w-96 max-sm:p-2 max-sm:text-center  max-sm:m-2 max-sm:w-40">
             <Image src={Org} alt="Org" />
             <h1 className="text-xl font-bold text-gray-800 capitalize max-sm:text-lg">
               7+organization
@@ -44,7 +44,7 @@ export default function SmallIntro() {
               I have worked in 7+ organizations as a web developer.
             </p>
           </div>
-          <div className="grid max-sm:p-3 justify-items-center bg-slate-100 rounded-2xl p-10 m-7 w-96 max-sm:text-center max-sm:w-40 max-sm:m-2">
+          <div className="grid max-sm:p-3 justify-items-center bg-slate-100 max-sm:bg-slate-50 rounded-2xl p-10 m-7 w-96 max-sm:text-center max-sm:w-40 max-sm:m-2">
             <Image src={Experince} alt="Experince" />
 
             <h1 className="text-xl font-bold text-gray-800 capitalize max-sm:text-lg">
@@ -52,7 +52,7 @@ export default function SmallIntro() {
             </h1>
             <p className="text-left text-gray-500 capitalize text-sm leading-7 max-sm:text-center">
               {" "}
-              I have been doing web design for the last 2 years .
+               doing web design for the last 3 years 
             </p>
           </div>
         </div>
