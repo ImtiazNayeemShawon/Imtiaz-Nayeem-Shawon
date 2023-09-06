@@ -5,6 +5,7 @@ import About from "./About";
 import Expertise from "./expertise";
 import Projects from "./Projects";
 import Contactme from "./Contactme";
+import Achievements from "./achievements";
 export default function App() {
   return (
     <>
@@ -22,8 +23,10 @@ export default function App() {
           <About />
           <SmallIntro />
           <Expertise />
+          <Achievements/>
           <Projects />
           <Contactme/>
+          
         </div>
       </div>
     </>

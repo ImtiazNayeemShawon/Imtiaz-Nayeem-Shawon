@@ -37,20 +37,6 @@ export default function Contactme() {
           Submit
         </button>
       </div>
-      <div className="mt-20 grid grid-cols-2 max-sm:grid-cols-1 justify-between">
-        <div>
-          <h1 className="text-3xl capitalize">order me on fiver</h1>
-          <p>Order me on fiver</p>
-        </div>
-        <script
-          id="fiverr-seller-widget-script-ae10eb9e-900c-42f0-b13b-119623acbcf4"
-          src="https://widgets.fiverr.com/api/v1/seller/imtiaznayeem?widget_id=ae10eb9e-900c-42f0-b13b-119623acbcf4"
-          data-config='{"category_name":"Programming \u0026 Tech"}'
-          async="true"
-          defer="true"
-        ></script>
-      </div>
-      {/* <script id='fiverr-seller-widget-script-ae10eb9e-900c-42f0-b13b-119623acbcf4' src='https://widgets.fiverr.com/api/v1/seller/imtiaznayeem?widget_id=ae10eb9e-900c-42f0-b13b-119623acbcf4' data-config='{"category_name":"Programming \u0026 Tech"}' async='true' defer='true'></script> */}
     </div>
   );
 }
