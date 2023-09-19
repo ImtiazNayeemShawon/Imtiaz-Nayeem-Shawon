@@ -11,7 +11,7 @@ export default function About() {
             <h1 className="extrastyle text-blue-700 m-auto text-center mainfont max-sm:h-fit">
               03
             </h1>
-            <p className="text-3xl text-blue-700 uppercase font-bold mainfont max-sm:text-xl max-sm:text-center">
+            <p className="text-3xl text-blue-700 uppercase font-bold mainfont max-sm:text-xl text-center ">
               Years of experience
             </p>
           </div>

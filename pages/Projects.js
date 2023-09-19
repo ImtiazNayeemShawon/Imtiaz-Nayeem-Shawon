@@ -3,10 +3,18 @@ import Styles from "../styles/Projects.module.css";
 import Image from "next/image";
 
 export default function Projects() {
+  const imageUrls = [
+    "https://i.ibb.co/tBJSjBn/Mac-Book-Pro-16-5.png",
+    "https://i.ibb.co/NZzTHT4/Mac-Book-Pro-16-6.png",
+    "https://i.ibb.co/GdxSWcD/Mac-Book-Pro-16-4.png",
+    "https://i.ibb.co/tJ2wtdH/BYOC.png",
+    "https://i.ibb.co/xDTgNk1/edu.png",
+    "https://i.ibb.co/hMNx13f/FATE.png",
+  ];
   return (
     <React.Fragment>
       <div id="Projects" className={Styles.Projects}>
-        <h1 className="mainfont text-center text-3xl font-semibold">
+        <h1 className="mainfont text-center text-5xl font-semibold us">
           My Latest Projects
         </h1>
         <p className="text-sm text-gray-700 text-center">
@@ -14,62 +22,19 @@ export default function Projects() {
           of security and company policy issue{" "}
         </p>
 
-        {/* section 1 */}
-        <div className="grid grid-cols-2 gap-5 mt-10  max-sm:grid-cols-1 max-sm:gap-1">
-          <div className={Styles.Showcase}>
-            <a href="https://www.eduthriller.com/" target="_blank">
+        <div className="grid grid-cols-3 gap-5 mt-10">
+          {imageUrls.map((imageUrl, index) => (
+            <div >
               <Image
-                src="https://i.ibb.co/wLfsTKN/image.png"
-                width={800}
-                height={1000}
-                className="hover:scale-105 duration-300  cursor-pointer"
-              />{" "}
-            </a>
-          </div>
-          <div className="grid grid-cols-2 gap-5 max-sm:gap-1">
-            <div className={Styles.Showcase}>
-              <a href="https://zipbox.netlify.app/" target="_blank">
-                <Image
-                  src="https://i.ibb.co/WgdWxgZ/Mac-Book-Pro-16-1-4.png"
-                  width={400}
-                  height={400}
-                  className="hover:scale-105 duration-300 cursor-pointer"
-                />
-              </a>
+              className="hover:scale-105 duration-300"
+                key={index}
+                src={imageUrl}
+                alt={`Image ${index}`}
+                width={400}
+                height={200}
+              />
             </div>
-            <div className={Styles.Showcase}>
-              <a href="https://mhcbd.netlify.app/" target="_blank">
-                <Image
-                  src="https://i.ibb.co/86b7Rn8/Mac-Book-Pro-16-1-3.png"
-                  width={400}
-                  height={400}
-                  className="hover:scale-105 duration-300 cursor-pointer"
-                />
-              </a>
-            </div>
-            <div className={Styles.Showcase}>
-              <a href="https://artasbygg.se/" target="_blank">
-                <Image
-                  src="https://i.ibb.co/dK8RbyR/image.png
-               "
-                  width={400}
-                  height={200}
-                  className="hover:scale-105 duration-300 cursor-pointer"
-                />
-              </a>
-            </div>
-            <div className={Styles.Showcase}>
-              <a href="https://fate.ae/" target="_blank">
-                <Image
-                  src="https://i.ibb.co/ZYWFMKP/image.png"
-                  width={400}
-                  height={400}
-                  className="hover:scale-105 duration-300 cursor-pointer"
-                />
-              </a>
-            </div>{" "}
-          </div>
-          <div></div>
+          ))}
         </div>
       </div>
     </React.Fragment>

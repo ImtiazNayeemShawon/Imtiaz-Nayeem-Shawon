@@ -36,7 +36,7 @@ export default function achievements() {
         <div className="flex gap-5 items-center flex-wrap">
           <Image
             src={CJ}
-            width={200}
+            width={100}
             className="rounded-full border-8 border-yellow-300"
           />
           <p className=" text-xl">Creative juniors award</p>
@@ -61,7 +61,7 @@ export default function achievements() {
         <div className="flex gap-5 items-center mt-10 flex-wrap">
           <Image
             src={ICTOB}
-            width={200}
+            width={100}
             className="rounded-full border-8 border-yellow-100"
           />
           <p className=" text-xl">Bangladesh ICT olympiad</p>
@@ -86,7 +86,7 @@ export default function achievements() {
         <div className="flex gap-5 items-center mt-10 flex-wrap">
           <Image
             src={BDJSO}
-            width={200}
+            width={100}
             className="rounded-full border-8 border-red-500"
           />
           <p className=" text-xl">Junior science olympiad -2022</p>
@@ -106,7 +106,7 @@ export default function achievements() {
         <div className="flex gap-5 items-center mt-10 flex-wrap">
           <Image
             src={DBD}
-            width={200}
+            width={100}
             className="rounded-full border-8 border-red-600"
           />
           <p className=" text-xl">Digital bangladesh quiz 2021,2022</p>
@@ -121,7 +121,7 @@ export default function achievements() {
         <div className="flex gap-5 items-center mt-10 flex-wrap">
           <Image
             src={NASA}
-            width={200}
+            width={100}
             height={200}
             className="rounded-full border-8 border-yellow-300"
           />

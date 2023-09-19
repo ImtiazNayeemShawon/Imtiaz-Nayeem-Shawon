@@ -2,21 +2,25 @@
   {
     "time": "2022-2023",
     "orgname": "Bangladesh Space Research Society",
-    "position": "Web designer"
+    "position": "Web designer",
+    "link":"https://bsrs.com.bd/"
   },
   {
     "time": "2023-june",
     "orgname": "Mental health care",
-    "position": "Web developer"
+    "position": "Web developer",
+    "link":"https://mhcbd.netlify.app/"
   }
   ,{
-    "time": "2023-2023 jul",
+    "time": "2023-now",
     "orgname": "Zipbox",
-    "position": "Full stack Web developer"
+    "position": "Founder and Lead developer ",
+    "link":"https://www.zipbox.design/"
   },
   {
     "time": "2022-aug 22",
     "orgname": "Aruddho 71",
-    "position": "Front end developer"
+    "position": "Front end developer",
+    "link":"https://www.aruddho71.org/"
   }
 ]

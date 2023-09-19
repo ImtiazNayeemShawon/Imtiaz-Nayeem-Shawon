@@ -72,9 +72,9 @@ export default function expertise() {
           <h2 className="text-blue-700 text-lg capitalize mainfont">
             {item.time}
           </h2>
-          <p className="text-lg capitalize mainfont mt-2 max-sm:text-sm">
+          <a href={item.link} className="text-lg capitalize mainfont mt-2 max-sm:text-sm hover:underline hover:text-gray-700 duration-300">
             {item.orgname}
-          </p>
+          </a>
           <hr class="h-px my-4 bg-gray-400 border-0 w-20" />
           <b className="text-2xl text-gray-900 mt-5 max-sm:text-lg">
             {item.position}

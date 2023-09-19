@@ -23,8 +23,8 @@ export default function App() {
           <About />
           <SmallIntro />
           <Expertise />
-          <Achievements/>
           <Projects />
+          <Achievements/>
           <Contactme/>
           
         </div>

@@ -6,16 +6,16 @@ import { useRouter } from "next/router";
 
 export default function Home() {
   const router = useRouter();
-  const resume=()=>{
-    router.push("/Resume")
-  }
+  const resume = () => {
+    router.push("/Resume");
+  };
   return (
     <React.Fragment>
-      <div id="Home" className="bghome">
-        <div className="grid grid-cols-2 max-sm:grid-cols-1  place-items-center mx-20  max-sm:mx-5 ">
+      <div id="Home" className="bg-white">
+        <div className=" grid grid-cols-2 max-sm:grid-cols-1  place-items-center mx-20  max-sm:mx-5 ">
           <div className="max-sm:mt-20 md:hidden">
             <Image
-              className="m-auto  max-sm:block"
+              className="m-auto   max-sm:block"
               src={Imtiaz}
               width={350}
               alt="imtiaz nayeem shawon"
@@ -27,19 +27,19 @@ export default function Home() {
             </h1>
             <div>
               {" "}
-              <h2 className="text-2xl mainfont font-semibold capitalize max-sm:text-center">
-                web Developer
+              <h2 className="text-xl mainfont  capitalize max-sm:text-center">
+                web Developer | programmer | entrepreneur
               </h2>
             </div>
 
-            <p className="text-gray-700 leading-10 mr-40 max-sm:m-0 text-left text-lg  mt-4 max-sm:text-center font-medium max-sm:text-sm">
+            <p className="text-gray-700  mr-40 max-sm:m-0 text-left text-lg  mt-10 max-sm:text-center font-medium max-sm:text-sm">
               {" "}
               A self-motivated IT professional with huge knowledge and
-              proficiency in HTML, CSS, JavaScript
+              proficiency in <span className="text-blue-700 font-semibold">web development ,Javascript & C++ </span>
             </p>
             <div className="flex  gap-20 mt-10 flex-wrap max-sm:gap-5">
               <button
-              onClick={resume}
+                onClick={resume}
                 className="mt-6 flex justify-around bg-blue-700 text-xl text-white px-10 py-5 rounded-3xl capitalize font-semibold hover:bg-white hover:text-gray-800 duration-300 hover:shadow-sm
               max-sm:m-auto max-sm:px-20 max-sm:py-3 max-sm:rounded-md max-sm:"
               >
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
           <div className="">
             <Image
-              className="m-auto max-sm:hidden block mt-16"
+              className="m-auto max-sm:hidden  block mt-16"
               src={Imtiaz}
               width="500"
               alt="imtiaz nayeem shawon"

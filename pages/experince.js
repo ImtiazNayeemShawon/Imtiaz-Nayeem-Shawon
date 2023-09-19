@@ -23,7 +23,7 @@ export default function experince() {
                 <h2 className="text-gray-700 text-3xl capitalize font-bold max-sm:text-xl">
                   {item.position}
                   <span className="text-teal-400 ml-2 max-sm:ml-0">
-                    @{item.orgname}
+                    {item.orgname}
                   </span>
                 </h2>
                 <p className="font-semibold capitalize text-lg">{item.title}</p>
