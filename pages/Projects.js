@@ -22,7 +22,7 @@ export default function Projects() {
           of security and company policy issue{" "}
         </p>
 
-        <div className="grid grid-cols-3 gap-5 mt-10">
+        <div className="grid grid-cols-3 gap-5 mt-10 max-sm:grid-cols-1">
           {imageUrls.map((imageUrl, index) => (
             <div >
               <Image
