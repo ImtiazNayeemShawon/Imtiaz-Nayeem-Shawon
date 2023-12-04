@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function footer() {
+export default function Footer() {
   return (
     <div>
       <div className="mt-60 mx-40 max-sm:mx-4 max-sm:mt-20">
