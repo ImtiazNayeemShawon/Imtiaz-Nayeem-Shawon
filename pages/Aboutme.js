@@ -7,20 +7,20 @@ export default function Aboutme() {
     <div className="mt-60 mx-40 max-sm:mx-4 max-sm:mt-40">
       <div className="">
         <h1 className="text-[40px] mainfont capitalize "> About me</h1>
-        <div className="w-60 h-[1px] bg-[#4e4949] rounded-sm "/>
+        <div className="w-60 h-[1px] bg-[#4e4949] rounded-sm " />
         <div className="grid grid-cols-2 max-sm:grid-cols-1 max-sm:flex-col-reverse max-sm:flex mt-10 items-center place-items-center">
           <div>
             <p className="text-lg text-left leading-9 max-sm:text-sm max-sm:mt-5">
-            👋 Hello there ,<br/> My name is Imtiaz Nayeem Shawon. I'm a web developer
-              with 3 Years of experience working with various organisations.
-              Additionally, I lead a web dMy name is Imtiaz Nayeem Shawon. I'm a
-              web developer with 3 Years of experience working with various
-              organizations. Additionally, I lead a web development agency and
+              👋 Hello there ,<br /> My name is Imtiaz Nayeem Shawon. I'm a web
+              developer with 3 Years of experience working with various
+              organisations. Additionally, I lead a web development agency and
               possess significant experience in remote work settings. Alongside
               my web development expertise, I excel in problem-solving skills,
               particularly in C++, as demonstrated on platforms like CodeChef
             </p>
-            <p className="px-4 py- mt-5 bg-[#272625] w-fit mainfont">Follow me on</p>
+            <p className="px-4 py- mt-5 bg-[#272625] w-fit mainfont">
+              Follow me on
+            </p>
             <div className="mt-5 flex gap-10">
               <a
                 href="twitter"
