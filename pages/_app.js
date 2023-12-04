@@ -1,12 +1,11 @@
 import "../styles/globals.css";
 import Navigation from "./Navbar";
-import Footer from "./Footer";
-import "../styles/important.css";
+import Footer from "./footer";
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <div className="fixed">
+      <div className="">
         <Navigation />
       </div>
 

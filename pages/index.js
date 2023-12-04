@@ -1,12 +1,21 @@
+"use client";
 import Head from "next/head";
-import SmallIntro from "./SmallIntro";
 import Home from "./Home";
-import About from "./About";
-import Expertise from "./expertise";
-import Projects from "./Projects";
-import Contactme from "./Contactme";
-import Achievements from "./achievements";
+import Org from "./org";
+import Aboutme from "./Aboutme";
+import WhatIdo from "./WhatIdo";
+
+import Aos from "aos";
+import { useEffect } from "react";
+
 export default function App() {
+  useEffect(() => {
+    Aos.init({
+      duration: 1000,
+      once: false,
+      easing: "ease", // default easing for AOS animations
+    });
+  }, []);
   return (
     <>
       <div>
@@ -20,13 +29,9 @@ export default function App() {
       <div className="bgi">
         <div className="bghome">
           <Home />
-          <About />
-          <SmallIntro />
-          <Expertise />
-          <Projects />
-          <Achievements/>
-          <Contactme/>
-          
+          <Org />
+          <Aboutme />
+          <WhatIdo/>
         </div>
       </div>
     </>

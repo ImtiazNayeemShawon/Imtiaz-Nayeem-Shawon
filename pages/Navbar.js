@@ -1,76 +1,36 @@
 import React from "react";
 import Image from "next/image";
 import Logo from "../public/logo.png";
-// import Link from "next/link";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import { Link } from "react-scroll";
 
 export default function Navbar() {
   return (
-    <div className="fixed">
-      <nav className="bg-inherit	 px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 border-0">
-        <div className="container flex  items-right justify-between mx-auto cursor-pointer">
-          <span className="">
-            <Image className="w-12 rounded-lg" src={Logo} alt="logo" />
-          </span>
-
-          <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-            id="mobile-menu-2"
-          >
-            <ul className="flex flex-col p-1 font-bold mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-6 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 uppercase text-sm">
-              <Link
-                to="Home"
-                smooth={true}
-                duration={500}
-                className=" text-gray hover:text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-3 text-center duration-300"
-              >
-                Home
-              </Link>
-              <Link
-                to="about"
-                smooth={true}
-                duration={500}
-                className=" text-gray hover:text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-3 text-center duration-300"
-              >
-                About
-              </Link>
-              <Link
-                to="expertise"
-                smooth={true}
-                duration={500}
-                className=" text-gray hover:text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-3 text-center duration-300"
-              >
-                Expertise
-              </Link>
-              <Link
-                to="Projects"
-                smooth={true}
-                duration={500}
-                className=" text-gray hover:text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-3 text-center duration-300"
-              >
-                Projects
-              </Link>
-              <Link
-               to="achievements"
-               smooth={true}
-               duration={500}
-                className=" text-gray hover:text-white hover:bg-blue-700 font-medium rounded-lg text-sm px-5 py-3 text-center duration-300"
-              >
-                Achievements
-              </Link>
-
-              <a
-                href="https://github.com/ImtiazNayeemShawon"
-                target="_blank"
-                className="text-white bg-gray-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
-              >
-                <GitHubIcon /> GitHub
-              </a>
-            </ul>
-          </div>
+    <nav className="">
+      <div className="flex justify-between items-center mx-40 mt-6  max-sm:mx-4">
+        <div>
+          <Image className="w-12 rounded-lg bg-[#f9f9f9]" src={Logo} alt="logo" />
         </div>
-      </nav>
-    </div>
+        <div>
+          <button className="text-[#9C9C9C] px-6 py-3 bg-[#1A1A1A] border-[#2f2e2e] border rounded-sm flex items-center gap-2 hover:shadow-2xl shadow-[#8D8D8D] duration-300">
+            Resume
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div className="mt-4 h-[1px] w-[80%] m-auto block bg-[#242424]" />
+    </nav>
   );
 }

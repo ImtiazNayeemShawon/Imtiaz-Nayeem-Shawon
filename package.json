@@ -15,6 +15,7 @@
     "@mui/material": "^5.11.4",
     "@next/font": "13.1.0",
     "@react-spring/web": "^9.7.1",
+    "aos": "^2.3.4",
     "aos-animations": "^0.0.7",
     "eslint": "8.30.0",
     "eslint-config-next": "13.1.0",
