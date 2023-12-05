@@ -29,16 +29,25 @@ export default function Home() {
           {/* <p className="text-center text-lg font-semibold">where lines speak louder than words</p> */}
           <p className="text-center text-sm mt-2">
             👋 I'm Imtiaz Nayeem Shawon, <br /> a full-stack web developer
-            specializing in SaaS web application development.
+            specializing in SaaS & web application development.
           </p>
           <div className="flex justify-center gap-5 mt-10">
-            <button className="border border-[#191818] bg-white text-[#242424] px-10 text-lg  py-2 rounded-lg flex items-center gap-2">
+            <a
+              href="https://wa.link/gihi2p"
+              target="blank"
+              className="border border-[#191818] bg-white text-[#242424] px-10 text-lg  py-2 rounded-lg flex items-center gap-2  "
+            >
               💬 Let's talk
-            </button>
+            </a>
 
-            <button className="border border-[#474646] bg-[#242424] text-[#fffdfd] px-10 text-lg  py-2 rounded-lg flex items-center gap-2">
+            <Link
+              to="projects"
+              duration={1000}
+              smooth={true}
+              className="border cursor-pointer border-[#474646] bg-[#242424] text-[#fffdfd] px-10 text-lg  py-2 rounded-lg flex items-center gap-2"
+            >
               💻 Projects
-            </button>
+            </Link>
           </div>
         </div>
       </div>

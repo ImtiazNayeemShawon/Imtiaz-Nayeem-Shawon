@@ -4,7 +4,7 @@ export default function WhatIdo() {
   return (
     <div className="mt-40 mx-40 max-sm:mx-4 max-sm:mt-20">
       <div>
-        <h1 className="text-center text-4xl max-sm:text-2xl">
+        <h1 className="text-center text-4xl max-sm:text-2xl text-white">
           Collaborate with brands <br /> and agencies to create impactful
           results.
         </h1>

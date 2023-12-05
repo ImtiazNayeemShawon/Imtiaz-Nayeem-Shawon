@@ -82,13 +82,13 @@ export default function Org() {
   return (
     <div className="mt-60 max-sm:mt-20">
       <div className="my-10 w-fit m-auto block">
-        <h1 className="text-center mainfont  capitalize text-[30px]">
+        <h1 className="text-center mainfont  capitalize text-[30px] text-white">
           &#128509; Brands I worked with{" "}
         </h1>
         <div className="w-40 h-[1px] rounded-full bg-[#6a6767]" />
       </div>
       <div className="overflow-clip ">
-        <div className="flex logos  justify-center  gap-40 ">
+        <div className="flex logos  justify-center  gap-40 max-sm:gap-20">
           {imageArray?.map((data, index) => (
             <Image
               key={index}
@@ -96,7 +96,7 @@ export default function Org() {
               alt={data?.name}
               width={100}
               height={100}
-              className="logostyle w-[150px] h-[60px]"
+              className="logostyle w-[200px] h-[60px]"
             />
           ))}
         </div>

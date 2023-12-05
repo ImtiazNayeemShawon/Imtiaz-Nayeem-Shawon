@@ -4,6 +4,8 @@ import Home from "./Home";
 import Org from "./org";
 import Aboutme from "./Aboutme";
 import WhatIdo from "./WhatIdo";
+import Projects from "./Projects";
+import Faq from "./Faq";
 
 import Aos from "aos";
 import { useEffect } from "react";
@@ -32,6 +34,8 @@ export default function App() {
           <Org />
           <Aboutme />
           <WhatIdo/>
+          <Projects/>
+          <Faq/>
         </div>
       </div>
     </>

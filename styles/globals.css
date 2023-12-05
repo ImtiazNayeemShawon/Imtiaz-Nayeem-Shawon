@@ -16,13 +16,19 @@ body {
   background-size: 50px 50px;
 }
 .logostyle {
-  filter: grayscale(110%);
+  filter: grayscale(10%);
 }
 /* Add this CSS to your stylesheet */
 
 .logos {
   display: flex;
   animation: slideRightToLeft 40s linear infinite;
+}
+@media only screen and (max-width: 600px) {
+  .logos {
+    display: flex;
+    animation: slideRightToLeft 10s linear infinite;
+  }
 }
 
 @keyframes slideRightToLeft {
@@ -41,3 +47,9 @@ body {
 }
 
 /* Adjust the duration (20s in this example) based on your preference */
+.project{
+  background-image: radial-gradient(#1b1c1b 20%, transparent 20%),
+  radial-gradient(#161615 20%, transparent 20%);
+background-size: 7px 7px;
+
+}

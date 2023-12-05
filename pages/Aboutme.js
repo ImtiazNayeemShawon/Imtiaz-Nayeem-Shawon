@@ -6,7 +6,7 @@ export default function Aboutme() {
   return (
     <div className="mt-60 mx-40 max-sm:mx-4 max-sm:mt-40">
       <div className="">
-        <h1 className="text-[40px] mainfont capitalize "> About me</h1>
+        <h1 className="text-[40px] mainfont capitalize text-white "> About me</h1>
         <div className="w-60 h-[1px] bg-[#4e4949] rounded-sm " />
         <div className="grid grid-cols-2 max-sm:grid-cols-1 max-sm:flex-col-reverse max-sm:flex mt-10 items-center place-items-center">
           <div>
@@ -23,7 +23,7 @@ export default function Aboutme() {
             </p>
             <div className="mt-5 flex gap-10">
               <a
-                href="twitter"
+                href="https://twitter.com/Imtiaz_Nayim"
                 target="_blank"
                 className="text-white  hover:scale-125 duration-300"
               >
@@ -37,7 +37,7 @@ export default function Aboutme() {
                 </svg>
               </a>
               <a
-                href="linkedin"
+                href="https://www.linkedin.com/in/imtiaznayeem/"
                 target="_blank"
                 className="text-white hover:scale-125 duration-300"
               >
@@ -51,7 +51,7 @@ export default function Aboutme() {
                 </svg>
               </a>
               <a
-                href="github"
+                href="https://github.com/ImtiazNayeemShawon/"
                 target="_blank"
                 className="text-white hover:scale-125 duration-300"
               >
@@ -65,7 +65,7 @@ export default function Aboutme() {
                 </svg>
               </a>
               <a
-                href="whatsapp"
+                href="https://wa.link/gihi2p"
                 target="_blank"
                 className="text-white hover:scale-125 duration-300"
               >
