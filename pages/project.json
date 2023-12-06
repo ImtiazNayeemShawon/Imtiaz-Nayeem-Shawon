@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Book your oil change - Webapp",
+    "title": "Complete Booking SaaS platform ",
+    "description": "A SaaS project powered by Next.js ,Express js , MongoDb and styled with Tailwind CSS for a seamless and modern web experience ans Stripe for subscription ",
+    "Link": "https://www.bookyouroilchange.com/",
+    "image": "https://i.ibb.co/0YWMPgz/Mac-Book-Pro-16-18.png"
+  },
+  {
+    "name": "Skynetix - Website",
+    "title": " Software Solutions Reach New Heights of Digital Excellence",
+    "description": "A Software agency website designed by Tailwind css and Nextjs and Strapi CMS",
+    "Link": "https://skynetix.vercel.app/",
+    "image": "https://i.ibb.co/Pw0h4cq/Mac-Book-Pro-16-22.png"
+  },
+  {
+    "name": "Eduthriller - LMS webapp",
+    "title": "Smooth Learning managment system ",
+    "description": "LMS website created for selling course taking quizes and see performance Dashboard by MERN stack tailwind css",
+    "Link": "https://eduthriller.netlify.app/",
+    "image": "https://i.ibb.co/1b6xZR3/Mac-Book-Pro-16-23.png"
+  },
+  {
+    "name": "Fate - website ",
+    "title": "E realm where ordinary people become entruprenuers",
+    "description": "A company portfolio website for represent there activity , designed by Tailwind css and Nextjs and Strapi CMS",
+    "Link": "https://fate-pi.vercel.app/",
+    "image": "https://i.ibb.co/R3wZkR4/Mac-Book-Pro-16-19.png"
+  },
+  {
+    "name": "zipbox - website",
+    "title": "Where meets Creative people with innovative brand",
+    "description": "Software agency website created by Nextjs",
+    "Link": "https://www.zipbox.design/",
+    "image": "https://i.ibb.co/mhXFGg1/zipnewbox.png"
+  },
+  {
+    "name": "Artas General - website",
+    "title": "Luxury House Building has never been so simple",
+    "description": "A realestate business website developed by Nextjs , TSx , CSS ",
+    "Link": "https://artasbygg.se/en",
+    "image": "https://i.ibb.co/tJm26pd/Mac-Book-Pro-16-20.png"
+  },
+  {
+    "name": "Mental Health care - webapp",
+    "title": "Mental Health Care works to raise mental health awareness ",
+    "description": "Mental health care BD a website blog site created by nextjs and prisma",
+    "Link": "https://www.mhcbd.org/",
+    "image": "https://i.ibb.co/LCx2W3M/Mac-Book-Pro-16-21.png"
+  },
+  {
+    "name": "Ridge Park - website",
+    "title": "Real estate Business presenting activity to peoples",
+    "description": "A real estate company website created by Nextjs and tailwind css and Google map apis for showing location of every Building ",
+    "Link": "https://ridge-park.net/",
+    "image": "https://i.ibb.co/b2mBRtK/Mac-Book-Pro-16-24.png"
+  },
+  {
+    "name": "Sage AI chat bot - UI/UX ",
+    "title": "A Personal chatbot ans every questions ",
+    "description": "A chatbot app redesign the UI by figma ",
+    "Link": "https://www.figma.com/file/aaccUwlJaZH14AiMJfAie1/AI-chat-bot?type=design&node-id=0%3A1&mode=design&t=pRPh4gZHfYydj20g-1",
+    "image": "https://i.ibb.co/jZ3n6gN/Mac-Book-Pro-16-17.png"
+  }
+]
