@@ -45,7 +45,7 @@ export default function Faq() {
             <Accordion className="my-10 py-1" collapseAll> 
               <Accordion.Panel>
                 <Accordion.Title className="px-4 py-3 font- text-lg rounded-none">
-                  How you give pricing estimate to cleints?{" "}
+                  How you give pricing estimate to clients?{" "}
                 </Accordion.Title>
                 <Accordion.Content className="p-4">
                   <p>
