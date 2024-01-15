@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Imtiaz from "../public/me.png";
-import Me from "../public/logo.png";
+import Me from "../public/me.png";
 
 import { Link } from "react-scroll";
 import { useRouter } from "next/router";
@@ -33,7 +33,7 @@ export default function Home() {
           {/* <p className="text-center text-lg font-semibold">where lines speak louder than words</p> */}
           <p className="text-center text-sm mt-2">
             👋 I'm Imtiaz Nayeem Shawon, <br /> a full-stack web developer
-            specializing in SaaS & web application development.
+            specializing in  web application development.
           </p>
           <div className="flex justify-center gap-5 mt-10">
             <a
