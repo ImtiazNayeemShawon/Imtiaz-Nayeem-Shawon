@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Me from "../public/me.png";
-import Whome from "../public/whome.jpeg";
+import Whome from "../public/me.png";
 
 
 export default function Aboutme() {
@@ -85,7 +85,7 @@ export default function Aboutme() {
           <Image
             src={Whome}
             alt="Me"
-            className="w-80 bg-[#161616] border object-cover h-96  border-[#323030] shadow m-auto"
+            className="w-80 me bg-[#161616] border object-cover h-96  border-[#323030] shadow m-auto"
           />
         </div>
       </div>

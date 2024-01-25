@@ -53,3 +53,6 @@ body {
 background-size: 7px 7px;
 
 }
+.me{
+  filter: grayscale(110%);
+}

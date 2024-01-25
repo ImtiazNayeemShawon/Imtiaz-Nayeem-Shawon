@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Imtiaz from "../public/me.png";
-import Me from "../public/me.jpeg";
+import Me from "../public/me.png";
 
 import { Link } from "react-scroll";
 import { useRouter } from "next/router";
@@ -18,7 +18,7 @@ export default function Home() {
           src={Me}
           width={1000}
           height={1000}
-          className="rounded-full object-cover  h-40 w-40 bg-[#ffffff] m-auto block border-2 border-[#434141]"
+          className="rounded-full me object-cover  h-40 w-40 bg-[#ffffff] m-auto block border-2 border-[#434141]"
         />
         <div className="m-auto w-fit  capitalize bg-[#111010] shadow py-2 px-4 rounded-xl flex items-center gap-3 ">
           <div className="w-4 h-4 bg-[#3cf64b] rounded-full  animate-pulse">
