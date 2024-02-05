@@ -13,9 +13,9 @@ export default function Aboutme() {
         <div className="grid grid-cols-2 max-sm:grid-cols-1 max-sm:flex-col-reverse max-sm:flex mt-10 items-center place-items-center">
           <div>
             <p className="text-lg text-left leading-9 max-sm:text-sm max-sm:mt-5">
-              👋 Hello there ,<br /> My name is Imtiaz Nayeem Shawon. I'm a web
+              👋 Hello there ,<br /> My name is Imtiaz Nayeem Shawon. I'm a 16 years old web
               developer with 3 Years of experience working with various
-              organisations. Additionally, I lead a web development agency and
+              organizations. Additionally, I lead a web development agency and
               possess significant experience in remote work settings. Alongside
               my web development expertise, I excel in problem-solving skills,
               particularly in C++, as demonstrated on platforms like CodeChef
