@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Me from "../public/me.png";
-import Whome from "../public/me.png";
+import Whome from "../public/new.png";
 
 
 export default function Aboutme() {
@@ -21,7 +21,7 @@ export default function Aboutme() {
               particularly in C++, as demonstrated on platforms like CodeChef
             </p>
             <p className="px-4 py- mt-5 bg-[#272625] w-fit mainfont">
-              Follow me on
+              connect with me 
             </p>
             <div className="mt-5 flex gap-10">
               <a

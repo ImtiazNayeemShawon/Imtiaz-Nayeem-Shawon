@@ -8,13 +8,13 @@ export default function WhatIdo() {
           Collaborate with brands <br /> and agencies to create impactful
           results.
         </h1>
-        <div className="grid grid-cols-4 max-sm:grid-cols-1 place-items-center justify-center gap-5 mt-20">
+        <div className="grid grid-cols-4 place-content-center max-sm:grid-cols-1 place-items-center justify-center gap-5 mt-20">
           <div className="bg-[#181818] border border-[#2e2c2c]  p-6 flex flex-col justify-end h-96 max-sm:h-60">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="w-10 h-10 text-[#9c9c9c] dark:text-white mb-10"
+              className="w-20 h-20 m-auto text-[#9c9c9c] dark:text-white "
             >
               <path
                 fillRule="evenodd"
@@ -32,11 +32,11 @@ export default function WhatIdo() {
             </div>
           </div>
           <div className="bg-[#181818] border border-[#2e2c2c]  p-6 flex flex-col justify-end h-96 max-sm:h-60">
-            <p className="px-4 py- mt-5 bg-[#272625] w-fit mainfont relative bottom-40 max-sm:bottom-14">
+            <p className="px-4 py- mt-5 bg-[#272625] w-fit mainfont relative bottom-14 max-sm:bottom-14">
               Exploring
             </p>
             <svg
-              className="w-10 h-10 text-[#9c9c9c] dark:text-white mb-10"
+              className="w-20 h-20 m-auto text-[#9c9c9c] dark:text-white "
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -56,7 +56,7 @@ export default function WhatIdo() {
           </div>
           <div className="bg-[#181818] border border-[#2e2c2c]  p-6 flex flex-col justify-end h-96 max-sm:h-60">
             <svg
-              className="w-10 h-10 text-[#9c9c9c] dark:text-white mb-10"
+              className="w-20 h-20 m-auto text-[#9c9c9c] dark:text-white "
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -75,7 +75,7 @@ export default function WhatIdo() {
           </div>
           <div className="bg-[#181818] border border-[#2e2c2c]  p-6 flex flex-col justify-end h-96 max-sm:h-60">
             <svg
-              className="w-10 h-10 text-[#9c9c9c] dark:text-white mb-10"
+              className="w-20 h-20 m-auto text-[#9c9c9c] dark:text-white "
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -85,8 +85,60 @@ export default function WhatIdo() {
             </svg>
             <h1 className="text-2xl mainfont mb-5">Backend development </h1>
             <p className="text-sm">
-              I develop the backend using Node.js, Express.js, and Next.js.  I use MongoDB and PostgreSQL
-              
+              I develop the backend using Node.js, Express.js, and Next.js. I
+              use MongoDB and PostgreSQL
+            </p>
+          </div>
+          <div className="bg-[#181818] border border-[#2e2c2c]  p-6 flex flex-col justify-end h-96 max-sm:h-60">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 28.87 28.87"
+              id="apple"
+              className="w-40 h-40 m-auto text-[#9c9c9c] dark:text-white mb-10"
+            >
+              <g data-name="Layer 2">
+                <g data-name="Layer 1">
+                  <path
+                    fill="#fff"
+                    fill-rule="evenodd"
+                    d="M20.72 18c-.56 1.52-2.17 4.07-3.75 3.77-1.09-.21-1.57-.77-2.79-.54-.86.16-1.16.49-1.85.56a2.84 2.84 0 0 1-2.43-1.52 10.65 10.65 0 0 1-1.08-1.94 8 8 0 0 1-.54-4.93 3.85 3.85 0 0 1 2.54-2.75 4.59 4.59 0 0 1 3.41.38c.56.16 1-.08 1.67-.33a4 4 0 0 1 4.5 1.2c-2.31 1.65-2.23 4.49.4 5.86 0 .07-.01.07-.08.24z"
+                  ></path>
+                  <path
+                    className="w-40 h-40 m-auto text-[#9c9c9c] dark:text-white mb-10"
+                    fill="#fff"
+                    fill-rule="evenodd"
+                    d="M17.39 7.08a4.17 4.17 0 0 1 0 .61 3.2 3.2 0 0 1-3 3 3.24 3.24 0 0 1 0-.52 3.46 3.46 0 0 1 2.74-3z"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <h1 className="text-2xl mainfont mb-5">IOS development </h1>
+            <p className="text-sm">
+              I'm learning iOS development using Swift and SwiftUI as my hobby,
+              I like & use apple device and eco system so I love to make app for
+              them as hobby
+            </p>
+          </div>
+          <div className="bg-[#181818] border border-[#2e2c2c]  p-6 flex flex-col justify-end h-96 max-sm:h-60">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-20 h-20 m-auto text-[#9c9c9c] dark:text-white "
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"
+              />
+            </svg>
+
+            <h1 className="text-2xl mainfont mb-5">System Design & DevOps </h1>
+            <p className="text-sm">
+              I'm exploring system design and DevOps for making scaleable
+              application and production ready applications
             </p>
           </div>
         </div>

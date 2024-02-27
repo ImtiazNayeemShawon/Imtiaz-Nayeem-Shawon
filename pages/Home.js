@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Imtiaz from "../public/me.png";
-import Me from "../public/me.png";
+import Me from "../public/logo.png";
 
 import { Link } from "react-scroll";
 import { useRouter } from "next/router";
