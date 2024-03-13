@@ -58,7 +58,7 @@ export default function Projects() {
             src={data?.image}
             width={1000}
             height={1000}
-            className="m-auto col-span-3 rounded-r-2xl h-[600px] w-full max-sm:rounded-r-none max-sm:rounded-b-2xl"
+            className="m-auto col-span-3 rounded-r-2xl h-[500px] max-sm:h-96 w-full max-sm:rounded-t-none max-sm:rounded-b-2xl"
           />
         </div>
       ))}
