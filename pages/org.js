@@ -8,9 +8,9 @@ import Mhc from "/public/logos/mhc.png";
 import Ridge from "/public/logos/ridge.png";
 import Edu from "/public/logos/edu.png";
 import Ski from "/public/logos/skinsort.png";
+import Cinema from "/public/logos/cm.png";
 
 export default function Org() {
-  
   return (
     <div className="mt-60 max-sm:mt-20">
       <div className="my-10 w-fit m-auto block">
@@ -21,7 +21,7 @@ export default function Org() {
       </div>
       <div className="flex relative gap-10 mt-40 max-sm:mt-10 logogroup">
         <Marquee className="flex gap-20">
-          {[Skynetix, Mzmedia, Mhc, Ridge, Edu,Ski].map((data) => (
+          {[Skynetix, Mzmedia, Mhc, Ridge, Edu, Ski, Cinema].map((data) => (
             <div className="">
               <Image
                 src={data}

@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Imtiaz from "../public/me.png";
 import Me from "../public/logo.png";
+import Light from "../public/light.webp";
+
 
 import { Link } from "react-scroll";
 import { useRouter } from "next/router";
@@ -13,14 +15,14 @@ export default function Home() {
   };
   return (
     <React.Fragment>
-      <div id="Home" className="bg mt-10">
+      <div id="Home" className="bg mt-10 z-0 " >
         <Image
           src={Me}
           width={1000}
           height={1000}
           className="rounded-full me object-cover  h-40 w-40 bg-[#ffffff] m-auto block border-2 border-[#434141]"
         />
-        <div className="m-auto w-fit  capitalize bg-[#111010] shadow py-2 px-4 rounded-xl flex items-center gap-3 ">
+        <div className="m-auto w-fit shadow-lg shadow-[#3326583a]  capitalize bg-[#111010]  py-2 px-4 rounded-xl flex items-center gap-3 ">
           <div className="w-4 h-4 bg-[#3cf64b] rounded-full  animate-pulse">
             <div className="w-4 h-4 bg-[#3cf64b] rounded-full  animate-ping" />
           </div>

@@ -1,16 +1,16 @@
 [
   {
     "name": "MZ media  - Website",
-    "title": " designed by Tailwind css , Nextjs and Prisma ",
+    "title": " Digital Agency Website For a creator ",
     "description": "Digital Agency Website For Neel Nafis  ",
     "Link": "https://mzmedia.digital/",
     "image": "https://i.ibb.co/Z1LZ1P0/thubnail.png"
   },
   {
-    "name": "Skinsort  - Under Development",
+    "name": "Skinsort  -  Website",
     "title": "developed using Tailwind css , Nextjs and Express js  ",
     "description": "Skinsort -copy- it's an SaaS platform for making skin care routine",
-    "Link": "https://skinsort-com-frontend.vercel.app/User/Imtiaz/profile",
+    "Link": "https://skinsort-com-frontend.vercel.app",
     "image": "https://i.ibb.co/3ckLhDH/skinsort.png"
   },
   {
@@ -19,6 +19,13 @@
     "description": "A multi vendoor Booking software for connect provider and users ",
     "Link": "https://book-your-oil-change-frontend.vercel.app/",
     "image": "https://i.ibb.co/0YWMPgz/Mac-Book-Pro-16-18.png"
+  },
+  {
+    "name": "Cinemadrip",
+    "title": " Streaming Platform ",
+    "description": "A full stack streaming service ",
+    "Link": "https://cinemadrip-next-js.vercel.app/",
+    "image": "  https://i.ibb.co/CzQPGSD/image.png"
   },
   {
     "name": "Skynetix - Website",
