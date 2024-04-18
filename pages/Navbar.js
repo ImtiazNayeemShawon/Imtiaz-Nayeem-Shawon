@@ -15,7 +15,7 @@ export default function Navbar() {
         </div>
         <div>
           <a
-            href="https://drive.google.com/file/d/1LzcSxDz6gS9XngYZsVGTQyn8B57rg3I8/view?usp=sharing"
+            href="https://drive.google.com/file/d/1H1VSxdKw4otXRDK59cvIryTL0SFsYgS8/view?usp=sharing"
             target="blank"
             className="text-[#9C9C9C] px-6 py-3 bg-[#1A1A1A] border-[#2f2e2e] border rounded-sm flex items-center gap-2 hover:shadow-2xl shadow-[#8D8D8D] duration-300"
           >
