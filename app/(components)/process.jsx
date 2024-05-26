@@ -10,7 +10,7 @@ export default function process() {
       <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px] my-10">
         Process to Unlock your products potential
       </h1>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-10 l">
         {/* step 1 */}
         <div className="border border-[#252525] p-10 rounded-2xl shadow-lg flex justify-between gap-10 items-start">
           {/* left side  */}
