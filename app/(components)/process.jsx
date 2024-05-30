@@ -6,16 +6,16 @@ import Image from "next/image";
 
 export default function process() {
   return (
-    <div className="mx-[10%]">
+    <div className="mx-[10%] max-md:mx-[4%]">
       <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px] my-10">
         Process to Unlock your products potential
       </h1>
       <div className="flex flex-col gap-10 l">
         {/* step 1 */}
-        <div className="border border-[#252525] p-10 rounded-2xl shadow-lg flex justify-between gap-10 items-start">
+        <div className="steps max-md:p-3 border border-[#252525] p-10 rounded-2xl shadow-lg flex justify-between gap-10 items-start max-md:flex-wrap max-md:flex-col-reverse">
           {/* left side  */}
           <div className="flex flex-col gap-5">
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-10 items-center max-md:flex-wrap max-md:gap-2">
               <h1 className="uppercase text-[#7f8bf1]  text-lg tracking-wider codefont">
                 001 ///
               </h1>
@@ -23,7 +23,7 @@ export default function process() {
                 System design & mindmapping
               </h2>
             </div>
-            <article className="text-[#f5f1f1] font-light w-full">
+            <article className="text-[#f5f1f1] font-light w-full ">
               Designing for future scalability ensures that your product can
               smoothly accommodate updates and new features while managing
               database server costs efficiently. To achieve this, focus on
@@ -32,7 +32,6 @@ export default function process() {
               disruptions. Containerization with tools like Docker ensures
               consistent environments and makes it easy to scale services
               horizontally.
-              <br />
               <br />
               <br />
               Opt for cloud-based databases from providers like AWS, Google
@@ -60,15 +59,15 @@ export default function process() {
             <Image
               src={SystemDesign}
               alt="SystemDesign"
-              className="h-[60%] w-[60%] m-auto  block"
+              className="h-[60%] w-[60%] m-auto  block max-md:w-full"
             />
           </div>
         </div>
         {/* step 2 */}
-        <div className="border border-[#252525] p-10 rounded-2xl shadow-lg flex justify-between gap-10 items-start">
+        <div className="steps max-md:p-3 border border-[#252525] p-10 rounded-2xl shadow-lg flex justify-between gap-10 items-start max-md:flex-wrap max-md:flex-col-reverse">
           {/* left side  */}
           <div className="flex flex-col gap-5">
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-10 items-center max-md:flex-wrap max-md:gap-2">
               <h1 className="uppercase text-[#7f8bf1]  text-lg tracking-wider codefont">
                 002 ///
               </h1>
@@ -76,14 +75,13 @@ export default function process() {
                 Design and develop
               </h2>
             </div>
-            <article className="text-[#f5f1f1] font-light w-full">
+            <article className="text-[#f5f1f1] font-light w-full ">
               Design and development begin with creating a clear visual
               blueprint of the project. Initially, I design the project in
               Figma, but if the client does not have a User Interface (UI)
               ready, I sometimes start with hand-drawn diagrams. Once the design
               is approved or provided by the client, I translate it into a
               Next.js application.
-              <br />
               <br />
               <br />
               For state management, I use React Redux to ensure that the
@@ -106,15 +104,15 @@ export default function process() {
             <Image
               src={DesignDev}
               alt="DesignDev"
-              className="h-[90%] w-[90%] m-auto  block"
+              className="h-[90%] w-[90%] m-auto  max-md:w-full max-md:h-[40%]"
             />
           </div>
-        </div>  
+        </div>
         {/* step 3 */}
-        <div className="border border-[#252525] p-10 rounded-2xl shadow-lg flex justify-between gap-10 items-start">
+        <div className="steps max-md:p-3 border border-[#252525] p-10 rounded-2xl shadow-lg flex justify-between gap-10 items-start max-md:flex-wrap max-md:flex-col-reverse">
           {/* left side  */}
           <div className="flex flex-col gap-5">
-            <div className="flex gap-10 items-center">
+            <div className="flex gap-10 items-center max-md:flex-wrap max-md:gap-2">
               <h1 className="uppercase text-[#7f8bf1]  text-lg tracking-wider codefont">
                 003 ///
               </h1>
@@ -122,14 +120,13 @@ export default function process() {
                 scalable backend and API
               </h2>
             </div>
-            <article className="text-[#f5f1f1] font-light w-full">
+            <article className="text-[#f5f1f1] font-light w-full ">
               To create a scalable backend and API, I use Node.js and
               Express.js. For database management, I rely on MongoDB with
               Mongoose as the ORM. For authentication, I implement JWT (JSON Web
               Tokens), Passport.js, sessions, and cookies to ensure secure and
               efficient user authentication processes. Passwords are hashed
               before being saved into the database to enhance security.
-              <br />
               <br />
               <br />
               For smaller projects, I sometimes use Next.js for the backend,
@@ -139,8 +136,7 @@ export default function process() {
               scalable object storage. This approach ensures that the backend is
               robust, secure, and adaptable to various project needs.
               <br />
-              <br />
-              I use Stripe for handling payments and integrate external
+              <br />I use Stripe for handling payments and integrate external
               APIs to meet various client-specific needs, ensuring a
               comprehensive and versatile backend solution.
             </article>
@@ -150,7 +146,7 @@ export default function process() {
             <Image
               src={Backend}
               alt="Backend"
-              className="h-[60%] w-[60%] m-auto  block"
+              className="h-[60%] w-[60%] m-auto  block max-md:w-full max-md:h-[40%]"
             />
           </div>
         </div>

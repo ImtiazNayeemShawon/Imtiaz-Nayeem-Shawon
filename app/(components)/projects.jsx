@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function projects() {
   return (
-    <div className="mx-[10%]">
+    <div className="mx-[10%] max-md:mx-[4%]">
       <div>
-        <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px] my-10">
+        <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px] my-10 ">
           Featured Work
         </h1>
         <div className="flex justify-center gap-10 flex-wrap  ">

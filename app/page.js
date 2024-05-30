@@ -9,6 +9,7 @@ export default function page() {
       <Herosection />
       <Projects />
       <Process />
+     
     </div>
   );
 }

@@ -2,8 +2,8 @@ import React from "react";
 
 export default function herosection() {
   return (
-    <div className="hero h-screen ">
-      <div className="mx-[10%] pt-[300px] max-md:pt-[150px]">
+    <div className="hero md:h-screen ">
+      <div className="mx-[10%] pt-[300px] max-md:pt-[150px] max-md:mx-[4%]">
         <div className="flex flex-col gap-6">
           <h1 className="uppercase text-[#7f8bf1]  text-lg tracking-wider codefont">
             Hello world ///
