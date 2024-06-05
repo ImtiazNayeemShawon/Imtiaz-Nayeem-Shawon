@@ -8,11 +8,13 @@ import Githubrofile from "./(components)/githubProfile";
 export default function page() {
   return (
     <div>
-      <Herosection />
-      <Projects />
-      <Process />
-      <Skills />
-      <Githubrofile />
+     
+        <Herosection />
+        <Projects />
+        <Githubrofile />
+        <Process />
+        <Skills />
+        
     </div>
   );
 }
