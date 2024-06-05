@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function navbar() {
   return (
     <div>
-      <div className="flex justify-around py-4 mt-8 max-md:mt-2 max-md:justify-center items-center fixed w-full max-md:flex-wrap">
+      <div className="flex justify-around py-4 mt-8 max-md:mt-2 max-md:justify-center items-center fixed w-full max-md:flex-wrap z-20">
         <div>
           <Image
             src={Logo}
