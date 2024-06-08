@@ -5,7 +5,8 @@ import Process from "./(components)/process";
 import Skills from "./(components)/skills";
 import Githubrofile from "./(components)/githubProfile";
 import Worldwide from "./(components)/wordlwide";
-import Contact from "./(components)/contact"
+import Contact from "./(components)/contact";
+import Footer from "./(components)/footer";
 
 export default function page() {
   return (
@@ -16,7 +17,8 @@ export default function page() {
       <Process />
       <Skills />
       <Worldwide />
-      <Contact/>
+      <Contact />
+      <Footer />
     </div>
   );
 }

@@ -1,11 +1,14 @@
+"use client";
 import React from "react";
 import Logo from "/public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function navbar() {
+  const pathname = usePathname();
   return (
-    <div>
+    <div className={`${pathname == "/resume" && "hidden"}`}>
       <div className="flex justify-around py-4 mt-8 max-md:mt-2 max-md:justify-center items-center fixed w-full max-md:flex-wrap z-40">
         <div>
           <Image
@@ -64,7 +67,8 @@ export default function navbar() {
               Projects
             </Link>
             <Link
-              href=""
+              href="/resume"
+              target="__blank"
               className="text-[14px] max-md:text-[10px] border border-[#9597f7]  bg-[#6366F1]   flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
             >
               Get Resume{" "}
