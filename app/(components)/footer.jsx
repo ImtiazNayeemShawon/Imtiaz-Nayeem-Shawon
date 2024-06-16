@@ -3,6 +3,7 @@ import React from "react";
 export default function footer() {
   return (
     <div className="py-8 mx-[8%]  border-t border-[#29374e80]">
+      <p className="text-center font-bold text-red-600 py-20 ">This project is under development </p>
       <div className="flex items-center gap-10  justify-center">
         <a href="linkedin">
           <span className="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-[#fdfdfd]">

@@ -7,6 +7,7 @@ import Githubrofile from "./(components)/githubProfile";
 import Worldwide from "./(components)/wordlwide";
 import Contact from "./(components)/contact";
 import Footer from "./(components)/footer";
+import Experience from "./(components)/experience";
 
 export default function page() {
   return (
@@ -16,6 +17,7 @@ export default function page() {
       <Githubrofile />
       <Process />
       <Skills />
+      <Experience/>
       <Worldwide />
       <Contact />
       <Footer />
