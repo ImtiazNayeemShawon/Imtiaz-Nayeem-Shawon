@@ -5,57 +5,52 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 export default function Skills() {
   return (
-    <div className=" my-40 w-full  flex flex-col items-center justify-center overflow-hidden rounded-md">
-      <h1 className="md:text-2xl text-2xl lg:text-6xl font-bold text-center text-white relative z-20">
-Teach stacks
+    <div className="mx-[10%] mt-40">
+      <h1 className="font-bold text-white text-[40px]">
+        Years of gaining my{" "}
+        <b className="border-b-2 border-blue-400">skills.</b>
       </h1>
-      <div className="w-[40rem] h-40 relative">
-        {/* Gradients */}
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
-
-        {/* Core component */}
-        <SparklesCore
-          background="transparent"
-          minSize={0.4}
-          maxSize={1}
-          particleDensity={1200}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-        />
-
-        {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-[#0e121a] [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+      <p className="text-sm text-white my-4">
+        I've learned a lot throughout my life and{" "}
+        <b>wrote my first program when I was in 7th grade</b>. I love to explore
+        things, and most of the skills I've gained are through practice and
+        hands-on experience
+      </p>
+      <div className="  w-full  flex flex-col items-center justify-center overflow-hidden rounded-md">
+        <HoverEffect items={projects} />
       </div>
-      <HoverEffect items={projects} />
     </div>
   );
 }
 export const projects = [
   {
-    title: "Frontend development",
+    title: "React js",
+    link: "https://stripe.com",
+    logo: "/react.svg",
+    description:
+      "React. js is an open-source JavaScript library, crafted with precision by Facebook, that aims to simplify the intricate process of building interactive user interfaces.",
+  },
+  {
+    title: "Next JS",
+    link: "https://stripe.com",
+    logo: "/next copy.svg",
+    description:
+      "Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.",
+  },
+  {
+    title: "Javascript",
+    link: "https://stripe.com",
+    logo: "/js.svg",
+    description:
+      "JavaScript is a scripting or programming language that allows you to implement complex features on web pages ",
+  },
+  {
+    title: "Express JS",
     link: "https://stripe.com",
     logo: "/react.svg",
   },
   {
-    title: "Frontend development",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-  {
-    title: "Frontend development",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-  {
-    title: "Frontend development",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-  {
-    title: "Frontend development",
+    title: "AWS",
     link: "https://stripe.com",
     logo: "/react.svg",
   },

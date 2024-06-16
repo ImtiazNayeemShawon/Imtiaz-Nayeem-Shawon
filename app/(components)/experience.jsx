@@ -1,7 +1,9 @@
-import React from 'react'
+import React from "react";
 
 export default function experience() {
   return (
-    <div>experience</div>
-  )
+    <div className="mx-[10%]">
+      
+    </div>
+  );
 }

@@ -10,7 +10,7 @@ export const HoverEffect = ({ items, className }) => {
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-4  py-10",
+        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
         className
       )}
     >
@@ -40,10 +40,22 @@ export const HoverEffect = ({ items, className }) => {
             )}
           </AnimatePresence>
           <Card>
-           <div className="flex items-center gap-2 ">
-           <Image src={item?.logo} width={100} height={100} className="w-10" />
-            <CardTitle>{item.title}</CardTitle>
-           </div>
+            <div className="flex flex-col  items-start gap-4 ">
+              <div className=" bg-slate-800 rounded-full p-4">
+                <Image
+                  src={item?.logo}
+                  width={100}
+                  height={100}
+                  className="w-8 "
+                />
+              </div>
+              <div>
+                <p className="text-white text-[14px]">{item?.title}</p>
+                <p className="text-[#e2e8f0ba] text-[12px]">
+                  {item?.description}
+                </p>
+              </div>
+            </div>
           </Card>
         </Link>
       ))}
@@ -67,9 +79,9 @@ export const Card = ({ className, children }) => {
 };
 export const CardTitle = ({ className, children }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide ", className)}>
+    <h5 className={cn("text-zinc-100 font-semibold tracking-wide ", className)}>
       {children}
-    </h4>
+    </h5>
   );
 };
 export const CardDescription = ({ className, children }) => {
