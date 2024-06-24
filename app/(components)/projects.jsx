@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function projects() {
   return (
-    <div className="mx-[10%] max-md:mx-[4%]">
+    <div id="projects" className="mx-[10%] max-md:mx-[4%]">
       <div>
         <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px] my-10 ">
           Featured Work
@@ -15,7 +15,7 @@ export default function projects() {
         <div className="flex justify-center gap-10 flex-wrap  ">
           {[0, 2, 3, 4]?.map((data, index) => (
             <CardContainer className="">
-              <CardBody className="border-[#252525] border relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6   ">
+              <CardBody className="border-[#252525] border relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6 bg-[#191919]  ">
                 <CardItem translateZ="100" className="w-full mt-4">
                   <Image
                     src={Thumb}
@@ -42,7 +42,7 @@ export default function projects() {
                     as={Link}
                     href="https://twitter.com/mannupaaji"
                     target="__blank"
-                    className="text-[14px] max-md:text-[10px] w-fit border border-[#323233]  bg-[#171C23]   flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
+                    className="text-[14px] max-md:text-[10px] w-fit border border-[#323233]    flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
                   >
                     Live site{" "}
                     <svg
@@ -67,17 +67,17 @@ export default function projects() {
         <button className="text-[14px] max-md:text-[10px] border border-[#9597f7]  bg-[#6366F1]   flex justify-center self-center m-auto mt-20 items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full">
           See more{" "}
           <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-6"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M15.28 9.47a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 1 1-1.06-1.06L13.69 10 9.97 6.28a.75.75 0 0 1 1.06-1.06l4.25 4.25ZM6.03 5.22l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L8.69 10 4.97 6.28a.75.75 0 0 1 1.06-1.06Z"
-                  clipRule="evenodd"
-                />
-              </svg>
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="w-6"
+          >
+            <path
+              fillRule="evenodd"
+              d="M15.28 9.47a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 1 1-1.06-1.06L13.69 10 9.97 6.28a.75.75 0 0 1 1.06-1.06l4.25 4.25ZM6.03 5.22l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L8.69 10 4.97 6.28a.75.75 0 0 1 1.06-1.06Z"
+              clipRule="evenodd"
+            />
+          </svg>
         </button>
       </div>
     </div>

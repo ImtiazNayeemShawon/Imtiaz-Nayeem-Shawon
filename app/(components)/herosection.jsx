@@ -1,9 +1,17 @@
 import React from "react";
+import Spotlight from "@/components/ui/spotlight";
 
 export default function herosection() {
   return (
-    <div className="hero md:h-screen ">
-      <div className="mx-[10%] pt-[300px] max-md:pt-[150px] max-md:mx-[4%]">
+    <div
+      id="home"
+      className="hero md:h-screen w-full   bg-grid-[#19191952] relative "
+    >
+      <Spotlight className="" fill="white" />
+
+      <div className="absolute pointer-events-none inset-0 flex items-center justify-center  [mask-image:radial-gradient(ellipse_at_center,transparent_20%,white)]"></div>
+
+      <div className="mx-[10%] pt-[300px] max-md:pt-[150px] max-md:mx-[4%] ">
         <div className="flex flex-col gap-6">
           <h1 className="uppercase text-[#7f8bf1]  text-lg tracking-wider codefont">
             Hello world ///
@@ -12,7 +20,7 @@ export default function herosection() {
             Designing and developing scalable, striking websites
           </h2>
           <p className="text-[#f5f1f1] font-light w-[50%] max-md:w-full">
-            Hey🖐 , I'm Imtiaz Nayeem Shawon Self Learned{" "}
+            Hey🖐 , I'm Imtiaz Nayeem Shawon Self-taught{" "}
             <strong>Full stack web developer</strong> with 3 years of experience
             in product development and client services.
           </p>
@@ -40,7 +48,7 @@ export default function herosection() {
             <a
               href="https://github.com/ImtiazNayeemShawon?tab"
               target="_blank"
-              className="text-[14px] max-md:text-[10px] border border-[#323233]  bg-[#171C23]   flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
+              className="text-[14px] max-md:text-[10px] border border-[#323233]  bg-[#191919]   flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
             >
               view github{" "}
               <svg

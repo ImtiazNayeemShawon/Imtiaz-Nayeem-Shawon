@@ -5,16 +5,12 @@
 @tailwind utilities;
 
 body {
-  background-color: #0e121a;
+  background-color: #101010;
 }
 * {
   font-family: "Sora", sans-serif;
 }
-.hero {
-  background-image: url("https://tailwindcss.com/_next/static/media/1-dark@tinypng.a99d6c93.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+
 .project-card{
   background-image: url("/casestudybackground.png");
   background-position: top;
@@ -28,7 +24,7 @@ body {
 .steps{
   position: sticky;
   top: 0;
-  background-color: #0e121a;
+  background-color: #191919;
 }
 @media (max-width: 768px) {
   .steps {
@@ -37,8 +33,11 @@ body {
   .project-card{
     position: sticky;
     top: 0;
-    background-color: #0e121a;
+    background-color: #191919;
 
   }
 }
 
+.bg-grid{
+color: #2c2c2c52;
+}

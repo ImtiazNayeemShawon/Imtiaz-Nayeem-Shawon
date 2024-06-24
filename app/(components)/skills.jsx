@@ -5,7 +5,7 @@ import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 export default function Skills() {
   return (
-    <div className="mx-[10%] mt-40">
+    <div id="tech" className="mx-[10%] mt-40">
       <h1 className="font-bold text-white text-[40px]">
         Years of gaining my{" "}
         <b className="border-b-2 border-blue-400">skills.</b>

@@ -2,7 +2,7 @@
 import React from "react";
 import Logo from "/public/logo.png";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import { usePathname } from "next/navigation";
 
 export default function navbar() {
@@ -18,11 +18,8 @@ export default function navbar() {
           />
         </div>
         <div className="">
-          <div className="bg-[#363B43] shadow-sm p-[5px] pl-5 rounded-full flex items-center gap-10 max-md:gap-40 ">
-            <Link
-              href=""
-              className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:block hidden"
-            >
+          <div className="bg-[#191919] border border-[#323233] shadow-sm p-[5px] pl-5 rounded-full flex items-center gap-10 max-md:gap-40 ">
+            <Link className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:block hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
@@ -37,38 +34,54 @@ export default function navbar() {
               </svg>
             </Link>
             <Link
-              href=""
-              className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
+              to="home"
+              smooth={true}
+              offset={50}
+              duration={1000}
+              className="text-[14px] cursor-pointer max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
             >
               Home
             </Link>
             <Link
-              href=""
-              className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
-            >
-              About
-            </Link>
-            <Link
-              href=""
-              className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
+              to="projects"
+              smooth={true}
+              offset={50}
+              duration={1000}
+              className="text-[14px] max-md:text-[10px] cursor-pointer  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
             >
               Projects
             </Link>
+
             <Link
-              href=""
-              className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
+              to="Experience"
+              smooth={true}
+              offset={50}
+              duration={1000}
+              className="text-[14px] max-md:text-[10px] cursor-pointer font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
+            >
+              Experiences
+            </Link>
+            <Link
+              to="tech"
+              smooth={true}
+              offset={50}
+              duration={1000}
+              className="text-[14px] max-md:text-[10px] cursor-pointer font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
             >
               Tech stack
             </Link>
             <Link
-              href=""
-              className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
+              to="about"
+              smooth={true}
+              offset={50}
+              duration={1000}
+              className="text-[14px] max-md:text-[10px] cursor-pointer font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
             >
-              Projects
+              Blogs
             </Link>
-            <Link
+            <a
               href="/resume"
-              target="__blank"
+              target="_blank"
               className="text-[14px] max-md:text-[10px] border border-[#9597f7]  bg-[#6366F1]   flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
             >
               Get Resume{" "}
@@ -84,7 +97,7 @@ export default function navbar() {
                   clipRule="evenodd"
                 />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
