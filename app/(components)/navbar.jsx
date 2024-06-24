@@ -53,7 +53,7 @@ export default function navbar() {
             </Link>
 
             <Link
-              to="Experience"
+              to="experince"
               smooth={true}
               offset={50}
               duration={1000}

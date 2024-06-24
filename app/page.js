@@ -9,6 +9,7 @@ import Contact from "./(components)/contact";
 import Footer from "./(components)/footer";
 import Experience from "./(components)/experience";
 
+
 export default function page() {
   return (
     <div>

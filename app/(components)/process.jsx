@@ -7,7 +7,6 @@ import { TracingBeam } from "@/components/ui/treasingbea";
 
 export default function process() {
   return (
-    <TracingBeam>
       <div className="mx-[10%] max-md:mx-[4%]">
         <h1 className="text-center text-white text-[40px] font-extrabold  max-md:text-[20px]  my-10">
           Process to Unlock your products potential
@@ -158,6 +157,5 @@ export default function process() {
           </div>
         </div>
       </div>
-    </TracingBeam>
   );
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import Spotlight from "@/components/ui/spotlight";
+import TextGenerateEffect from "@/components/ui/wordAnimation";
 
 export default function herosection() {
   return (
@@ -13,11 +14,9 @@ export default function herosection() {
 
       <div className="mx-[10%] pt-[300px] max-md:pt-[150px] max-md:mx-[4%] ">
         <div className="flex flex-col gap-6">
-          <h1 className="uppercase text-[#7f8bf1]  text-lg tracking-wider codefont">
-            Hello world ///
-          </h1>
+          <TextGenerateEffect words={" Hello world ///"} />
           <h2 className="text-white text-[50px] font-extrabold w-[60%] max-md:text-[30px]  max-md:w-full leading-[120%]">
-            Designing and developing scalable, striking websites
+            Designing and developing scalable websites
           </h2>
           <p className="text-[#f5f1f1] font-light w-[50%] max-md:w-full">
             Hey🖐 , I'm Imtiaz Nayeem Shawon Self-taught{" "}
