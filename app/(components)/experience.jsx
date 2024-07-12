@@ -19,7 +19,9 @@ export default function Experience() {
         "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
       content: (
         <div className="h-full w-full  flex items-center justify-center text-white font-extrabold text-4xl">
-           <p className="text-center uppercase">@Bangladesh space research society</p>
+          <p className="text-center uppercase">
+            @Bangladesh space research society
+          </p>
         </div>
       ),
     },
@@ -53,9 +55,30 @@ export default function Experience() {
         </div>
       ),
     },
+    {
+      title: "Running out of content",
+      description:
+        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+      content: (
+        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white font-extrabold text-4xl">
+          @NSAC
+        </div>
+      ),
+    },
   ];
   return (
-    <div id="experince" className="z-50 relative my-40">
+    <div id="experince" className="z-50 relative my-40 ">
+      <div className="mx-[10%] max-md:mx-[10%]">
+        <h1 className="font-bold text-white  text-[40px]">
+          <b className="border-b-2 border-red-400">Experiences</b> of Working as
+          a Developer
+        </h1>
+        <p className="text-sm text-white my-4 ">
+          After embarking on my coding journey, I have accumulated extensive
+          experience as a developer through numerous freelance projects, various
+          companies, and voluntary contributions.
+        </p>
+      </div>
       <StickyScroll content={content} />
     </div>
   );

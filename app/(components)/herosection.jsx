@@ -45,11 +45,11 @@ export default function herosection() {
               </svg>
             </a>
             <a
-              href="https://github.com/ImtiazNayeemShawon?tab"
+              href="https://meet.brevo.com/imtiaz-nayeem-shawon/get-consultation-quotation-for-your-softwarewebsite"
               target="_blank"
               className="text-[14px] max-md:text-[10px] border border-[#323233]  bg-[#191919]   flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
             >
-              view github{" "}
+              Book a meeting{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"

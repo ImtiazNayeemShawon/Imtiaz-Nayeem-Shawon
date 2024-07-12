@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import { useState } from "react";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 export default function Skills() {
+  const [filter, setFilter] = useState();
+
   return (
     <div id="tech" className="mx-[10%] mt-40">
       <h1 className="font-bold text-white text-[40px]">
@@ -16,6 +18,43 @@ export default function Skills() {
         things, and most of the skills I've gained are through practice and
         hands-on experience
       </p>
+      <div className="flex items-center gap-5 flex-wrap mt-10">
+        <button
+          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
+        >
+          All
+        </button>
+        <button
+          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
+        >
+          Languages
+        </button>
+        <button
+          className={`text-white font-semibold border-[1px] border-white px-8 py-2 rounded-full ${filter && "bg-[#6366F1]"}`}
+        >
+          Frontend
+        </button>
+        <button
+          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
+        >
+          Backend
+        </button>
+        <button
+          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
+        >
+          DevOps
+        </button>
+        <button
+          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
+        >
+          UI/UX
+        </button>
+        <button
+          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
+        >
+          App
+        </button>
+      </div>
       <div className="  w-full  flex flex-col items-center justify-center overflow-hidden rounded-md">
         <HoverEffect items={projects} />
       </div>

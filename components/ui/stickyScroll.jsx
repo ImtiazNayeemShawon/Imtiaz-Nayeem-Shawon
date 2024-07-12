@@ -13,7 +13,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
     container: ref,
     offset: ["start start", "end start"],
   });
-  const cardLength = content.length + 1;
+  const cardLength = content.length + 2;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
@@ -30,7 +30,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
     setActiveCard(closestBreakpointIndex);
   });
 
-  const backgroundColors = ["#101010","#000","#191919"];
+  const backgroundColors = ["#101010"];
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
     "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
@@ -55,17 +55,6 @@ export const StickyScroll = ({ content, contentClassName }) => {
     >
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
-          <div className="">
-            <h1 className="font-bold text-white  text-[40px]">
-              <b className="border-b-2 border-red-400">Experiences</b> of
-              Working as a Developer
-            </h1>
-            <p className="text-sm text-white my-4 ">
-              After embarking on my coding journey, I have accumulated extensive
-              experience as a developer through numerous freelance projects,
-              various companies, and voluntary contributions.
-            </p>
-          </div>
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
               <motion.h2
