@@ -1,73 +1,84 @@
-import React from "react";
-import { StickyScroll } from "@/components/ui/stickyScroll";
+"use client";
+import React, { useRef } from "react";
+
+import { useScroll, useInView, motion } from "framer-motion";
+
+function Cards({ data }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { margin: "-50% 0px -50% 0px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: inView ? 1 : 0.1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      className={` py-20 p-4 m-2`}
+    >
+      <p ref={ref} className="text-2xl font-bold text-white">
+        {data?.title}
+      </p>
+      <div className="text-[#d4c7c7] mt-4 text-sm">{data?.description}</div>
+    </motion.div>
+  );
+}
 
 export default function Experience() {
   const content = [
     {
-      title: "Full stack developer @ZIPBOX",
-      description:
-        "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
-      content: (
-        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white font-extrabold text-4xl">
-          <p className="text-center">@ZIPBOX</p>
-        </div>
+      title: "Lead Developer @zipbox",
+      description: (
+        <ul className="list-disc">
+          <li className="my-4">
+            Designed, developed, and deployed scalable full stack web
+            applications, ensuring high performance and responsiveness.
+          </li>
+          <li className="my-4">
+            Led teams and managed client relations, successfully delivering
+            projects for over 30 clients.{" "}
+          </li>
+          <li className="my-4">
+            Spearheaded product development initiatives, driving innovation and
+            achieving project goals.
+          </li>
+        </ul>
       ),
     },
     {
-      title: "Real time changes",
-      description:
-        "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
-      content: (
-        <div className="h-full w-full  flex items-center justify-center text-white font-extrabold text-4xl">
-          <p className="text-center uppercase">
-            @Bangladesh space research society
-          </p>
-        </div>
+      title: "Web developer @Bangladesh Space Research Society",
+      description: (
+        <ul className="list-disc">
+          <li className="my-4">
+            Designed web applications and dashboards for event management,
+            enhancing user experience and operational efficiency
+          </li>
+          <li className="my-4">
+            Collaborated with cross-functional teams and senior developers to
+            ensure seamless project execution and delivery.
+          </li>
+        </ul>
       ),
     },
     {
-      title: "Version control",
-      description:
-        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-      content: (
-        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white font-extrabold text-4xl">
-          @MHCBD
-        </div>
-      ),
-    },
-    {
-      title: "Running out of content",
-      description:
-        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-      content: (
-        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white font-extrabold text-4xl">
-          @CTBD
-        </div>
-      ),
-    },
-    {
-      title: "Running out of content",
-      description:
-        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-      content: (
-        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white font-extrabold text-4xl">
-          @NSAC
-        </div>
-      ),
-    },
-    {
-      title: "Running out of content",
-      description:
-        "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
-      content: (
-        <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white font-extrabold text-4xl">
-          @NSAC
-        </div>
+      title: "Web developer -Intern @Mental Health Care Bangladesh",
+      description: (
+        <ul className="list-disc">
+          <li className="my-4">
+            Designed and developed blogs, event management platforms, and
+            organizational portfolio websites, improving online presence and
+            user engagement
+          </li>
+          <li className="my-4">
+            Collaborated with teams and contributed to initiatives focused on
+            mental health awareness among young individuals.
+          </li>
+        </ul>
       ),
     },
   ];
+
   return (
-    <div id="experince" className="z-50 relative my-40 ">
+    <div id="experince" className=" my-40 ">
       <div className="mx-[10%] max-md:mx-[10%]">
         <h1 className="font-bold text-white  text-[40px]">
           <b className="border-b-2 border-red-400">Experiences</b> of Working as
@@ -78,8 +89,20 @@ export default function Experience() {
           experience as a developer through numerous freelance projects, various
           companies, and voluntary contributions.
         </p>
+
+        <div className="flex justify-between items-start ">
+          <div className="w-full">
+            {content?.map((data, index) => (
+              <Cards data={data} />
+            ))}
+          </div>
+          <div className="w-full sticky top-[30%]">
+            <div className="w-full h-60 rounded-sm bg-white text-black ">
+              Hello world
+            </div>
+          </div>
+        </div>
       </div>
-      <StickyScroll content={content} />
     </div>
   );
 }
