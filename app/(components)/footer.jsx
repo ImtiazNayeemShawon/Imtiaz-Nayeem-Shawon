@@ -3,16 +3,18 @@ import React from "react";
 export default function footer() {
   return (
     <div className="py-8 mx-[8%]  border-t border-[#29374e80]">
-      <p className="text-center font-bold text-red-600 py-20 ">This project is under development </p>
+      {/* <p className="text-center font-bold text-red-600 py-20 ">
+        This project is under development{" "}
+      </p> */}
       <div className="flex items-center gap-10  justify-center">
-        <a href="linkedin">
+        <a href="https://www.linkedin.com/in/imtiaznayeem/" target="_blank">
           <span className="[&>svg]:h-7 [&>svg]:w-7 [&>svg]:fill-[#fdfdfd]">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
             </svg>
           </span>
         </a>
-        <a href="github">
+        <a href="https://github.com/ImtiazNayeemShawon" target="_blank">
           <span className="[&>svg]:h-6 [&>svg]:w-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -23,7 +25,7 @@ export default function footer() {
             </svg>
           </span>
         </a>
-        <a href="whatsapp">
+        <a href="https://wa.link/og3i52" target="_blank">
           <span className="[&>svg]:h-6 [&>svg]:w-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +37,7 @@ export default function footer() {
             </svg>
           </span>
         </a>
-        <a href="linkedin">
+        <a href="mailto:imtiaznayeem@icloud.com" target="_blank">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -47,7 +49,6 @@ export default function footer() {
           </svg>
         </a>
       </div>
-    
     </div>
   );
 }

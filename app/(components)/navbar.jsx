@@ -70,7 +70,7 @@ export default function navbar() {
             >
               Tech stack
             </Link>
-            <Link
+            {/* <Link
               to="about"
               smooth={true}
               offset={50}
@@ -78,7 +78,7 @@ export default function navbar() {
               className="text-[14px] max-md:text-[10px] cursor-pointer font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
             >
               Blogs
-            </Link>
+            </Link> */}
             <a
               href="/resume"
               target="_blank"
