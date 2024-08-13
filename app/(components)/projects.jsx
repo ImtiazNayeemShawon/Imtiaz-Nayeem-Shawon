@@ -26,15 +26,14 @@ export default function projects() {
                   />
                 </CardItem>
                 <CardItem translateZ="50" className="mt-10">
-                  <h1 className="font-bold text-white text-2xl">Cinmadrip</h1>
+                  <h1 className="font-bold text-white text-2xl">Frosty Icepod</h1>
                 </CardItem>
                 <CardItem
                   as="h2"
                   translateZ="60"
                   className=" text-[#c5c0c0] text-lg w-[90%] mt-4"
                 >
-                  Powering delightful podcast , movie experiences for everyone,
-                  everywhere
+                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                 </CardItem>
                 <div>
                   <CardItem
