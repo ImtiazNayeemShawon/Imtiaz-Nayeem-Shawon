@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Thumb from "/public/bard.png";
+import Thumb from "/public/brandbird.png";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card";
 import Link from "next/link";
