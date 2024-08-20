@@ -23,7 +23,7 @@ body {
 }
 .steps{
   position: sticky;
-  top: 100px;
+  top: 150px;
   background-color: #191919;
 }
 @media (max-width: 768px) {

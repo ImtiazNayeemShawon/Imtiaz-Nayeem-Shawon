@@ -4,7 +4,6 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
 
 export default function Skills() {
-  const [filter, setFilter] = useState();
 
   return (
     <div id="tech" className="mx-[10%] mt-40">
@@ -18,7 +17,7 @@ export default function Skills() {
         things, and most of the skills I've gained are through practice and
         hands-on experience
       </p>
-      <div className="flex items-center gap-5 flex-wrap mt-10">
+      {/* <div className="flex items-center gap-5 flex-wrap mt-10">
         <button
           className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
         >
@@ -54,7 +53,7 @@ export default function Skills() {
         >
           App
         </button>
-      </div>
+      </div> */}
       <div className="  w-full  flex flex-col items-center justify-center overflow-hidden rounded-md">
         <HoverEffect items={projects} />
       </div>

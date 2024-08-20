@@ -19,7 +19,13 @@ export default function navbar() {
         </div>
         <div className="">
           <div className="bg-[#191919] border border-[#323233] shadow-sm p-[5px] pl-5 rounded-full flex items-center gap-10 max-md:gap-40 ">
-            <Link className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:block hidden">
+            <Link
+              to="home"
+              smooth={true}
+              offset={50}
+              duration={1000}
+              className="text-[14px] max-md:text-[10px]  font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:block hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
