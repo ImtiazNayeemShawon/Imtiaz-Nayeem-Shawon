@@ -1,45 +1,107 @@
 "use client";
 import React from "react";
-import Thumb from "/public/brandbird.png";
 import Image from "next/image";
 import { CardBody, CardContainer, CardItem } from "../../components/ui/3d-card";
 import Link from "next/link";
+import Ryun from "/public/projects/ryun.png";
+import Zipbox from "/public/projects/zipbox.png";
+import Frosty from "/public/projects/frosty.png";
+import Skinsort from "/public/projects/skinsort.png";
+import Mzmedia from "/public/projects/mzmedia.png";
+import Byoc from "/public/projects/boyc.png";
+import SkyNetix from "/public/projects/skynetix.png";
 
 export default function projects() {
+  const projects = [
+    {
+      title: "MZ Media",
+      description:
+        "A digital agency website for showcasing there work and reviews ",
+      url: "https://mzmedia.digital/",
+      image: Mzmedia,
+    },
+    {
+      title: "Ryun Shim",
+      description:
+        "A portfolio website for Ryun Shim, a graduate from Cornell University",
+      url: "https://www.ryunshim.com/",
+      image: Ryun,
+    },
+    {
+      title: "zipbox",
+      description: "A Web Design & development agency portfolio",
+      url: "https://www.zipbox.design/",
+      image: Zipbox,
+    },
+    {
+      title: "Frosty icepod",
+      description:
+        "A e-commerce website for selling icepod and other products ",
+      url: "https://frostyicepod.com/",
+      image: Frosty,
+    },
+    {
+      title: "cosmpulse",
+      description:
+        "A  SaaS platform where user can able to make routine and track daily logs",
+      url: "https://www.cosmpulse.com/",
+      image: Skinsort,
+    },
+    {
+      title: "Book your oil change",
+      description:
+        "A dynamic multi vendor booking platform where user can book and call mechanics",
+      url: "mzmedia.digital",
+      image: Byoc,
+    },
+    {
+      title: "Skynetix",
+      description: "A 360 degreee digital marketing agency portfolio ",
+      url: "https://skynetix.vercel.app/",
+      image: SkyNetix,
+    },
+  ];
+
   return (
     <div id="projects" className="mx-[10%] max-md:mx-[4%]">
       <div>
-        <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px] my-10 ">
+        <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px]  ">
           Featured Work
         </h1>
+        <p className="text-sm text-white text-center mb-10">
+          Here, I’m showcasing my latest project. While I’ve worked on several
+          other projects, I’m unable to share them due to NDA restrictions.
+        </p>
         <div className="flex justify-center gap-10 flex-wrap  ">
-          {[0, 2, 3, 4]?.map((data, index) => (
-            <CardContainer className="">
-              <CardBody className="border-[#252525] border relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6 bg-[#191919]  ">
+          {projects?.map((data, index) => (
+            <CardContainer>
+              <CardBody className="border-[#252525]  border relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6 bg-[#191919]  ">
                 <CardItem translateZ="100" className="w-full mt-4">
                   <Image
-                    src={Thumb}
+                    src={data?.image}
                     height="1000"
                     width="1000"
-                    className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    className="h-[16rem] w-full  object-cover rounded-xl group-hover/card:shadow-xl"
                     alt="thumbnail"
                   />
                 </CardItem>
                 <CardItem translateZ="50" className="mt-10">
-                  <h1 className="font-bold text-white text-2xl">Frosty Icepod</h1>
+                  <h1 className="font-bold text-white text-2xl">
+                    {data?.title}
+                  </h1>
                 </CardItem>
                 <CardItem
                   as="h2"
                   translateZ="60"
                   className=" text-[#c5c0c0] text-lg w-[90%] mt-4"
                 >
-                 Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                  {data?.description}
                 </CardItem>
                 <div>
                   <CardItem
                     translateZ={20}
                     as={Link}
-                    href="https://twitter.com/mannupaaji"
+                    href={data?.url}
                     target="__blank"
                     className="text-[14px] max-md:text-[10px] w-fit border border-[#323233]    flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
                   >
@@ -63,7 +125,7 @@ export default function projects() {
           ))}
         </div>
 
-        <button className="text-[14px] max-md:text-[10px] border border-[#9597f7]  bg-[#6366F1]   flex justify-center self-center m-auto mt-20 items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full">
+        {/* <button className="text-[14px] max-md:text-[10px] border border-[#9597f7]  bg-[#6366F1]   flex justify-center self-center m-auto mt-20 items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full">
           See more{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +139,7 @@ export default function projects() {
               clipRule="evenodd"
             />
           </svg>
-        </button>
+        </button> */}
       </div>
     </div>
   );
