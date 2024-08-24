@@ -1,6 +1,6 @@
+"use server"
 import { NextResponse } from "next/server";
 import prisma from "../../../utils/prismadb";
-import ImageUploader from "../../../utils/fileuploader";
 
 // Get All Data
 export async function GET() {
