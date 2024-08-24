@@ -10,7 +10,7 @@ generator client {
     provider = "prisma-client-js"
 }
 
-model Stacks {
+model techSkills {
     id          String @id @default(auto()) @map("_id") @db.ObjectId
     Name        String
     Description String
