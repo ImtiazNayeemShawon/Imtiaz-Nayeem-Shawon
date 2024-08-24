@@ -74,7 +74,7 @@ export default function projects() {
         </p>
         <div className="flex justify-center gap-10 flex-wrap  ">
           {projects?.map((data, index) => (
-            <CardContainer>
+            <CardContainer key={index}>
               <CardBody className="border-[#252525]  border relative group/card  w-auto sm:w-[30rem] h-auto rounded-xl p-6 bg-[#191919]  ">
                 <CardItem translateZ="100" className="w-full mt-4">
                   <Image

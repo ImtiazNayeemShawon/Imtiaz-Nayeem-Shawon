@@ -1,9 +1,22 @@
 "use client";
-import { useState } from "react";
-import { SparklesCore } from "@/components/ui/sparkles";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import { useEffect, useState } from "react";
+import getSkills from "../(apiRequest)/skills";
 
 export default function Skills() {
+  const [data, setData] = useState();
+  useEffect(() => {
+    try {
+      const fetchData = async () => {
+        const data = await getSkills();
+        setData(data?.data);
+      };
+
+      fetchData();
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
 
   return (
     <div id="tech" className="mx-[10%] mt-40">
@@ -55,11 +68,12 @@ export default function Skills() {
         </button>
       </div> */}
       <div className="  w-full  flex flex-col items-center justify-center overflow-hidden rounded-md">
-        <HoverEffect items={projects} />
+        <HoverEffect items={data} />
       </div>
     </div>
   );
 }
+
 export const projects = [
   {
     title: "React js",

@@ -6,13 +6,10 @@ import Image from "next/image";
 
 export const HoverEffect = ({ items, className }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
-
   return (
     <div className={cn("grid grid-cols-2   lg:grid-cols-3  py-10", className)}>
-      {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
+      {items?.map((item, idx) => (
+        <motion.div
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -38,21 +35,21 @@ export const HoverEffect = ({ items, className }) => {
             <div className="flex flex-col  items-start gap-4 ">
               <div className=" bg-slate-800 rounded-full p-4">
                 <Image
-                  src={item?.logo}
+                  src={item?.Icon}
                   width={100}
                   height={100}
                   className="w-8 "
                 />
               </div>
               <div>
-                <p className="text-white text-[14px]">{item?.title}</p>
+                <p className="text-white text-[14px]">{item?.Name}</p>
                 <p className="text-[#e2e8f0ba] text-[12px] max-sm:hidden">
-                  {item?.description}
+                  {item?.Description}
                 </p>
               </div>
             </div>
           </Card>
-        </Link>
+        </motion.div>
       ))}
     </div>
   );
