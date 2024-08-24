@@ -4,11 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 
-export const HoverEffect = ({ items, className }) => {
+export const HoverEffect = ({ items, className, Lenght }) => {
   let [hoveredIndex, setHoveredIndex] = useState(null);
   return (
-    <div className={cn("grid grid-cols-2   lg:grid-cols-3  py-10", className)}>
-      {items?.map((item, idx) => (
+    <div
+      className={cn(
+        "grid grid-cols-2  lg:grid-cols-3 2xl:grid-cols-4   py-10",
+        className
+      )}
+    >
+      {items?.slice(0, Lenght)?.map((item, idx) => (
         <motion.div
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}

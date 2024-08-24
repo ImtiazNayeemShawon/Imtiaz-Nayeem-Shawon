@@ -74,7 +74,7 @@ export default function navbar() {
               duration={1000}
               className="text-[14px] max-md:text-[10px] cursor-pointer font-semibold capitalize text-[#EAF3FB] hover:opacity-80 max-sm:hidden"
             >
-              Tech stack
+              Skills 
             </Link>
             {/* <Link
               to="about"

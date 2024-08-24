@@ -1,22 +1,32 @@
 "use client";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { useEffect, useState } from "react";
-import getSkills from "../(apiRequest)/skills";
+import Data from "@/utils/techSkills.json";
+import { useState } from "react";
 
 export default function Skills() {
-  const [data, setData] = useState();
-  useEffect(() => {
-    try {
-      const fetchData = async () => {
-        const data = await getSkills();
-        setData(data?.data);
-      };
-
-      fetchData();
-    } catch (err) {
-      console.log(err);
+  const options = [
+    "All",
+    "Frontend",
+    "Backend",
+    "Programming",
+    "App",
+    "CSS/UI library",
+    "DevOps",
+    "Database",
+    "Others",
+  ];
+  const [Lenght, setLenght] = useState(12);
+  const [filteredData, setFilteredData] = useState(Data);
+  const [key, setKey] = useState("All");
+  function handleFilter(filterKey) {
+    if (filterKey == "All") {
+      setFilteredData(Data);
+    } else {
+      const filters = Data?.filter((item) => item.Category === filterKey);
+      setFilteredData(filters);
     }
-  }, []);
+    setKey(filterKey);
+  }
 
   return (
     <div id="tech" className="mx-[10%] mt-40">
@@ -30,100 +40,45 @@ export default function Skills() {
         things, and most of the skills I've gained are through practice and
         hands-on experience
       </p>
-      {/* <div className="flex items-center gap-5 flex-wrap mt-10">
-        <button
-          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
-        >
-          All
-        </button>
-        <button
-          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
-        >
-          Languages
-        </button>
-        <button
-          className={`text-white font-semibold border-[1px] border-white px-8 py-2 rounded-full ${filter && "bg-[#6366F1]"}`}
-        >
-          Frontend
-        </button>
-        <button
-          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
-        >
-          Backend
-        </button>
-        <button
-          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
-        >
-          DevOps
-        </button>
-        <button
-          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
-        >
-          UI/UX
-        </button>
-        <button
-          className={`text-white font-semibold  border-[1px] border-white px-8 py-2 rounded-full ${filter && ""}`}
-        >
-          App
-        </button>
-      </div> */}
-      <div className="  w-full  flex flex-col items-center justify-center overflow-hidden rounded-md">
-        <HoverEffect items={data} />
+      <div className="flex items-center gap-5 flex-wrap mt-10">
+        {options?.map((data) => (
+          <button
+            onClick={() => {
+              handleFilter(data);
+            }}
+            className={`text-white text-[14px] font-semibold  border-[1px] border-[#2b2a2a] px-4 py-1 rounded-full ${
+              key == data ? "bg-[#6366F1]" : ""
+            }`}
+          >
+            {data}
+          </button>
+        ))}
       </div>
+      <div className="  w-full  flex flex-col items-center justify-center overflow-hidden rounded-md">
+        <HoverEffect items={filteredData} Lenght={Lenght} />
+      </div>
+      {key == "All" && (
+        <button
+          onClick={() => setLenght(Data?.length)}
+          className="text-[14px] max-md:text-[10px] border border-[#9597f7]  bg-[#6366F1]   flex justify-center self-center m-auto mt-20 items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
+        >
+          See All{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-4"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m4.5 5.25 7.5 7.5 7.5-7.5m-15 6 7.5 7.5 7.5-7.5"
+            />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }
-
-export const projects = [
-  {
-    title: "React js",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-    description:
-      "React. js is an open-source JavaScript library, crafted with precision by Facebook, that aims to simplify the intricate process of building interactive user interfaces.",
-  },
-  {
-    title: "Next JS",
-    link: "https://stripe.com",
-    logo: "/next copy.svg",
-    description:
-      "Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.",
-  },
-  {
-    title: "Javascript",
-    link: "https://stripe.com",
-    logo: "/js.svg",
-    description:
-      "JavaScript is a scripting or programming language that allows you to implement complex features on web pages ",
-  },
-  {
-    title: "Express JS",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-  {
-    title: "AWS",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-  {
-    title: "Frontend development",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-  {
-    title: "Frontend development",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-  {
-    title: "Frontend development",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-  {
-    title: "Frontend development",
-    link: "https://stripe.com",
-    logo: "/react.svg",
-  },
-];

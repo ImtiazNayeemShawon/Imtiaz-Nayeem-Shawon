@@ -3,16 +3,17 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import ImageUploader from "@/utils/fileuploader";
 import Image from "next/image";
-import getSkills from "@/app/(apiRequest)/skills";
 import axios from "axios";
 import { Toaster, toast } from "react-hot-toast";
+import Data from "@/utils/techSkills.json";
 
 export default function page() {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [Category, setCategory] = useState("");
+
   const [image, setImage] = useState("");
-  const [data, setData] = useState();
   const [id, setId] = useState("");
   const [type, setType] = useState("");
 
@@ -28,19 +29,6 @@ export default function page() {
     }
   };
 
-  useEffect(() => {
-    try {
-      const fetchData = async () => {
-        const data = await getSkills();
-        setData(data?.data);
-      };
-
-      fetchData();
-    } catch (err) {
-      console.log(err);
-    }
-  }, [id]);
-
   const hanldeUpload = async (passedId) => {
     if (type == "put") {
       await axios.put("/api/techstack", {
@@ -48,6 +36,7 @@ export default function page() {
         Description: description,
         Icon: image,
         id: id,
+        Category,
       });
       toast.success("Updated");
       setOpen(!open);
@@ -63,11 +52,24 @@ export default function page() {
         Name: name,
         Description: description,
         Icon: image,
+        Category,
       });
       toast.success("Skill added");
       setOpen(!open);
     }
   };
+
+  const options = [
+    "All",
+    "Frontend",
+    "Backend",
+    "Programming",
+    "App",
+    "CSS/UI library",
+    "DevOps",
+    "Database",
+    "Others",
+  ];
 
   return (
     <div className="group mt-4">
@@ -140,6 +142,23 @@ export default function page() {
             />
           </svg>
         </button>
+        <select
+          value={Category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="border-2 border-[#6d6e70] bg-transparent rounded-lg w-full px-1 py-1 focus:outline-0 text-white text-sm"
+        >
+          <option value="" disabled>
+            Select a category...
+          </option>
+          {/* Add your options here */}
+          {options?.map((data) => (
+            <option className="" value={data}>
+              {data}
+            </option>
+          ))}
+          {/* Add more options as needed */}
+        </select>
+
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -181,7 +200,7 @@ export default function page() {
           </button>
         </div>
         <div className="grid grid-cols-3 mt-10 gap-10">
-          {data?.map((data, index) => (
+          {Data?.map((data, index) => (
             <div
               key={index}
               className=" text-white border-[1px] w-full   border-[#302020] p-10 rounded-xl"
@@ -195,6 +214,7 @@ export default function page() {
                     setDescription(data?.Description);
                     setImage(data?.Icon);
                     setOpen(true);
+                    setCategory(data?.Category);
                     setType("put");
                   }}
                 >

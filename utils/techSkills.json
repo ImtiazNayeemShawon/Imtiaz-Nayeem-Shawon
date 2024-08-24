@@ -1,8 +1,331 @@
 [
   {
     "id": 1,
-    "Description": "js",
+    "Description": "JavaScript is a scripting or programming language that allows you to implement complex features on web pages ",
     "Name": "Javascript",
-    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724490427/sfk70boi5h8kpzabbkqg.svg"
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724490427/sfk70boi5h8kpzabbkqg.svg",
+    "Category": "Programming"
+  },
+  {
+    "id": 2,
+    "Description": "React. js is an open-source JavaScript library, crafted with precision by Facebook, that aims to simplify the intricate process of building interactive user interfaces.",
+    "Name": "React JS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724491540/tv2g76vropntgxv1uye6.svg",
+    "Category": "Frontend"
+  },
+  {
+    "id": 3,
+    "Description": "Next.js is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Next.js for additional features and optimizations.",
+    "Name": "Next JS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724491661/uhdi1w00byqdbxbplorq.svg",
+    "Category": "Frontend"
+  },
+  {
+    "id": 4,
+    "Description": "Express.js is a minimal and flexible Node.js framework for building web applications and APIs. It simplifies routing, middleware integration, and HTTP request handling.",
+    "Name": "Express JS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724491799/jjzugbgihyh1pps9ffqd.svg",
+    "Category": "Backend"
+  },
+  {
+    "id": 5,
+    "Description": "TypeScript is a statically typed superset of JavaScript that adds type annotations and other features to improve code quality and maintainability. It compiles to plain JavaScript and helps catch errors early through static type checking.",
+    "Name": "Typescript",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724491911/abtlmexfecge5agbpd11.svg",
+    "Category": "Programming"
+  },
+  {
+    "id": 6,
+    "Description": "Tailwind CSS is a utility-first CSS framework that provides low-level utility classes for creating custom designs without writing custom CSS. It allows for rapid UI development with a focus on composition and reusability.",
+    "Name": "Tailwind CSS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492053/xfozecyfqnqinlknvl18.svg",
+    "Category": "CSS/UI library"
+  },
+  {
+    "id": 7,
+    "Description": "Node.js is a JavaScript runtime built on Chrome's V8 engine, enabling server-side execution of JavaScript code. It features a non-blocking, event-driven architecture, making it ideal for building scalable, real-time applications.",
+    "Name": "Node JS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492097/r5uzu5pp4mzcxwqlm1wc.svg",
+    "Category": "Backend"
+  },
+  {
+    "id": 8,
+    "Description": "Redux is a state management library for JavaScript applications, often used with React. It centralizes application state in a single store, allowing for predictable state changes through actions and reducers.",
+    "Name": "Redux",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492122/qr9197nnmt82budvyko8.svg",
+    "Category": "Frontend"
+  },
+  {
+    "id": 9,
+    "Description": "Zustand is a lightweight state management library for React. It simplifies state management by providing a minimalistic API, enabling easy creation and management of global and local state without the boilerplate of other libraries like Redux.",
+    "Name": "Zustand",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492458/s7w5t9fipxhmcjrfneaj.png",
+    "Category": "Frontend"
+  },
+  {
+    "id": 10,
+    "Description": "AWS (Amazon Web Services) is a comprehensive cloud computing platform by Amazon. It offers a wide range of services, including computing power, storage, databases, networking, machine learning, and more, enabling businesses to build and scale applications in the cloud.",
+    "Name": "AWS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492245/yyn6hfapuovjebvirgd8.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 11,
+    "Description": "C++ is a powerful, high-performance programming language that extends C with object-oriented features. It's widely used for system software, game development, and applications requiring high efficiency, such as operating systems and real-time simulations.",
+    "Name": "C++",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492291/gylk0dkjlfwdpnx74dlw.svg",
+    "Category": "Programming"
+  },
+  {
+    "id": 12,
+    "Description": "C is a foundational, high-performance programming language known for its efficiency and control over system resources. It's widely used in developing operating systems, embedded systems, and other applications where direct hardware manipulation is necessary.",
+    "Name": "C",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492320/ho1vjl9h1ec2bmryjuwn.svg",
+    "Category": "Programming"
+  },
+  {
+    "id": 13,
+    "Description": "Docker is a platform that enables developers to create, deploy, and run applications in containers. Containers are lightweight, portable units that bundle an application and its dependencies, ensuring consistency across different environments. Docker simplifies application deployment and scaling by isolating software from its environment.",
+    "Name": "Docker",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492956/y2hxo3rm98lkar0up9kb.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 14,
+    "Description": "iOS development involves creating applications for Apple's iOS devices, like iPhone and iPad, using languages like Swift or Objective-C. Developers use Xcode, Apple's integrated development environment (IDE), along with frameworks like UIKit and SwiftUI to design, build, and test apps.",
+    "Name": "IOS App development",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492981/icl0h8rrxf16x3y22hgh.svg",
+    "Category": "App"
+  },
+  {
+    "id": 15,
+    "Description": "Prisma ORM is a modern database toolkit and Object-Relational Mapping (ORM) for Node.js and TypeScript. It simplifies database access by providing a type-safe API to interact with databases, supporting various SQL and NoSQL databases. Prisma generates queries, migrations, and models automatically, helping developers focus on business logic rather than database management.",
+    "Name": "Prisma ORM",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493030/dvvah7xdggebcpylozqr.svg",
+    "Category": "Database"
+  },
+  {
+    "id": 16,
+    "Description": "PostgreSQL is an open-source, powerful, and feature-rich relational database management system. It supports advanced data types, transactions, and complex queries, making it suitable for a wide range of applications from small to large-scale systems. PostgreSQL is known for its extensibility, reliability, and strong SQL compliance.",
+    "Name": "PostgreSql",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493082/tyvg9uw5nm4toy5vamvq.svg",
+    "Category": "Database"
+  },
+  {
+    "id": 17,
+    "Description": "MongoDB is a NoSQL database that stores data in flexible, JSON-like documents. It's designed for scalability and high performance, making it ideal for handling large volumes of unstructured data.",
+    "Name": "MongoDB",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493121/f99v6aefziacdztawu2f.svg",
+    "Category": "Database"
+  },
+  {
+    "id": 18,
+    "Description": "Swift is a powerful, modern programming language for iOS, macOS, watchOS, and tvOS development. It's designed for safety and performance with a clean syntax and strong type inference.",
+    "Name": "Swift",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493156/ncsjneitfz1nxpgzcspt.svg",
+    "Category": "Programming"
+  },
+  {
+    "id": 19,
+    "Description": "React Native is a framework for building cross-platform mobile apps using JavaScript and React. It allows developers to create native-like apps for iOS and Android from a single codebase.",
+    "Name": "React Native App development",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493190/fmqrzthu3ozpndfmpkxh.svg",
+    "Category": "App"
+  },
+  {
+    "id": 20,
+    "Description": "DigitalOcean is a cloud infrastructure provider that offers scalable virtual private servers, known as Droplets, and other cloud services like databases and storage. It is known for its simplicity and developer-friendly approach.",
+    "Name": "Digital ocean",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493388/publ0xw7w97yen4zpwve.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 21,
+    "Description": "A Linux VPS (Virtual Private Server) is a virtualized server running a Linux operating system. It provides dedicated resources and full root access, allowing users to install and configure software as needed, often used for hosting websites, applications, or development environments.",
+    "Name": "Linux VPS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493411/wapbaxux8ib0wg2pm7zv.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 22,
+    "Description": "Nginx is a high-performance web server and reverse proxy server known for its speed and scalability. It handles HTTP, HTTPS, and other protocols, often used for serving static content, load balancing, and as a reverse proxy.\n\n\n\n\n\n\n",
+    "Name": "Nginx",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493606/mi2b7tdcgfozwcq6s9jr.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 23,
+    "Description": "Apache is a widely used open-source web server software known for its flexibility and extensive configuration options. It handles HTTP requests, serves static and dynamic content, and supports various modules and features for enhancing web server capabilities.",
+    "Name": "Apache",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493662/wkmqd63pogjf3ihmqfi0.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 24,
+    "Description": "Framer Motion is a React library for creating animations and transitions. It provides simple APIs for animating components with smooth, performant animations and interactions.",
+    "Name": "Framer motion",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493819/y28nxolofzmz7mdt23lw.svg",
+    "Category": "CSS/UI library"
+  },
+  {
+    "id": 25,
+    "Description": "Shopify is a cloud-based e-commerce platform that allows users to create and manage online stores. It offers tools for product management, payment processing, and marketing, making it easy to build and run a retail website.",
+    "Name": "Shopify",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493894/werukbwjwxpqtku6oucz.svg",
+    "Category": "Others"
+  },
+  {
+    "id": 26,
+    "Description": "Stripe is an online payment processing platform that enables businesses to accept payments, manage subscriptions, and handle financial transactions. It offers APIs and tools for integrating payment solutions into websites and apps.",
+    "Name": "Stripe",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493945/n1byhluufljiqkoyqgax.svg",
+    "Category": "Others"
+  },
+  {
+    "id": 27,
+    "Description": "Bun is a JavaScript runtime like Node.js and Deno, designed for speed and efficiency. It includes a bundler, transpiler, and package manager, aiming to improve the developer experience with fast build times and modern features.",
+    "Name": "Bun JS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724494160/bfzphnyp53gvtgwb3ujy.svg",
+    "Category": "Backend"
+  },
+  {
+    "id": 28,
+    "Description": "Git is a distributed version control system that tracks changes in source code and facilitates collaboration. GitHub is a web-based platform that hosts Git repositories, providing features for code collaboration, issue tracking, and version control.",
+    "Name": "Git & Github",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724494190/ha4jlp5dti072hyjrcdo.svg",
+    "Category": "Others"
+  },
+  {
+    "id": 29,
+    "Description": "Mongoose provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.\n",
+    "Name": "Mongoose",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724494359/sijn3lgjpt9pudew3d6a.svg",
+    "Category": "Database"
+  },
+  {
+    "id": 30,
+    "Description": "Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.\n\n",
+    "Name": "Bootstrap",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724494425/chpu66rtq3n6cdqbyqja.svg",
+    "Category": "CSS/UI library"
+  },
+  {
+    "id": 31,
+    "Description": "Build better products as a team. Design, prototype, and gather feedback all in one place with Figma.\n",
+    "Name": "Figma",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724499939/xhvveto28bmbivdi7c49.svg",
+    "Category": "Others"
+  },
+  {
+    "id": 32,
+    "Description": "Syntactically Awesome Style Sheets",
+    "Name": "Saas",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502090/jbmloxpjfuwd069eeddx.svg",
+    "Category": "CSS/UI library"
+  },
+  {
+    "id": 33,
+    "Description": "Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.",
+    "Name": "CSS 3",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502125/dtrkzyj4phxezqe8kzsk.svg",
+    "Category": "CSS/UI library"
+  },
+  {
+    "id": 34,
+    "Description": "AWS S3 (Simple Storage Service) is a scalable object storage service for storing and retrieving any amount of data at any time. It offers high durability, availability, and security for data, making it suitable for backup, archiving, and content distribution.",
+    "Name": "AWS S3",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502202/be0oswbwyzs7q5nsxoxu.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 35,
+    "Description": "Amazon EC2 (Elastic Compute Cloud) provides resizable compute capacity in the cloud. It allows users to run virtual servers, or instances, on-demand with various configurations, operating systems, and software options. EC2 offers scalable and flexible computing power, ideal for hosting applications, websites, and managing workloads.",
+    "Name": "AWS EC2",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502267/sznob9pya0o6kmllak23.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 36,
+    "Description": "Xcode includes everything you need to develop, test, and distribute apps across all Apple platforms.",
+    "Name": "Xcode",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724503128/vnqbzapkckcdb90hzc0g.svg",
+    "Category": "App"
+  },
+  {
+    "id": 37,
+    "Description": "s a design system and component library for building user interfaces with Aceternity’s blockchain technology. It provides pre-built components and design guidelines to streamline the development of blockchain-based applications.",
+    "Name": "Aceternity UI",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502529/oubwxrybsmowyhtaifwz.webp",
+    "Category": "CSS/UI library"
+  },
+  {
+    "id": 38,
+    "Description": "DaisyUI is a component library for Tailwind CSS that provides pre-designed, customizable UI components. It simplifies building user interfaces by offering a collection of ready-to-use components like buttons, forms, and cards, which can be easily styled and adapted to fit various designs.",
+    "Name": "Daisy UI",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502706/jsn12tl2npqkrpe50zus.svg",
+    "Category": "CSS/UI library"
+  },
+  {
+    "id": 39,
+    "Description": "Next Generation Frontend Tooling",
+    "Name": "Vite JS",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502795/iexmo8oyigkgggqgbbkv.svg",
+    "Category": "Frontend"
+  },
+  {
+    "id": 40,
+    "Description": "Axios is a promise-based HTTP Client for node.js and the browser.",
+    "Name": "Axios",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502863/iwjemnsi1bbterh6k1qu.svg",
+    "Category": "Frontend"
+  },
+  {
+    "id": 41,
+    "Description": "Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration.",
+    "Name": "Vercel",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502945/qqbzqtf6goocp2m3kvf7.svg",
+    "Category": "DevOps"
+  },
+  {
+    "id": 42,
+    "Description": "Shadcn UI is a design system and component library built for React applications. It provides a collection of customizable and accessible UI components, designed to simplify the development of modern web applications by offering consistent styling and behavior.",
+    "Name": "Shadcn UI",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724503790/ap7ahr6qfnv0vshbnckv.png",
+    "Category": "CSS/UI library"
+  },
+  {
+    "id": 43,
+    "Description": "JSON (JavaScript Object Notation) is a lightweight data-interchange format",
+    "Name": "JSON",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724503938/g8jbdbtr1lmspzaf4wqz.svg",
+    "Category": "Frontend"
+  },
+  {
+    "id": 44,
+    "Description": "Cheerio is a fast, flexible, and lean implementation of core jQuery designed for the server. It simplifies parsing and manipulating HTML and XML documents in Node.js environments, allowing you to traverse and modify the DOM with familiar jQuery-like syntax.",
+    "Name": "Cheerio js ",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724503978/b4xrq9z0ua3dey0xhdpe.svg",
+    "Category": "Others"
+  },
+  {
+    "id": 45,
+    "Description": "NativeWind is a library for React Native that brings Tailwind CSS-like styling to React Native applications. It allows you to use utility-first classes to style components, making it easier to build responsive and consistent designs with a utility-based approach.",
+    "Name": "NativWind",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724504136/giavznkntzqdgeajr0pe.svg",
+    "Category": "App"
+  },
+  {
+    "id": 46,
+    "Description": "Nodemon is a command-line tool that helps with the speedy development of Node. js applications. It monitors your project directory and automatically restarts your node application when it detects any changes.\n\n",
+    "Name": "Nodemon",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724504167/wn751cszohkhplzdz2gi.svg",
+    "Category": "Backend"
+  },
+  {
+    "id": 47,
+    "Description": "Nodemailer is a Node.js module for sending emails. It provides a straightforward way to send emails from a Node.js application, supporting various transport options like SMTP, sendmail, and more. It allows you to compose and send messages with attachments and HTML content.",
+    "Name": "Nodemailer",
+    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724504216/tbdy6v9srmayew7jmudp.png",
+    "Category": "Backend"
   }
 ]

@@ -35,11 +35,13 @@ export async function GET() {
 // Post Single Data
 export async function POST(Request) {
   try {
-    const { Description, Name, Icon } = await Request.json();
+    const { Description, Name, Icon, Category } = await Request.json();
     const techSkills = getData();
 
-    const newId = techSkills.length ? techSkills[techSkills.length - 1].id + 1 : 1;
-    const newSkill = { id: newId, Description, Name, Icon };
+    const newId = techSkills.length
+      ? techSkills[techSkills.length - 1].id + 1
+      : 1;
+    const newSkill = { id: newId, Description, Name, Icon, Category };
 
     techSkills.push(newSkill);
     saveData(techSkills);
@@ -54,15 +56,18 @@ export async function POST(Request) {
 // Edit Single Data
 export async function PUT(Request) {
   try {
-    const { id, Description, Name, Icon } = await Request.json();
+    const { id, Description, Name, Icon, Category } = await Request.json();
     let techSkills = getData();
 
     techSkills = techSkills.map((skill) =>
-      skill.id === id ? { ...skill, Description, Name, Icon } : skill
+      skill.id === id ? { ...skill, Description, Name, Icon, Category } : skill
     );
     saveData(techSkills);
 
-    return NextResponse.json({ message: "Data updated successfully" }, { status: 200 });
+    return NextResponse.json(
+      { message: "Data updated successfully" },
+      { status: 200 }
+    );
   } catch (error) {
     console.log(error.message);
     return NextResponse.json({ message: error.message }, { status: 500 });
@@ -78,7 +83,10 @@ export async function PATCH(Request) {
     techSkills = techSkills.filter((skill) => skill.id !== id);
     saveData(techSkills);
 
-    return NextResponse.json({ message: "techSkill deleted successfully" }, { status: 200 });
+    return NextResponse.json(
+      { message: "techSkill deleted successfully" },
+      { status: 200 }
+    );
   } catch (error) {
     console.log(error.message);
     return NextResponse.json({ message: error.message }, { status: 500 });
