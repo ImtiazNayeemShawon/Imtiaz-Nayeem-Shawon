@@ -27,6 +27,33 @@ export default function Experience() {
       ),
     },
     {
+      title: "MERN stack developer @outnet",
+      tag: "@outnet",
+      description: (
+        <ul className="list-disc">
+          <li className="my-4">
+            Develop and maintain the backend services and APIs using Node.js and Express.js.
+          </li>
+          <li className="my-4">
+            Design and implement scalable and efficient database schemas using MongoDB.
+          </li>
+          <li className="my-4">
+            Work with the Next.js framework to build and optimize server-side rendered and statically
+generated React applications.
+          </li>
+          <li className="my-4">
+           Collaborate with front-end developers to integrate user-facing elements with server-side logic.
+          </li>
+          <li className="my-4">
+           Participate in code reviews and provide constructive feedback.
+          </li>
+          <li className="my-4">
+            Write clean, maintainable, and well-documented code.
+          </li>
+        </ul>
+      ),
+    },
+    {
       title: "Web developer @Bangladesh Space Research Society",
       tag: "@BSRS",
       description: (
