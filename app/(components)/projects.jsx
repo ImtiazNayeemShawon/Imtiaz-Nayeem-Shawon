@@ -47,13 +47,7 @@ export default function projects() {
       url: "https://www.cosmpulse.com/",
       image: Skinsort,
     },
-    {
-      title: "Book your oil change",
-      description:
-        "A dynamic multi vendor booking platform where user can book and call mechanics",
-      url: "mzmedia.digital",
-      image: Byoc,
-    },
+    
     {
       title: "Skynetix",
       description: "A 360 degreee digital marketing agency portfolio ",
