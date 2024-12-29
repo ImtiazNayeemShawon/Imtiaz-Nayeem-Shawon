@@ -57,7 +57,7 @@ export default function projects() {
   ];
 
   return (
-    <div id="projects" className="mx-[10%] max-md:mx-[4%]">
+    <div id="projects" className="mx-[10%] max-md:mx-[4%] max-sm:mt-28">
       <div>
         <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px]  ">
           Featured Work
