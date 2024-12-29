@@ -327,5 +327,12 @@
     "Name": "Nodemailer",
     "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724504216/tbdy6v9srmayew7jmudp.png",
     "Category": "Backend"
+  },
+  {
+    "id": 48,
+    "Description": "A progressive Node.js framework for building efficient, reliable and scalable server-side applications.",
+    "Name": "Nest JS",
+    "Icon": "https://nestjs.com/logo-small-gradient.d792062c.svg",
+    "Category": "Backend"
   }
 ]

@@ -16,11 +16,11 @@ export default function herosection() {
         <div className="flex flex-col gap-6">
           <TextGenerateEffect words={" Hello world ///"} />
           <h2 className="text-white text-[50px] font-extrabold w-[60%] max-md:text-[30px]  max-md:w-full leading-[120%]">
-            Designing and developing scalable websites
+            Designing and developing scalable softwares 
           </h2>
           <p className="text-[#f5f1f1] font-light w-[50%] max-md:w-full">
             Hey🖐 , I'm Imtiaz Nayeem Shawon Self-taught{" "}
-            <strong>Full stack web developer</strong> with 3 years of experience
+            <strong>Full stack developer</strong> with 4 years of experience
             in product development and client services.
           </p>
           {/* cta */}

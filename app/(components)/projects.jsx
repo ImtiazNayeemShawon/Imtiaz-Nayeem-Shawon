@@ -10,6 +10,8 @@ import Skinsort from "/public/projects/skinsort.png";
 import Mzmedia from "/public/projects/mzmedia.png";
 import Byoc from "/public/projects/boyc.png";
 import SkyNetix from "/public/projects/skynetix.png";
+import Dealer from "/public/dealer.png";
+import Fahim from "/public/fahim.png";
 
 export default function projects() {
   const projects = [
@@ -26,6 +28,13 @@ export default function projects() {
         "A portfolio website for Ryun Shim, a graduate from Cornell University",
       url: "https://www.ryunshim.com/",
       image: Ryun,
+    },
+    {
+      title: "Dealer nexus",
+      description:
+        "SaaS website for Dealer Nexus, showcasing this very approach in action",
+      url: "https://www.zipbox.design/",
+      image: Dealer,
     },
     {
       title: "zipbox",
@@ -47,7 +56,13 @@ export default function projects() {
       url: "https://www.cosmpulse.com/",
       image: Skinsort,
     },
-    
+    {
+      title: "Product designer portfolio",
+      description: "A portfolio website for showcasing his work and reviews ",
+      url: "https://www.cosmpulse.com/",
+      image: Fahim,
+    },
+
     {
       title: "Skynetix",
       description: "A 360 degreee digital marketing agency portfolio ",
@@ -97,7 +112,7 @@ export default function projects() {
                     as={Link}
                     href={data?.url}
                     target="__blank"
-                    className="text-[14px] max-md:text-[10px] w-fit border border-[#323233]    flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
+                    className="text-[14px] hidden max-md:text-[10px] w-fit border border-[#323233]     items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
                   >
                     Live site{" "}
                     <svg
