@@ -44,6 +44,7 @@ export const HoverEffect = ({ items, className, Lenght }) => {
                   width={100}
                   height={100}
                   className="w-8 "
+                  alt="#"
                 />
               </div>
               <div>

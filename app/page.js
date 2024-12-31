@@ -186,7 +186,7 @@ export default function page() {
       <Githubrofile />
       <Process />
       <Skills />
-      <Worldwide />
+      {/* <Worldwide /> */}
       <Experience
         content={content}
         title="Experiences of Working as a Developer"
