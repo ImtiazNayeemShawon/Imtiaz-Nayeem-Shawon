@@ -1,7 +1,7 @@
-"use client"
-import React, { useEffect, useRef, useState } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
-import { cn } from "@/utils/cn"
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { cn } from "@/utils/cn";
 import {
   IconBrightnessDown,
   IconBrightnessUp,
@@ -16,44 +16,44 @@ import {
   IconTable,
   IconVolume,
   IconVolume2,
-  IconVolume3
-} from "@tabler/icons-react"
-import { IconSearch } from "@tabler/icons-react"
-import { IconWorld } from "@tabler/icons-react"
-import { IconCommand } from "@tabler/icons-react"
-import { IconCaretLeftFilled } from "@tabler/icons-react"
-import { IconCaretDownFilled } from "@tabler/icons-react"
-import Image from "next/image"
+  IconVolume3,
+} from "@tabler/icons-react";
+import { IconSearch } from "@tabler/icons-react";
+import { IconWorld } from "@tabler/icons-react";
+import { IconCommand } from "@tabler/icons-react";
+import { IconCaretLeftFilled } from "@tabler/icons-react";
+import { IconCaretDownFilled } from "@tabler/icons-react";
+import Image from "next/image";
 
 export const MacbookScroll = ({ src, showGradient, title, badge }) => {
-  const ref = useRef(null)
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"]
-  })
+    offset: ["start start", "end start"],
+  });
 
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     if (window && window.innerWidth < 768) {
-      setIsMobile(true)
+      setIsMobile(true);
     }
-  }, [])
+  }, []);
 
   const scaleX = useTransform(
     scrollYProgress,
     [0, 0.3],
     [1.2, isMobile ? 1 : 1.5]
-  )
+  );
   const scaleY = useTransform(
     scrollYProgress,
     [0, 0.3],
     [0.6, isMobile ? 1 : 1.5]
-  )
-  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500])
-  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0])
-  const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100])
-  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0])
+  );
+  const translate = useTransform(scrollYProgress, [0, 1], [0, 1500]);
+  const rotate = useTransform(scrollYProgress, [0.1, 0.12, 0.3], [-28, -28, 0]);
+  const textTransform = useTransform(scrollYProgress, [0, 0.3], [0, 100]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
     <div
@@ -63,7 +63,7 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
       <motion.h2
         style={{
           translateY: textTransform,
-          opacity: textOpacity
+          opacity: textOpacity,
         }}
         className="dark:text-white text-neutral-800 text-3xl font-bold mb-20 text-center"
       >
@@ -106,8 +106,8 @@ export const MacbookScroll = ({ src, showGradient, title, badge }) => {
         {badge && <div className="absolute bottom-4 left-4">{badge}</div>}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const Lid = ({ scaleX, scaleY, rotate, translate, src }) => {
   return (
@@ -116,13 +116,13 @@ export const Lid = ({ scaleX, scaleY, rotate, translate, src }) => {
         style={{
           transform: "perspective(800px) rotateX(-25deg) translateZ(0px)",
           transformOrigin: "bottom",
-          transformStyle: "preserve-3d"
+          transformStyle: "preserve-3d",
         }}
         className="h-[12rem] w-[32rem] bg-[#010101] rounded-2xl p-2 relative"
       >
         <div
           style={{
-            boxShadow: "0px 2px 0px 2px var(--neutral-900) inset"
+            boxShadow: "0px 2px 0px 2px var(--neutral-900) inset",
           }}
           className="absolute inset-0 bg-[#010101] rounded-lg flex items-center justify-center"
         >
@@ -138,7 +138,7 @@ export const Lid = ({ scaleX, scaleY, rotate, translate, src }) => {
           rotateX: rotate,
           translateY: translate,
           transformStyle: "preserve-3d",
-          transformOrigin: "top"
+          transformOrigin: "top",
         }}
         className="h-96 w-[32rem] absolute inset-0 bg-[#010101] rounded-2xl p-2"
       >
@@ -147,23 +147,23 @@ export const Lid = ({ scaleX, scaleY, rotate, translate, src }) => {
           src={src}
           alt="aceternity logo"
           fill
-          className="object-fill object-left-top absolute rounded-lg inset-0 h-full w-full"
+          className="object-cover object-left-top absolute rounded-lg inset-0 h-full w-full"
         />
       </motion.div>
     </div>
-  )
-}
+  );
+};
 
 export const Trackpad = () => {
   return (
     <div
       className="w-[40%] mx-auto h-32  rounded-xl my-1"
       style={{
-        boxShadow: "0px 0px 1px 1px #00000020 inset"
+        boxShadow: "0px 0px 1px 1px #00000020 inset",
       }}
     ></div>
-  )
-}
+  );
+};
 
 export const Keypad = () => {
   return (
@@ -524,13 +524,13 @@ export const Keypad = () => {
         </div>
       </Row>
     </div>
-  )
-}
+  );
+};
 export const KBtn = ({
   className,
   children,
   childrenClassName,
-  backlit = true
+  backlit = true,
 }) => {
   return (
     <div
@@ -546,7 +546,7 @@ export const KBtn = ({
         )}
         style={{
           boxShadow:
-            "0px -0.5px 2px 0 #0D0D0F inset, -0.5px 0px 2px 0 #0D0D0F inset"
+            "0px -0.5px 2px 0 #0D0D0F inset, -0.5px 0px 2px 0 #0D0D0F inset",
         }}
       >
         <div
@@ -560,16 +560,16 @@ export const KBtn = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export const Row = ({ children }) => {
   return (
     <div className="flex gap-[2px] mb-[2px] w-full flex-shrink-0">
       {children}
     </div>
-  )
-}
+  );
+};
 
 export const SpeakerGrid = () => {
   return (
@@ -578,11 +578,11 @@ export const SpeakerGrid = () => {
       style={{
         backgroundImage:
           "radial-gradient(circle, #08080A 0.5px, transparent 0.5px)",
-        backgroundSize: "3px 3px"
+        backgroundSize: "3px 3px",
       }}
     ></div>
-  )
-}
+  );
+};
 
 export const OptionKey = ({ className }) => {
   return (
@@ -615,11 +615,9 @@ export const OptionKey = ({ className }) => {
         stroke="none"
       />
     </svg>
-  )
-}
+  );
+};
 
 const AceternityLogo = () => {
-  return (
-    <Image src={"/apple-logo.png"} width={20} height={20}/>
-  )
-}
+  return <Image src={"/apple-logo.png"} width={20} height={20} />;
+};

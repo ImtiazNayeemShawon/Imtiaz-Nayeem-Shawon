@@ -151,8 +151,8 @@ export default function page() {
             Select a category...
           </option>
           {/* Add your options here */}
-          {options?.map((data) => (
-            <option className="" value={data}>
+          {options?.map((data,index) => (
+            <option key={index} className="" value={data}>
               {data}
             </option>
           ))}

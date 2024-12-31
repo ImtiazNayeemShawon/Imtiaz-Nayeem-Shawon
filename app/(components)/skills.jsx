@@ -41,8 +41,9 @@ export default function Skills() {
         hands-on experience
       </p>
       <div className="flex items-center gap-5 flex-wrap mt-10">
-        {options?.map((data) => (
+        {options?.map((data,index) => (
           <button
+          key={index}
             onClick={() => {
               handleFilter(data);
             }}
