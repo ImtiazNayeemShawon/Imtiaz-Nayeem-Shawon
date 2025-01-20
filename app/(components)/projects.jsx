@@ -33,46 +33,45 @@ export default function projects() {
       title: "Dealer nexus",
       description:
         "SaaS website for Dealer Nexus, showcasing this very approach in action",
-      url: "https://www.zipbox.design/",
+      url: "https://dealernexus.vercel.app/",
       image: Dealer,
+    },
+    {
+      title: "Product designer portfolio",
+      description: "A portfolio website for showcasing his work and reviews ",
+      url: "https://www.mehedihasanfahim.com/",
+      image: Fahim,
     },
     {
       title: "zipbox",
       description: "A Web Design & development agency portfolio",
-      url: "https://www.zipbox.design/",
+      url: "https://www.zipboxs.com/",
       image: Zipbox,
     },
     {
       title: "Frosty icepod",
       description:
         "A e-commerce website for selling icepod and other products ",
-      url: "https://frostyicepod.com/",
+
       image: Frosty,
     },
     {
       title: "cosmpulse",
       description:
         "A  SaaS platform where user can able to make routine and track daily logs",
-      url: "https://www.cosmpulse.com/",
+      url: "https://skinsort-com-frontend.vercel.app/",
       image: Skinsort,
     },
     {
-      title: "Product designer portfolio",
-      description: "A portfolio website for showcasing his work and reviews ",
-      url: "https://www.cosmpulse.com/",
-      image: Fahim,
-    },
-
-    {
       title: "Skynetix",
       description: "A 360 degreee digital marketing agency portfolio ",
-      url: "https://skynetix.vercel.app/",
+
       image: SkyNetix,
     },
   ];
 
   return (
-    <div id="projects" className="mx-[10%] max-md:mx-[4%] max-sm:mt-28">
+    <div id="projects" className="mx-[10%] max-md:mx-[4%] max-md:mt-28">
       <div>
         <h1 className="text-center text-white text-[60px] font-extrabold  max-md:text-[30px]  ">
           Featured Work
@@ -106,27 +105,43 @@ export default function projects() {
                 >
                   {data?.description}
                 </CardItem>
+
                 <div>
                   <CardItem
                     translateZ={20}
                     as={Link}
-                    href={data?.url}
+                    href={data?.url || ""}
                     target="__blank"
-                    className="text-[14px] hidden max-md:text-[10px] w-fit border border-[#323233]     items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
+                    className="text-[14px]  w-fit border border-[#323233] flex     items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
                   >
-                    Live site{" "}
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      className="w-6"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                    {data?.url ? "Visit site" : "No Longer Active"}
+                    {data?.url ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-6"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="size-6"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    )}
                   </CardItem>
                 </div>
               </CardBody>
