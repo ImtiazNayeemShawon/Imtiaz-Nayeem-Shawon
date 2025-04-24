@@ -90,13 +90,7 @@
     "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492956/y2hxo3rm98lkar0up9kb.svg",
     "Category": "DevOps"
   },
-  {
-    "id": 14,
-    "Description": "iOS development involves creating applications for Apple's iOS devices, like iPhone and iPad, using languages like Swift or Objective-C. Developers use Xcode, Apple's integrated development environment (IDE), along with frameworks like UIKit and SwiftUI to design, build, and test apps.",
-    "Name": "IOS App development",
-    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724492981/icl0h8rrxf16x3y22hgh.svg",
-    "Category": "App"
-  },
+  
   {
     "id": 15,
     "Description": "Prisma ORM is a modern database toolkit and Object-Relational Mapping (ORM) for Node.js and TypeScript. It simplifies database access by providing a type-safe API to interact with databases, supporting various SQL and NoSQL databases. Prisma generates queries, migrations, and models automatically, helping developers focus on business logic rather than database management.",
@@ -118,13 +112,7 @@
     "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493121/f99v6aefziacdztawu2f.svg",
     "Category": "Database"
   },
-  {
-    "id": 18,
-    "Description": "Swift is a powerful, modern programming language for iOS, macOS, watchOS, and tvOS development. It's designed for safety and performance with a clean syntax and strong type inference.",
-    "Name": "Swift",
-    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724493156/ncsjneitfz1nxpgzcspt.svg",
-    "Category": "Programming"
-  },
+  
   {
     "id": 19,
     "Description": "React Native is a framework for building cross-platform mobile apps using JavaScript and React. It allows developers to create native-like apps for iOS and Android from a single codebase.",
@@ -244,13 +232,7 @@
     "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724502267/sznob9pya0o6kmllak23.svg",
     "Category": "DevOps"
   },
-  {
-    "id": 36,
-    "Description": "Xcode includes everything you need to develop, test, and distribute apps across all Apple platforms.",
-    "Name": "Xcode",
-    "Icon": "https://res.cloudinary.com/dif5pfkci/image/upload/v1724503128/vnqbzapkckcdb90hzc0g.svg",
-    "Category": "App"
-  },
+ 
   {
     "id": 37,
     "Description": "s a design system and component library for building user interfaces with Aceternity’s blockchain technology. It provides pre-built components and design guidelines to streamline the development of blockchain-based applications.",
