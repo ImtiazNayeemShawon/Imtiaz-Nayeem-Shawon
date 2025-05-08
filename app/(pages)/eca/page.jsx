@@ -1,19 +1,31 @@
+"use client";
 import React from "react";
 import Navbar from "@/app/(components)/navbar";
 import Link from "next/link";
 import Experience from "@/app/(components)/experience";
 import Footer from "@/app/(components)/footer";
+import SideNav from "@/app/(components)/sidenav"; // Import the new component
 
 export default function page() {
+  // Navigation sections configuration
+  const navSections = [
+    { id: "volunteering", title: "Volunteering" },
+    { id: "experiences", title: "Work Experience" },
+    { id: "awards", title: "Awards" },
+    { id: "startups", title: "Startups" },
+    { id: "hackathons", title: "Hackathons" },
+    { id: "olympiads", title: "Olympiads" },
+  ];
+
   const Jobs = [
     {
-      title: "Lead Developer @zipbox",
-      tag: "@zipbox",
+      title: "Co-Founder & CTO @ Zippix LTD ",
+      tag: "@zippix ltd",
       description: (
         <ul className="list-disc">
           <li className="my-4">
-            Designed, developed, and deployed scalable full stack web
-            applications, ensuring high performance and responsiveness.
+            Designed, developed, and deployed scalable full stack web,mobile
+            applications, ensuring high performance and security .
           </li>
           <li className="my-4">
             Led teams and managed client relations, successfully delivering
@@ -135,7 +147,7 @@ export default function page() {
         <p>
           The first such great achievement of my life! An Experience of Taking a
           coding for juniors Batch Topper Award from Cyber ​​Teens Founder Sadat
-          Rahman (International Children’s Peace Prize Winner) and Monir Hossain
+          Rahman (International Children's Peace Prize Winner) and Monir Hossain
           (CEO of Creative IT).
         </p>
       ),
@@ -156,17 +168,18 @@ export default function page() {
   ];
   const startup = [
     {
-      title: "Zipbox",
+      title: "Zippix Limited, UK",
       tag: "@cyberTeens",
       description: (
         <p>
-          I sought web development, UI/UX, and app development clients within my
-          network, leading projects under the company name Zipbox. As the lead
-          developer, I focused primarily on application development and
-          successfully delivered over 30+ projects to different companies and
-          startups. Target Audience: Individuals seeking mental health support,
-          therapists, employers looking to offer mental health solutions, and
-          researchers.
+          Zippix is a UK-based software agency that helps businesses grow with
+          smart, reliable digital solutions. Our expert team of developers,
+          designers, and tech experts work together to build custom websites,
+          mobile apps, and software that actually make a difference. We
+          specialize in things like full-stack development, AI-powered tools,
+          SaaS platforms, and tailored software that fits your business needs
+          whether you're just starting out or running a big company. Our goal is
+          simple: to build fast, easy-to-use, and future-ready digital products.
         </p>
       ),
     },
@@ -218,6 +231,18 @@ export default function page() {
   ];
   const Olympiad = [
     {
+      title: "Bangladesh Artificial intelligence Olympiad",
+      tag: "@bdaio",
+      description: (
+        <p>
+          Participated in the BDAIO 2025, successfully cleared the preliminary
+          round, and was selected for the National Round. It was a remarkable
+          experience to showcase my skills in AI and compete at a national
+          level.
+        </p>
+      ),
+    },
+    {
       title: "Bangladesh Informatics Olympiad",
       tag: "@cyberTeens",
       description: (
@@ -255,142 +280,85 @@ export default function page() {
 
   return (
     <div>
-      <section className="   sm:py-16 lg:py-20 xl:py-24">
-        <div className="absolute  inset-0">
-          <img
-            className="object-cover w-full h-full"
-            src="https://landingfoliocom.imgix.net/store/collection/niftyui/images/hero-marketplace/3/background.png"
-            alt=""
+      {/* Side Navigation */}
+
+      {/* Main Content */}
+      <div className="max-md:hidden">
+        <SideNav sections={navSections} />
+      </div>
+      <div className="ml-0 md:ml-8">
+        {/* Volunteering experience */}
+        <div id="volunteering" className="pt-40 scroll-mt-24">
+          <Experience
+            content={volunteer}
+            title="Volunteering"
+            description={
+              "This section covers my contributions to several organizations where I worked to bring about positive change in society. It demonstrates my commitment to social causes, including internet safety, youth development, mental health awareness, and space research."
+            }
           />
         </div>
-        <div className="absolute inset-0 hidden lg:block">
-          <img
-            className="object-cover w-full h-full"
-            src="https://landingfoliocom.imgix.net/store/collection/niftyui/images/hero-marketplace/3/3d-objects.png"
-            alt=""
+
+        {/* Job  */}
+        <div id="experiences" className="scroll-mt-24">
+          <Experience
+            content={Jobs}
+            title="Experiences of Working as a Developer"
+            description="After embarking on my coding journey, I have accumulated extensive experience as a developer through numerous freelance projects, various companies, and voluntary contributions."
           />
         </div>
-        <div className="relative mt-40 px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="flex">
-            <div className="max-w-lg  mx-auto text-center lg:w-1/2 lg:max-w-none lg:mx-0 lg:text-left">
-              <h1 className="text-3xl  font-bold text-white uppercase sm:text-5xl xl:text-5xl">
-                explore my extra extracurricular profile
-              </h1>
-              <p className="max-w-xl mx-auto mt-6 text-lg font-normal text-gray-200 sm:text-xl lg:mx-0">
-                I have been involved in various organizations ,projects, startup
-                and events.
-              </p>
-              <div className="flex flex-col justify-center px-16 mt-10 space-y-5 sm:px-0 sm:items-center sm:space-x-5 sm:flex-row lg:justify-start sm:space-y-0">
-                <Link
-                  href="https://www.facebook.com/imtinayeem/"
-                  target="_blank"
-                  className="text-[14px] max-md:text-[10px] border border-[#9597f7] bg-[#6366F1] flex items-center gap-1 hover:gap-2 duration-300 font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-sm"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 320 512"
-                    className="w-2"
-                  >
-                    <path d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z" />
-                  </svg>
-                  facebook
-                </Link>
-                <Link
-                  href="https://www.linkedin.com/in/imtiaznayeem/"
-                  target="_blank"
-                  className="text-[14px] max-md:text-[10px] border border-[#9597f7] text-[#acadfe] flex items-center gap-1 hover:gap-2 duration-300 font-semibold capitalize  hover:opacity-80 px-4 py-2 rounded-sm"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="currentColor"
-                    viewBox="0 0 448 512"
-                    className="w-3"
-                  >
-                    <path d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z" />
-                  </svg>
-                  <span className=""> Linkedin</span>
-                </Link>
-              </div>
-              <div className="inline-grid grid-cols-2 mt-16 gap-x-8">
-                <div className="flex flex-col lg:items-center lg:space-x-3 lg:flex-row">
-                  <p className="text-4xl font-bold text-white">10+</p>
-                  <p className="mt-2 text-sm font-medium text-gray-400 lg:mt-0">
-                    Organizations <br className="hidden lg:block" />
-                  </p>
-                </div>
-                <div className="flex flex-col lg:items-center lg:space-x-3 lg:flex-row">
-                  <p className="text-4xl font-bold text-white">65+</p>
-                  <p className="mt-2 text-sm font-medium text-gray-400 lg:mt-0">
-                    Projects
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+
+        {/* Awards */}
+        <div id="awards" className="scroll-mt-24">
+          <Experience
+            content={awards}
+            title="Awards and Achievements"
+            description={
+              "This section showcases the recognition I have received for my efforts and achievements. It reflects my dedication and excellence in the fields of coding and innovation."
+            }
+          />
         </div>
-      </section>
-      {/* Volunteering experience */}
-      <div className="pt-40">
-        <Experience
-          content={volunteer}
-          title="Volunteering"
-          description={
-            "This section covers my contributions to several organizations where I worked to bring about positive change in society. It demonstrates my commitment to social causes, including internet safety, youth development, mental health awareness, and space research."
-          }
-        />
-      </div>
-      {/* Job  */}
-      <div className="">
-        <Experience
-          content={Jobs}
-          title="Experiences of Working as a Developer"
-          description="After embarking on my coding journey, I have accumulated extensive experience as a developer through numerous freelance projects, various companies, and voluntary contributions."
-        />
-      </div>
-      {/* Awards */}
-      <div className="">
-        <Experience
-          content={awards}
-          title="Awards and Achievements"
-          description={
-            "This section showcases the recognition I have received for my efforts and achievements. It reflects my dedication and excellence in the fields of coding and innovation."
-          }
-        />
-      </div>
-      {/* Startup and business */}
-      <div className="">
-        <Experience
-          content={startup}
-          title="Startups and Businesses"
-          description={
-            "This section highlights my entrepreneurial ventures and projects, focusing on the development and delivery of technology-driven solutions. It showcases my leadership, technical expertise, and commitment to innovation and impact."
-          }
-        />
-      </div>
-      {/* Hackathons */}
-      <div className="">
-        <Experience content={Hackathons} title="Hackathons" description={""} />
-      </div>
-      {/* Olympiad */}
-      <div className="">
-        <Experience
-          content={Olympiad}
-          title="Olympiads"
-          description={
-            "This section highlights my participation in various national-level Olympiads, showcasing my academic and problem-solving abilities. It reflects my enthusiasm for competitive programming and science, along with the experiences gained from these events."
-          }
-        />
-      </div>
-      <div className="pt-4">
-        <p className="text-sm text-white my-10 w-[70%] m-auto text-center  ">
-          In addition to these achievements, I participated in numerous local
-          exams, events, and competitions, gaining valuable experience and
-          building a strong network. I also had the opportunity to work with
-          robotics at the DC Office Robotics Lab,also I taught some students the
-          basics of robotics, further fueling my passion for technology and
-          education.
-        </p>
+
+        {/* Startup and business */}
+        <div id="startups" className="scroll-mt-24">
+          <Experience
+            content={startup}
+            title="Startups and Businesses"
+            description={
+              "This section highlights my entrepreneurial ventures and projects, focusing on the development and delivery of technology-driven solutions. It showcases my leadership, technical expertise, and commitment to innovation and impact."
+            }
+          />
+        </div>
+
+        {/* Hackathons */}
+        <div id="hackathons" className="scroll-mt-24">
+          <Experience
+            content={Hackathons}
+            title="Hackathons"
+            description={""}
+          />
+        </div>
+
+        {/* Olympiad */}
+        <div id="olympiads" className="scroll-mt-24">
+          <Experience
+            content={Olympiad}
+            title="Olympiads"
+            description={
+              "This section highlights my participation in various national-level Olympiads, showcasing my academic and problem-solving abilities. It reflects my enthusiasm for competitive programming and science, along with the experiences gained from these events."
+            }
+          />
+        </div>
+
+        <div className="pt-4">
+          <p className="text-sm text-white my-10 w-[70%] m-auto text-center">
+            In addition to these achievements, I participated in numerous local
+            exams, events, and competitions, gaining valuable experience and
+            building a strong network. I also had the opportunity to work with
+            robotics at the DC Office Robotics Lab, also I taught some students
+            the basics of robotics, further fueling my passion for technology
+            and education.
+          </p>
+        </div>
       </div>
 
       <Footer />

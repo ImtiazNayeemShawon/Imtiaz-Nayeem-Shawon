@@ -13,13 +13,13 @@ import Navbar from "./(components)/navbar";
 export default function page() {
   const content = [
     {
-      title: "Lead Developer @zipbox",
-      tag: "@zipbox",
+      title: "Co-Founder & CTO @ Zippix LTD ",
+      tag: "@zippix ltd",
       description: (
         <ul className="list-disc">
           <li className="my-4">
-            Designed, developed, and deployed scalable full stack web
-            applications, ensuring high performance and responsiveness.
+            Designed, developed, and deployed scalable full stack web,mobile
+            applications, ensuring high performance and security .
           </li>
           <li className="my-4">
             Led teams and managed client relations, successfully delivering

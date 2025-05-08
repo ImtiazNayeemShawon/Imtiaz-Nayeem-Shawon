@@ -45,7 +45,7 @@ export default function herosection() {
               </svg>
             </a>
             <a
-              href="https://meet.brevo.com/imtiaz-nayeem-shawon/get-consultation-quotation-for-your-softwarewebsite"
+              href="https://cal.com/imtiaznayeem/30min?overlayCalendar=true"
               target="_blank"
               className="text-[14px] max-md:text-[10px] border border-[#323233]  bg-[#191919]   flex items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
             >
