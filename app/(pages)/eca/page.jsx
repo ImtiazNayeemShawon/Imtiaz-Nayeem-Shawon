@@ -349,7 +349,7 @@ export default function page() {
           />
         </div>
 
-        <div className="pt-4">
+        <div className="pt-4 mt-20">
           <p className="text-sm text-white my-10 w-[70%] m-auto text-center">
             In addition to these achievements, I participated in numerous local
             exams, events, and competitions, gaining valuable experience and
