@@ -236,9 +236,18 @@ export default function page() {
       description: (
         <p>
           Participated in the BDAIO 2025, successfully cleared the preliminary
-          round, and was selected for the National Round. It was a remarkable
-          experience to showcase my skills in AI and compete at a national
-          level.
+          round, and National Round. It was a remarkable experience to showcase
+          my skills in AI and compete at a national level.
+        </p>
+      ),
+    },
+    {
+      title: "National high school programming contest",
+      tag: "@nhspc",
+      description: (
+        <p>
+          Participated in the NHSPC 2025, won the regional round, received a
+          medal and certificate, and was selected for the national round.
         </p>
       ),
     },
