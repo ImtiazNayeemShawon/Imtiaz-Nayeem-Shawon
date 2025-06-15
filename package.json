@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.18.0",
+    "@radix-ui/react-slot": "^1.2.3",
     "@react-three/drei": "^9.106.0",
     "@react-three/fiber": "^8.16.8",
     "@tabler/icons-react": "^3.5.0",
@@ -18,8 +19,10 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.4.0",
     "axios": "^1.7.5",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
+    "lucide-react": "^0.515.0",
     "mini-svg-data-uri": "^1.4.4",
     "next": "14.2.3",
     "react": "^18",

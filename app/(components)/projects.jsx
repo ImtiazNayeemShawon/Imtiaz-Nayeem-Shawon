@@ -19,53 +19,53 @@ export default function projects() {
       title: "MZ Media",
       description:
         "A digital agency website for showcasing there work and reviews ",
-      url: "https://mzmedia.digital/",
+      url: true,
       image: Mzmedia,
     },
     {
       title: "Ryun Shim",
       description:
         "A portfolio website for Ryun Shim, a graduate from Cornell University",
-      url: "https://www.ryunshim.com/",
+      url: true,
       image: Ryun,
     },
     {
       title: "Dealer nexus",
       description:
         "SaaS website for Dealer Nexus, showcasing this very approach in action",
-      url: "https://dealernexus.vercel.app/",
+      url: true,
       image: Dealer,
     },
     {
       title: "Product designer portfolio",
       description: "A portfolio website for showcasing his work and reviews ",
-      url: "https://www.mehedihasanfahim.com/",
+      url: true,
       image: Fahim,
     },
     {
       title: "zipbox",
       description: "A Web Design & development agency portfolio",
-      url: "https://www.zipboxs.com/",
+      url: true,
       image: Zipbox,
     },
     {
       title: "Frosty icepod",
       description:
         "A e-commerce website for selling icepod and other products ",
-
+      url: true,
       image: Frosty,
     },
     {
       title: "cosmpulse",
       description:
         "A  SaaS platform where user can able to make routine and track daily logs",
-      url: "https://skinsort-com-frontend.vercel.app/",
+      url: true,
       image: Skinsort,
     },
     {
       title: "Skynetix",
       description: "A 360 degreee digital marketing agency portfolio ",
-
+      url: true,
       image: SkyNetix,
     },
   ];
@@ -110,11 +110,11 @@ export default function projects() {
                   <CardItem
                     translateZ={20}
                     as={Link}
-                    href={data?.url || ""}
+                    href={""}
                     target="__blank"
                     className="text-[14px]  w-fit border border-[#323233] flex     items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
                   >
-                    {data?.url ? "Visit site" : "No Longer Active"}
+                    {data?.url ? "View Project" : "No Longer Active"}
                     {data?.url ? (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
