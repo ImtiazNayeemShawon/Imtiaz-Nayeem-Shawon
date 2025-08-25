@@ -679,7 +679,21 @@ const conveyai = {
     ],
   },
 
-  mockups: [""],
+  mockups: [
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142629/Device_Mockup_Aug_25_2025_14_wmtne3.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142625/Device_Mockup_Aug_25_2025_11_mgci1y.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142635/Device_Mockup_Aug_25_2025_13_agfoq0.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142636/Device_Mockup_Aug_25_2025_12_aa175w.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756141643/Device_Mockup_Aug_25_2025_6_ac3xbr.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756141643/Device_Mockup_Aug_25_2025_5_y5rcch.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756141643/Device_Mockup_Aug_25_2025_8_lquouy.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142086/Screenshot_Aug_25_2025_from_PostSpark_1_bklnb3.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756141643/Device_Mockup_Aug_25_2025_7_ubpibf.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142090/Screenshot_Aug_25_2025_from_PostSpark_jldc8n.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142091/Screenshot_Aug_25_2025_from_PostSpark_2_trgisu.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142086/Screenshot_Aug_25_2025_from_PostSpark_1_bklnb3.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756142084/Device_Mockup_Aug_25_2025_9_vqoix5.png",
+  ],
 
   overview: {
     badge: "Project Overview",
@@ -1003,7 +1017,7 @@ const TaskFlowCaseStudy = ({ params }) => {
           {/* Shadow right */}
           <div className="pointer-events-none absolute right-0 top-0 h-[100%] w-40 bg-gradient-to-l from-black/60 to-transparent z-10" />
 
-          <Marquee speed={60} gradient={false}>
+          <Marquee speed={120} gradient={false}>
             <div className="flex gap-0">
               {projectData?.mockups?.map((mockup, index) => (
                 <div key={index} className="">
@@ -1011,8 +1025,8 @@ const TaskFlowCaseStudy = ({ params }) => {
                     src={mockup}
                     alt={`mockup-${index}`}
                     width={800}
-                    height={800}
-                    className=""
+                    height={600}
+                    className="h-[600px]"
                   />
                 </div>
               ))}
@@ -1437,10 +1451,10 @@ const TaskFlowCaseStudy = ({ params }) => {
 
                   <div className="pt-4 border-t">
                     <div className="">
-                      <Button className="w-full">
+                      <a href="https://docs.google.com/document/d/1OkUC-uBpFHLvS_snV8p1VtwFmXLvihJZ/edit?usp=sharing&ouid=106823129058087044514&rtpof=true&sd=true" className="w-full flex items-center gap-2 mx-auto justify-center text-sm font-medium text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">
                         <Download className="mr-2 h-4 w-4" />
                         Resume
-                      </Button>
+                      </a>
                     </div>
                   </div>
 
