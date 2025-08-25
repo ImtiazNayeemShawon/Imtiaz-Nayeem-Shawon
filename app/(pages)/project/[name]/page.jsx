@@ -35,6 +35,8 @@ import {
   Image as ImageIcon,
 } from "lucide-react";
 import HeroSection from "../../../../components/Hero";
+import Marquee from "react-fast-marquee";
+import Image from "next/image";
 
 // JSON Data Configuration
 const vestornet = {
@@ -66,33 +68,12 @@ const vestornet = {
   },
 
   mockups: [
-    {
-      title: "Newsfeed",
-      description:
-        "Dynamic feed with mortgage insights, promotions, and industry news",
-      device: "desktop",
-      image: "/api/placeholder/800/500",
-    },
-    {
-      title: "Profiles & Badges",
-      description:
-        "Verified professionals with unique profile badges for easy identification",
-      device: "desktop",
-      image: "/api/placeholder/800/500",
-    },
-    {
-      title: "Real-time Chat",
-      description: "Secure real-time messaging system similar to Messenger",
-      device: "mobile",
-      image: "/api/placeholder/375/667",
-    },
-    {
-      title: "AI-Powered Search",
-      description:
-        "Intelligent search to connect with the right mortgage professionals",
-      device: "tablet",
-      image: "/api/placeholder/768/1024",
-    },
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756139381/Imtiaz_Nayeem_Shawon_kttzce.jpg",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756140509/Device_Mockup_Aug_25_2025_2_dyipfy.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756140506/Device_Mockup_Aug_25_2025_tkwiuk.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756140915/Device_Mockup_Aug_25_2025_4_iiq351.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756140505/Device_Mockup_Aug_25_2025_3_d8yij3.png",
+    "https://res.cloudinary.com/dif5pfkci/image/upload/v1756140504/Device_Mockup_Aug_25_2025_1_xlghxt.png",
   ],
 
   overview: {
@@ -374,33 +355,7 @@ const Flourish = {
     ],
   },
 
-  mockups: [
-    {
-      title: "Dashboard Home",
-      description:
-        "Centralized overview of financial health, transactions, and portfolio",
-      device: "desktop",
-      image: "/api/placeholder/800/500",
-    },
-    {
-      title: "Portfolio & Investments",
-      description: "Track your stocks, investments, and portfolio performance",
-      device: "desktop",
-      image: "/api/placeholder/800/500",
-    },
-    {
-      title: "AI-Powered Insights",
-      description: "Personalized insights and suggestions powered by AI",
-      device: "mobile",
-      image: "/api/placeholder/375/667",
-    },
-    {
-      title: "Goal Management",
-      description: "Set and track savings, debt, and investment goals easily",
-      device: "tablet",
-      image: "/api/placeholder/768/1024",
-    },
-  ],
+  mockups: [""],
 
   overview: {
     badge: "Project Overview",
@@ -703,6 +658,7 @@ const conveyai = {
     description:
       "Simplifying property transactions by connecting Vendors, Purchasers, Real Estate Agents, Conveyancers, and Mortgage Brokers into a single unified system.",
     badge: "Case Study",
+    link: "https://conveyai.app/",
     metadata: [
       {
         title: "Components",
@@ -723,35 +679,7 @@ const conveyai = {
     ],
   },
 
-  mockups: [
-    {
-      title: "Property Dashboard",
-      description:
-        "Real-time overview of property listings, milestones, and transactions",
-      device: "desktop",
-      image: "/api/placeholder/800/500",
-    },
-    {
-      title: "Document Management",
-      description:
-        "AI-powered contract review and document upload for all users",
-      device: "desktop",
-      image: "/api/placeholder/800/500",
-    },
-    {
-      title: "Mobile Notifications",
-      description:
-        "Real-time alerts for milestones, reminders, and chat messages",
-      device: "mobile",
-      image: "/api/placeholder/375/667",
-    },
-    {
-      title: "AI Chatbot",
-      description: "24/7 assistant for answering legal and transaction queries",
-      device: "tablet",
-      image: "/api/placeholder/768/1024",
-    },
-  ],
+  mockups: [""],
 
   overview: {
     badge: "Project Overview",
@@ -1042,73 +970,6 @@ const TaskFlowCaseStudy = ({ params }) => {
   const projectData =
     projects.find((project) => project.name === name)?.data || projectData;
 
-  const [currentMockup, setCurrentMockup] = useState(0);
-
-  const nextMockup = () => {
-    setCurrentMockup((prev) => (prev + 1) % projectData.mockups.length);
-  };
-
-  const prevMockup = () => {
-    setCurrentMockup(
-      (prev) =>
-        (prev - 1 + projectData.mockups.length) % projectData.mockups.length
-    );
-  };
-
-  const DeviceFrame = ({ device, children }) => {
-    if (device === "mobile") {
-      return (
-        <div className="relative mx-auto w-80">
-          <div className="bg-gray-800 rounded-3xl p-3 shadow-2xl">
-            <div className="bg-black rounded-2xl p-1">
-              <div
-                className="bg-white rounded-xl overflow-hidden"
-                style={{ aspectRatio: "375/667" }}
-              >
-                {children}
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    if (device === "tablet") {
-      return (
-        <div className="relative mx-auto w-96">
-          <div className="bg-gray-800 rounded-2xl p-4 shadow-2xl">
-            <div className="bg-black rounded-xl p-2">
-              <div
-                className="bg-white rounded-lg overflow-hidden"
-                style={{ aspectRatio: "768/1024" }}
-              >
-                {children}
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <div className="relative mx-auto max-w-4xl">
-        <div className="bg-gray-800 rounded-t-xl p-3 shadow-2xl">
-          <div className="flex gap-2 mb-3">
-            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-          </div>
-          <div
-            className="bg-white rounded-lg overflow-hidden"
-            style={{ aspectRatio: "16/10" }}
-          >
-            {children}
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   const getIcon = (iconName) => {
     const IconComponent = iconMap[iconName];
     return IconComponent || Target;
@@ -1134,79 +995,29 @@ const TaskFlowCaseStudy = ({ params }) => {
               experience across different devices.
             </p>
           </div>
+        </div>
+        <div className="relative w-full overflow-hidden">
+          {/* Shadow left */}
+          <div className="pointer-events-none absolute left-0 top-0 h-[100%] w-40 bg-gradient-to-r from-black/60 to-transparent z-10" />
 
-          <div className="max-w-6xl mx-auto">
-            <div className="relative">
-              <DeviceFrame device={projectData.mockups[currentMockup].device}>
-                <div className="w-full h-full bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <ImageIcon className="h-16 w-16 mx-auto mb-4 text-blue-400" />
-                    <h3 className="text-lg font-semibold text-gray-700 mb-2">
-                      {projectData.mockups[currentMockup].title}
-                    </h3>
-                    <p className="text-sm text-gray-500">
-                      {projectData.mockups[currentMockup].description}
-                    </p>
-                  </div>
-                </div>
-              </DeviceFrame>
+          {/* Shadow right */}
+          <div className="pointer-events-none absolute right-0 top-0 h-[100%] w-40 bg-gradient-to-l from-black/60 to-transparent z-10" />
 
-              {/* Navigation Buttons */}
-              <div className="absolute inset-y-0 left-0 flex items-center">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="h-12 w-12 rounded-full shadow-lg bg-white hover:bg-gray-50"
-                  onClick={prevMockup}
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </Button>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="h-12 w-12 rounded-full shadow-lg bg-white hover:bg-gray-50"
-                  onClick={nextMockup}
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </Button>
-              </div>
-            </div>
-
-            {/* Device Icons and Dots */}
-            <div className="flex justify-center items-center mt-8 space-x-6">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center space-x-2">
-                  <Monitor className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-xs text-muted-foreground">Desktop</span>
+          <Marquee speed={60} gradient={false}>
+            <div className="flex gap-0">
+              {projectData?.mockups?.map((mockup, index) => (
+                <div key={index} className="">
+                  <Image
+                    src={mockup}
+                    alt={`mockup-${index}`}
+                    width={800}
+                    height={800}
+                    className=""
+                  />
                 </div>
-                <div className="flex items-center space-x-2">
-                  <Tablet className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-xs text-muted-foreground">Tablet</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Smartphone className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-xs text-muted-foreground">Mobile</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Mockup Navigation Dots */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {projectData.mockups.map((_, index) => (
-                <button
-                  key={index}
-                  className={`w-3 h-3 rounded-full transition-all ${
-                    index === currentMockup
-                      ? "bg-primary"
-                      : "bg-gray-300 hover:bg-gray-400"
-                  }`}
-                  onClick={() => setCurrentMockup(index)}
-                />
               ))}
             </div>
-          </div>
+          </Marquee>
         </div>
       </section>
 

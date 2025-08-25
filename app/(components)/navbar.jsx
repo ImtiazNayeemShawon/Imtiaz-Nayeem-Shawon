@@ -111,7 +111,7 @@ export default function Navbar() {
               ECA Profile
             </Link>
             <Link
-              href="/resume"
+              href="https://docs.google.com/document/d/1OkUC-uBpFHLvS_snV8p1VtwFmXLvihJZ/edit?usp=sharing&ouid=106823129058087044514&rtpof=true&sd=true"
               target="_blank"
               className="text-[14px] border border-[#9597f7] bg-[#6366F1] flex items-center gap-1 hover:gap-2 duration-300 font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
             >
@@ -173,7 +173,7 @@ export default function Navbar() {
               ECA Profile
             </Link>
             <Link
-              href="/resume"
+              href="https://docs.google.com/document/d/1OkUC-uBpFHLvS_snV8p1VtwFmXLvihJZ/edit?usp=sharing&ouid=106823129058087044514&rtpof=true&sd=true"
               target="_blank"
               className="text-[14px] max-md:text-[10px] border border-[#9597f7] bg-[#6366F1] flex items-center gap-1 hover:gap-2 duration-300 font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
             >
