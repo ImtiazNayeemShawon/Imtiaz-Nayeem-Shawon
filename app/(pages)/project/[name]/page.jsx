@@ -37,524 +37,690 @@ import {
 import HeroSection from "../../../../components/Hero";
 
 // JSON Data Configuration
-// const projectData = {
-//   projectInfo: {
-//     title: "VestorNet",
-//     subtitle: "Seamless Mortgage Networking Platform",
-//     description:
-//       "Unlock a Seamless Mortgage Network: Empower Your Next Deal with VestorNet. A platform transforming the way mortgage agents, brokers, realtors, and lenders connect, collaborate, and close deals.",
-//     badge: "Case Study",
-//   },
+const vestornet = {
+  projectInfo: {
+    title: "VestorNet",
+    subtitle: "Seamless Mortgage Networking Platform",
+    description:
+      "Unlock a Seamless Mortgage Network: Empower Your Next Deal with VestorNet. A platform transforming the way mortgage agents, brokers, realtors, and lenders connect, collaborate, and close deals.",
+    badge: "Case Study",
+    link: "https://vestornet.com/",
+    metadata: [
+      {
+        title: "Components",
+        data: "180+",
+      },
+      {
+        title: "Technology used",
+        data: "20+",
+      },
+      {
+        title: "Typescript",
+        data: "100%",
+      },
+      {
+        title: "Optimized",
+        data: "98%",
+      },
+    ],
+  },
 
-//   mockups: [
-//     {
-//       title: "Newsfeed",
-//       description:
-//         "Dynamic feed with mortgage insights, promotions, and industry news",
-//       device: "desktop",
-//       image: "/api/placeholder/800/500",
-//     },
-//     {
-//       title: "Profiles & Badges",
-//       description:
-//         "Verified professionals with unique profile badges for easy identification",
-//       device: "desktop",
-//       image: "/api/placeholder/800/500",
-//     },
-//     {
-//       title: "Real-time Chat",
-//       description: "Secure real-time messaging system similar to Messenger",
-//       device: "mobile",
-//       image: "/api/placeholder/375/667",
-//     },
-//     {
-//       title: "AI-Powered Search",
-//       description:
-//         "Intelligent search to connect with the right mortgage professionals",
-//       device: "tablet",
-//       image: "/api/placeholder/768/1024",
-//     },
-//   ],
+  mockups: [
+    {
+      title: "Newsfeed",
+      description:
+        "Dynamic feed with mortgage insights, promotions, and industry news",
+      device: "desktop",
+      image: "/api/placeholder/800/500",
+    },
+    {
+      title: "Profiles & Badges",
+      description:
+        "Verified professionals with unique profile badges for easy identification",
+      device: "desktop",
+      image: "/api/placeholder/800/500",
+    },
+    {
+      title: "Real-time Chat",
+      description: "Secure real-time messaging system similar to Messenger",
+      device: "mobile",
+      image: "/api/placeholder/375/667",
+    },
+    {
+      title: "AI-Powered Search",
+      description:
+        "Intelligent search to connect with the right mortgage professionals",
+      device: "tablet",
+      image: "/api/placeholder/768/1024",
+    },
+  ],
 
-//   overview: {
-//     badge: "Project Overview",
-//     title: "Transforming the Mortgage Industry",
-//     description:
-//       "VestorNet addresses the critical need for seamless communication and networking in the mortgage industry.",
-//     challenges: {
-//       title: "Challenges",
-//       description: "Key problems identified in the mortgage networking space",
-//       color: "destructive",
-//       icon: "Target",
-//       items: [
-//         "Lack of a centralized platform for mortgage professionals",
-//         "Difficulty verifying professionals’ credibility",
-//         "Inefficient communication between agents, brokers, and lenders",
-//         "Limited tools for client engagement and discovery",
-//       ],
-//     },
-//     solutions: {
-//       title: "Solutions",
-//       description: "How VestorNet solves industry pain points",
-//       color: "green-600",
-//       icon: "TrendingUp",
-//       items: [
-//         "Verified profiles with unique role-based badges",
-//         "Secure real-time chat for all user types",
-//         "Dynamic newsfeed for updates and promotions",
-//         "AI-powered search engine tailored for mortgage needs",
-//       ],
-//     },
-//     stats: [
-//       { icon: "Users", value: "5,000+", label: "Verified Professionals" },
-//       { icon: "Clock", value: "1 Year", label: "Development Time" },
-//       { icon: "Target", value: "100%", label: "Verified Connections" },
-//       { icon: "TrendingUp", value: "Seamless", label: "Networking Experience" },
-//     ],
-//   },
+  overview: {
+    badge: "Project Overview",
+    title: "Transforming the Mortgage Industry",
+    description:
+      "VestorNet addresses the critical need for seamless communication and networking in the mortgage industry.",
+    challenges: {
+      title: "Challenges",
+      description: "Key problems identified in the mortgage networking space",
+      color: "destructive",
+      icon: "Target",
+      items: [
+        "Lack of a centralized platform for mortgage professionals",
+        "Difficulty verifying professionals’ credibility",
+        "Inefficient communication between agents, brokers, and lenders",
+        "Limited tools for client engagement and discovery",
+      ],
+    },
+    solutions: {
+      title: "Solutions",
+      description: "How VestorNet solves industry pain points",
+      color: "green-600",
+      icon: "TrendingUp",
+      items: [
+        "Verified profiles with unique role-based badges",
+        "Secure real-time chat for all user types",
+        "Dynamic newsfeed for updates and promotions",
+        "AI-powered search engine tailored for mortgage needs",
+      ],
+    },
+    stats: [
+      { icon: "Users", value: "300+", label: "Verified Professionals" },
+      { icon: "Clock", value: "6 Month", label: "Development Time" },
+      { icon: "Target", value: "100%", label: "Verified Connections" },
+      { icon: "TrendingUp", value: "Seamless", label: "Networking Experience" },
+    ],
+  },
 
-//   techStack: {
-//     badge: "Technology Stack",
-//     title: "Modern Cross-Platform Technologies",
-//     description:
-//       "VestorNet is built with scalable frontend, backend, and dashboard technologies ensuring reliability and performance.",
-//     stacks: [
-//       {
-//         title: "Mobile App (Project)",
-//         color: "blue",
-//         description: "Expo React Native app with modern tools",
-//         technologies: [
-//           {
-//             name: "React Native",
-//             description: "Cross-platform mobile development",
-//           },
-//           { name: "Expo", description: "Framework for React Native apps" },
-//           { name: "Zustand", description: "Lightweight state management" },
-//           { name: "Axios", description: "API communication" },
-//           { name: "Nativewind", description: "Tailwind for React Native" },
-//           { name: "Expo Notifications", description: "Push notifications" },
-//         ],
-//       },
-//       {
-//         title: "Backend",
-//         color: "green",
-//         description: "Laravel-based backend with modern ecosystem",
-//         technologies: [
-//           { name: "Laravel 11", description: "Robust PHP framework" },
-//           { name: "Sanctum", description: "API authentication" },
-//           { name: "Redis", description: "In-memory caching and sessions" },
-//           { name: "AWS S3", description: "File storage" },
-//           { name: "Inertia.js", description: "Full-stack approach" },
-//           { name: "Predis", description: "Redis client for PHP" },
-//         ],
-//       },
-//       {
-//         title: "Dashboard",
-//         color: "purple",
-//         description: "Next.js powered web dashboard",
-//         technologies: [
-//           { name: "Next.js 14", description: "React framework for web apps" },
-//           { name: "TailwindCSS", description: "Utility-first CSS framework" },
-//           { name: "Framer Motion", description: "Animations" },
-//           { name: "Recharts", description: "Data visualization" },
-//           { name: "Lucide-react", description: "Modern icon library" },
-//           { name: "Radix UI", description: "Accessible UI components" },
-//         ],
-//       },
-//     ],
-//   },
+  techStack: {
+    badge: "Technology Stack",
+    title: "Modern Cross-Platform Technologies",
+    description:
+      "VestorNet is built with scalable frontend, backend, and dashboard technologies ensuring reliability and performance.",
+    stacks: [
+      {
+        title: "Mobile App (Project)",
+        color: "blue",
+        description: "Expo React Native app with modern tools",
+        technologies: [
+          {
+            name: "React Native",
+            description: "Cross-platform mobile development",
+          },
+          { name: "Expo", description: "Framework for React Native apps" },
+          { name: "Zustand", description: "Lightweight state management" },
+          { name: "Axios", description: "API communication" },
+          { name: "Nativewind", description: "Tailwind for React Native" },
+          { name: "Expo Notifications", description: "Push notifications" },
+        ],
+      },
+      {
+        title: "Backend",
+        color: "green",
+        description: "Laravel-based backend with modern ecosystem",
+        technologies: [
+          { name: "Laravel 11", description: "Robust PHP framework" },
+          { name: "Sanctum", description: "API authentication" },
+          { name: "Redis", description: "In-memory caching and sessions" },
+          { name: "AWS S3", description: "File storage" },
+          { name: "Inertia.js", description: "Full-stack approach" },
+          { name: "Predis", description: "Redis client for PHP" },
+        ],
+      },
+      {
+        title: "Dashboard",
+        color: "purple",
+        description: "Next.js powered web dashboard",
+        technologies: [
+          { name: "Next.js 14", description: "React framework for web apps" },
+          { name: "TailwindCSS", description: "Utility-first CSS framework" },
+          { name: "Framer Motion", description: "Animations" },
+          { name: "Recharts", description: "Data visualization" },
+          { name: "Lucide-react", description: "Modern icon library" },
+          { name: "Radix UI", description: "Accessible UI components" },
+        ],
+      },
+    ],
+  },
 
-//   features: {
-//     badge: "Key Features",
-//     title: "Innovative Features That Simplify Mortgage Networking",
-//     description:
-//       "Discover VestorNet’s powerful features designed for professionals, realtors, lenders, and clients.",
-//     featureList: [
-//       {
-//         icon: "Shield",
-//         title: "Verified Professionals",
-//         description:
-//           "Every user is carefully verified for trust and reliability",
-//         details: [
-//           "Mortgage Agents",
-//           "Brokers",
-//           "Realtors",
-//           "A & B Lender Representatives",
-//           "Alternative Lenders",
-//         ],
-//       },
-//       {
-//         icon: "Award",
-//         title: "Unique Profile Badges",
-//         description: "Role-based badges for easy identification",
-//         details: [
-//           "Public Users",
-//           "Realtors",
-//           "Mortgage Brokerages",
-//           "Lender Representatives",
-//         ],
-//       },
-//       {
-//         icon: "MessageSquare",
-//         title: "Real-Time Chat",
-//         description: "Messenger-like chat for instant communication",
-//         details: [
-//           "1-on-1 Chat",
-//           "Secure Messaging",
-//           "Realtime Updates",
-//           "Cross-role Communication",
-//         ],
-//       },
-//       {
-//         icon: "Newspaper",
-//         title: "Dynamic Newsfeed",
-//         description: "Latest posts, mortgage insights, and promotions",
-//         details: [
-//           "Photo/Video posts",
-//           "Carousel updates",
-//           "Mortgage industry news",
-//           "Public & Professional content",
-//         ],
-//       },
-//       {
-//         icon: "Search",
-//         title: "AI-Powered Search",
-//         description: "Intelligent search tailored for mortgage professionals",
-//         details: [
-//           "Find Realtors",
-//           "Locate Brokers",
-//           "Connect with Lenders",
-//           "Discover Mortgage Agents",
-//         ],
-//       },
-//     ],
-//   },
+  features: {
+    badge: "Key Features",
+    title: "Innovative Features That Simplify Mortgage Networking",
+    description:
+      "Discover VestorNet’s powerful features designed for professionals, realtors, lenders, and clients.",
+    featureList: [
+      {
+        icon: "Shield",
+        title: "Verified Professionals",
+        description:
+          "Every user is carefully verified for trust and reliability",
+        details: [
+          "Mortgage Agents",
+          "Brokers",
+          "Realtors",
+          "A & B Lender Representatives",
+          "Alternative Lenders",
+        ],
+      },
+      {
+        icon: "Award",
+        title: "Unique Profile Badges",
+        description: "Role-based badges for easy identification",
+        details: [
+          "Public Users",
+          "Realtors",
+          "Mortgage Brokerages",
+          "Lender Representatives",
+        ],
+      },
+      {
+        icon: "MessageSquare",
+        title: "Real-Time Chat",
+        description: "Messenger-like chat for instant communication",
+        details: [
+          "1-on-1 Chat",
+          "Secure Messaging",
+          "Realtime Updates",
+          "Cross-role Communication",
+        ],
+      },
+      {
+        icon: "Newspaper",
+        title: "Dynamic Newsfeed",
+        description: "Latest posts, mortgage insights, and promotions",
+        details: [
+          "Photo/Video posts",
+          "Carousel updates",
+          "Mortgage industry news",
+          "Public & Professional content",
+        ],
+      },
+      {
+        icon: "Search",
+        title: "AI-Powered Search",
+        description: "Intelligent search tailored for mortgage professionals",
+        details: [
+          "Find Realtors",
+          "Locate Brokers",
+          "Connect with Lenders",
+          "Discover Mortgage Agents",
+        ],
+      },
+    ],
+  },
 
-//   architecture: {
-//     badge: "System Architecture",
-//     title: "Cross-Platform Scalable Solution",
-//     description:
-//       "VestorNet uses a modern cross-platform architecture to power mobile, backend, and dashboard seamlessly.",
-//     overview: {
-//       title: "System Overview",
-//       description:
-//         "High-level architecture showcasing the connection between mobile app, Laravel backend, and Next.js dashboard",
-//     },
-//     layers: [
-//       {
-//         title: "Mobile App Layer",
-//         color: "blue-500",
-//         components: [
-//           { title: "Expo React Native", desc: "Cross-platform app" },
-//           {
-//             title: "Zustand & Nativewind",
-//             desc: "State management and styling",
-//           },
-//           { title: "Expo APIs", desc: "Notifications, File system, Auth" },
-//         ],
-//       },
-//       {
-//         title: "Backend Services",
-//         color: "green-500",
-//         components: [
-//           { title: "Laravel Core", desc: "Business logic & APIs" },
-//           { title: "Sanctum", desc: "Authentication" },
-//           { title: "Redis + AWS S3", desc: "Caching & File storage" },
-//         ],
-//       },
-//       {
-//         title: "Dashboard",
-//         color: "purple-500",
-//         components: [
-//           { title: "Next.js", desc: "Admin & reporting dashboard" },
-//           { title: "Tailwind + Radix", desc: "Modern UI components" },
-//           { title: "Recharts", desc: "Analytics & reporting" },
-//         ],
-//       },
-//     ],
-//   },
+  architecture: {
+    badge: "System Architecture",
+    title: "Cross-Platform Scalable Solution",
+    description:
+      "VestorNet uses a modern cross-platform architecture to power mobile, backend, and dashboard seamlessly.",
+    overview: {
+      title: "System Overview",
+      description:
+        "High-level architecture showcasing the connection between mobile app, Laravel backend, and Next.js dashboard",
+    },
+    layers: [
+      {
+        title: "Mobile App Layer",
+        color: "blue-500",
+        components: [
+          { title: "Expo React Native", desc: "Cross-platform app" },
+          {
+            title: "Zustand & Nativewind",
+            desc: "State management and styling",
+          },
+          { title: "Expo APIs", desc: "Notifications, File system, Auth" },
+        ],
+      },
+      {
+        title: "Backend Services",
+        color: "green-500",
+        components: [
+          { title: "Laravel Core", desc: "Business logic & APIs" },
+          { title: "Sanctum", desc: "Authentication" },
+          { title: "Redis + AWS S3", desc: "Caching & File storage" },
+        ],
+      },
+      {
+        title: "Dashboard",
+        color: "purple-500",
+        components: [
+          { title: "Next.js", desc: "Admin & reporting dashboard" },
+          { title: "Tailwind + Radix", desc: "Modern UI components" },
+          { title: "Recharts", desc: "Analytics & reporting" },
+        ],
+      },
+    ],
+  },
 
-//   contact: {
-//     badge: "Get In Touch",
-//     title: "Join VestorNet Today",
-//     description:
-//       "Become an early adopter of our app. Connect with mortgage professionals in real-time, right from your mobile device.",
-//     profile: {
-//       title: "About VestorNet",
-//       description:
-//         "A revolutionary social platform for mortgage agents, brokers, lenders, and realtors to connect, collaborate, and close deals.",
-//       expertise: [
-//         "Mortgage Networking",
-//         "Verified Professionals",
-//         "Real-Time Communication",
-//         "AI-Powered Search",
-//         "Cross-Platform Solution",
-//       ],
-//       achievements: [
-//         "Built cross-platform app with Expo",
-//         "Laravel backend with Redis and AWS S3",
-//         "Next.js dashboard with modern UI/UX",
-//         "Seamless real-time chat and networking",
-//       ],
-//     },
-//     contactInfo: {
-//       title: "Contact Information",
-//       description: "Ready to discuss opportunities with VestorNet?",
-//       links: [
-//         { icon: "Mail", label: "support@vestornet.com", variant: "default" },
-//         { icon: "Linkedin", label: "LinkedIn Profile", variant: "default" },
-//         { icon: "Github", label: "GitHub Repositories", variant: "default" },
-//       ],
-//       availability: "Open to partnerships, collaborations, and investments",
-//       status: "Active & Growing",
-//     },
-//   },
-// };
+  contact: {
+    badge: "Get In Touch",
+    title: "About Developer",
+    description:
+      "Imtiaz Nayeem Shawon Self-taught Full stack developer with 4 years of experience in product development and client services.",
+    profile: {
+      title: "About Developer",
+      description:
+        "Imtiaz Nayeem Shawon Self-taught Full stack developer with 4 years of experience in product development and client services.",
+      expertise: [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "C++",
+        "DSA",
+        "OOP",
+        "React",
+        "Next.js",
+        "React Native",
+        "Redux",
+        "Tailwind",
+        "Node.js",
+        "Express",
+        "GraphQL",
+        "REST APIs",
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "AWS",
+        "Docker",
+        "Nginx",
+        "CI/CD",
+        "Payment Gateway",
+        "GenAI Development",
+      ],
+      achievements: [
+        "Built cross-platform app with Expo",
+        "Laravel backend with Redis and AWS S3",
+        "Next.js dashboard with modern UI/UX",
+        "Seamless real-time chat and networking",
+      ],
+    },
+    contactInfo: {
+      title: "Contact Information",
+      description: "Ready to discuss opportunities with me?",
+      links: [
+        { icon: "Mail", label: "imtiaznayim95@gmail.com", variant: "default" },
+      ],
+      availability: "Contact with me for full-stack development ",
+      status: "Open for a position",
+    },
+  },
+};
 
-// const projectData = {
-//   projectInfo: {
-//     title: "Flourish",
-//     subtitle: "Your Personal Finance Companion",
-//     description:
-//       "Flourish empowers users to take control of their financial life. Track transactions, manage investments, set financial goals, and gain insights through AI-powered recommendations.",
-//     badge: "Case Study",
-//   },
+const Flourish = {
+  projectInfo: {
+    title: "Flourish",
+    subtitle: "Your Personal Finance Companion",
+    description:
+      "Flourish empowers users to take control of their financial life. Track transactions, manage investments, set financial goals, and gain insights through AI-powered recommendations.",
+    badge: "Case Study",
+    metadata: [
+      {
+        title: "Components",
+        data: "120+",
+      },
+      {
+        title: "Technology used",
+        data: "17+",
+      },
+      {
+        title: "Typescript",
+        data: "100%",
+      },
+      {
+        title: "Optimized",
+        data: "99%",
+      },
+    ],
+  },
 
-//   mockups: [
-//     {
-//       title: "Dashboard Home",
-//       description: "Centralized overview of financial health, transactions, and portfolio",
-//       device: "desktop",
-//       image: "/api/placeholder/800/500",
-//     },
-//     {
-//       title: "Portfolio & Investments",
-//       description: "Track your stocks, investments, and portfolio performance",
-//       device: "desktop",
-//       image: "/api/placeholder/800/500",
-//     },
-//     {
-//       title: "AI-Powered Insights",
-//       description: "Personalized insights and suggestions powered by AI",
-//       device: "mobile",
-//       image: "/api/placeholder/375/667",
-//     },
-//     {
-//       title: "Goal Management",
-//       description: "Set and track savings, debt, and investment goals easily",
-//       device: "tablet",
-//       image: "/api/placeholder/768/1024",
-//     },
-//   ],
+  mockups: [
+    {
+      title: "Dashboard Home",
+      description:
+        "Centralized overview of financial health, transactions, and portfolio",
+      device: "desktop",
+      image: "/api/placeholder/800/500",
+    },
+    {
+      title: "Portfolio & Investments",
+      description: "Track your stocks, investments, and portfolio performance",
+      device: "desktop",
+      image: "/api/placeholder/800/500",
+    },
+    {
+      title: "AI-Powered Insights",
+      description: "Personalized insights and suggestions powered by AI",
+      device: "mobile",
+      image: "/api/placeholder/375/667",
+    },
+    {
+      title: "Goal Management",
+      description: "Set and track savings, debt, and investment goals easily",
+      device: "tablet",
+      image: "/api/placeholder/768/1024",
+    },
+  ],
 
-//   overview: {
-//     badge: "Project Overview",
-//     title: "Simplifying Personal Finance Management",
-//     description:
-//       "Flourish provides a comprehensive solution for managing finances, investments, and goals, all in one place.",
-//     challenges: {
-//       title: "Challenges",
-//       description: "Problems users face in personal finance management",
-//       color: "destructive",
-//       icon: "Target",
-//       items: [
-//         "Difficulty tracking expenses and income in one place",
-//         "Limited visibility on investments and portfolio performance",
-//         "Hard to set and monitor financial goals effectively",
-//         "Lack of AI-driven insights for better decision-making",
-//       ],
-//     },
-//     solutions: {
-//       title: "Solutions",
-//       description: "How Flourish addresses these challenges",
-//       color: "green-600",
-//       icon: "TrendingUp",
-//       items: [
-//         "Centralized dashboard to track finances, portfolio, and goals",
-//         "AI-powered insights for spending, saving, and investing",
-//         "Seamless transaction management with bank integrations",
-//         "Goal-oriented tracking with progress visualizations",
-//       ],
-//     },
-//     stats: [
-//       { icon: "Users", value: "10,000+", label: "Active Users" },
-//       { icon: "Clock", value: "2 Years", label: "Development Time" },
-//       { icon: "Target", value: "100%", label: "Goal Achievement Support" },
-//       { icon: "TrendingUp", value: "Smart", label: "Financial Insights" },
-//     ],
-//   },
+  overview: {
+    badge: "Project Overview",
+    title: "Simplifying Personal Finance Management",
+    description:
+      "Flourish provides a comprehensive solution for managing finances, investments, and goals, all in one place.",
+    challenges: {
+      title: "Challenges",
+      description: "Problems users face in personal finance management",
+      color: "destructive",
+      icon: "Target",
+      items: [
+        "Difficulty tracking expenses and income in one place",
+        "Limited visibility on investments and portfolio performance",
+        "Hard to set and monitor financial goals effectively",
+        "Lack of AI-driven insights for better decision-making",
+      ],
+    },
+    solutions: {
+      title: "Solutions",
+      description: "How Flourish addresses these challenges",
+      color: "green-600",
+      icon: "TrendingUp",
+      items: [
+        "Centralized dashboard to track finances, portfolio, and goals",
+        "AI-powered insights for spending, saving, and investing",
+        "Seamless transaction management with bank integrations",
+        "Goal-oriented tracking with progress visualizations",
+      ],
+    },
+    stats: [
+      { icon: "Users", value: "Not launched yet", label: "Active Users" },
+      { icon: "Clock", value: "4 Month", label: "Development Time" },
+      { icon: "Target", value: "100%", label: "Goal Achievement Support" },
+      { icon: "TrendingUp", value: "Smart", label: "Financial Insights" },
+    ],
+  },
 
-//   techStack: {
-//     badge: "Technology Stack",
-//     title: "Modern Cross-Platform Technologies",
-//     description:
-//       "Flourish is built with scalable backend, mobile, and web technologies ensuring performance and reliability.",
-//     stacks: [
-//       {
-//         title: "Mobile App",
-//         color: "blue",
-//         description: "Expo React Native app with typed routes and modern libraries",
-//         technologies: [
-//           { name: "React Native", description: "Cross-platform mobile development" },
-//           { name: "Expo", description: "Framework for React Native apps" },
-//           { name: "React Query", description: "Data fetching and caching" },
-//           { name: "TailwindCSS / Nativewind", description: "Styling and utility classes" },
-//           { name: "Zustand", description: "Lightweight state management" },
-//           { name: "Expo Notifications", description: "Push notifications" },
-//         ],
-//       },
-//       {
-//         title: "Backend",
-//         color: "green",
-//         description: "Bun + Hono server with integrations for finance and AI",
-//         technologies: [
-//           { name: "Bun + Hono", description: "High-performance backend framework" },
-//           { name: "MongoDB (Mongoose)", description: "Database for transactions & portfolio" },
-//           { name: "Redis", description: "Caching & session management" },
-//           { name: "Plaid API", description: "Bank account integration" },
-//           { name: "OpenAI API", description: "AI-powered insights and chat" },
-//           { name: "Svix", description: "Webhook management" },
-//         ],
-//       },
-//       {
-//         title: "Web Dashboard",
-//         color: "purple",
-//         description: "React + Vite powered web app for portfolio & analytics",
-//         technologies: [
-//           { name: "React", description: "Web interface development" },
-//           { name: "Vite", description: "Fast bundler for development" },
-//           { name: "ShadCN + Radix UI", description: "Accessible UI components" },
-//           { name: "Recharts & Chart.js", description: "Data visualization" },
-//           { name: "React Hook Form + Zod", description: "Forms and validation" },
-//         ],
-//       },
-//     ],
-//   },
+  techStack: {
+    badge: "Technology Stack",
+    title: "Modern Cross-Platform Technologies",
+    description:
+      "Flourish is built with scalable backend, mobile, and web technologies ensuring performance and reliability.",
+    stacks: [
+      {
+        title: "Mobile App",
+        color: "blue",
+        description:
+          "Expo React Native app with typed routes and modern libraries",
+        technologies: [
+          {
+            name: "React Native",
+            description: "Cross-platform mobile development",
+          },
+          { name: "Expo", description: "Framework for React Native apps" },
+          { name: "React Query", description: "Data fetching and caching" },
+          { name: "Revenue-cat", description: "in-app purchase feature" },
+          {
+            name: "Clerk",
+            description: "Authentication and Multi factor auth",
+          },
 
-//   features: {
-//     badge: "Key Features",
-//     title: "Powerful Features That Simplify Finance Management",
-//     description:
-//       "Flourish combines transaction tracking, portfolio management, goal setting, and AI-driven insights in a single platform.",
-//     featureList: [
-//       {
-//         icon: "CreditCard",
-//         title: "Transaction Tracking",
-//         description: "Easily manage all your income and expenses",
-//         details: ["Add Transactions", "Recurring Expenses", "Categorization", "Bank Integrations"],
-//       },
-//       {
-//         icon: "TrendingUp",
-//         title: "Portfolio Management",
-//         description: "Track your stocks and investments in real-time",
-//         details: ["Add Stocks", "View Performance", "Investment Insights", "Portfolio Analytics"],
-//       },
-//       {
-//         icon: "Target",
-//         title: "Goal Setting",
-//         description: "Set and track financial goals such as savings and debt",
-//         details: ["Emergency Fund", "Debt Payoff", "Investment Goals", "Savings Plans"],
-//       },
-//       {
-//         icon: "MessageCircle",
-//         title: "AI Insights & Chat",
-//         description: "Get personalized recommendations and AI guidance",
-//         details: ["Expense Analysis", "Investment Advice", "Budget Improvement", "Real-time Chat Assistance"],
-//       },
-//       {
-//         icon: "PieChart",
-//         title: "Analytics & Reports",
-//         description: "Visualize your financial data with charts and dashboards",
-//         details: ["Portfolio Charts", "Transaction Summaries", "Goal Progress", "Spending Patterns"],
-//       },
-//     ],
-//   },
+          {
+            name: "TailwindCSS / Nativewind",
+            description: "Styling and utility classes",
+          },
+          { name: "Zustand", description: "Lightweight state management" },
+          { name: "Expo Notifications", description: "Push notifications" },
+        ],
+      },
+      {
+        title: "Backend",
+        color: "green",
+        description: "Bun + Hono server with integrations for finance and AI",
+        technologies: [
+          {
+            name: "Bun + Hono",
+            description: "High-performance backend framework",
+          },
+          {
+            name: "MongoDB (Mongoose)",
+            description: "Database for transactions & portfolio",
+          },
+          { name: "Redis", description: "Caching & session management" },
+          { name: "Plaid API", description: "Bank account integration" },
+          { name: "OpenAI API", description: "AI-powered insights and chat" },
+          { name: "Svix", description: "Webhook management" },
+          {
+            name: "Clerk",
+            description: "Authentication and Multi factor auth",
+          },
+        ],
+      },
+      {
+        title: "Web Dashboard",
+        color: "purple",
+        description: "React + Vite powered web app for portfolio & analytics",
+        technologies: [
+          { name: "React", description: "Web interface development" },
+          { name: "Vite", description: "Fast bundler for development" },
+          {
+            name: "ShadCN + Radix UI",
+            description: "Accessible UI components",
+          },
+          { name: "Recharts & Chart.js", description: "Data visualization" },
+          {
+            name: "React Hook Form + Zod",
+            description: "Forms and validation",
+          },
+          {
+            name: "Clerk",
+            description: "Authentication and Multi factor auth",
+          },
+        ],
+      },
+    ],
+  },
 
-//   architecture: {
-//     badge: "System Architecture",
-//     title: "Cross-Platform Scalable Solution",
-//     description:
-//       "Flourish uses a modern architecture connecting mobile apps, backend APIs, and web dashboards seamlessly.",
-//     overview: {
-//       title: "System Overview",
-//       description:
-//         "Mobile, backend, and web dashboard communicate via API, AI services, and real-time updates.",
-//     },
-//     layers: [
-//       {
-//         title: "Mobile App Layer",
-//         color: "blue-500",
-//         components: [
-//           { title: "Expo React Native", desc: "Cross-platform mobile application" },
-//           { title: "React Query & Zustand", desc: "State management and data fetching" },
-//           { title: "Nativewind / Tailwind", desc: "Styling and theming" },
-//         ],
-//       },
-//       {
-//         title: "Backend Services",
-//         color: "green-500",
-//         components: [
-//           { title: "Bun + Hono", desc: "API server and business logic" },
-//           { title: "MongoDB + Mongoose", desc: "Database for transactions & portfolio" },
-//           { title: "Redis + Plaid + OpenAI + Svix", desc: "Caching, banking, AI, and webhooks" },
-//         ],
-//       },
-//       {
-//         title: "Web Dashboard",
-//         color: "purple-500",
-//         components: [
-//           { title: "React + Vite", desc: "Web interface and dashboard" },
-//           { title: "ShadCN + Radix UI", desc: "Accessible and modern UI components" },
-//           { title: "Recharts & Chart.js", desc: "Analytics and data visualization" },
-//         ],
-//       },
-//     ],
-//   },
+  features: {
+    badge: "Key Features",
+    title: "Powerful Features That Simplify Finance Management",
+    description:
+      "Flourish combines transaction tracking, portfolio management, goal setting, and AI-driven insights in a single platform.",
+    featureList: [
+      {
+        icon: "CreditCard",
+        title: "Transaction Tracking",
+        description: "Easily manage all your income and expenses",
+        details: [
+          "Add Transactions",
+          "Recurring Expenses",
+          "Categorization",
+          "Bank Integrations",
+        ],
+      },
+      {
+        icon: "TrendingUp",
+        title: "Portfolio Management",
+        description: "Track your stocks and investments in real-time",
+        details: [
+          "Add Stocks",
+          "View Performance",
+          "Investment Insights",
+          "Portfolio Analytics",
+        ],
+      },
+      {
+        icon: "Target",
+        title: "Goal Setting",
+        description: "Set and track financial goals such as savings and debt",
+        details: [
+          "Emergency Fund",
+          "Debt Payoff",
+          "Investment Goals",
+          "Savings Plans",
+        ],
+      },
+      {
+        icon: "MessageCircle",
+        title: "AI Insights & Chat",
+        description: "Get personalized recommendations and AI guidance",
+        details: [
+          "Expense Analysis",
+          "Investment Advice",
+          "Budget Improvement",
+          "Real-time Chat Assistance",
+        ],
+      },
+      {
+        icon: "PieChart",
+        title: "Analytics & Reports",
+        description: "Visualize your financial data with charts and dashboards",
+        details: [
+          "Portfolio Charts",
+          "Transaction Summaries",
+          "Goal Progress",
+          "Spending Patterns",
+        ],
+      },
+    ],
+  },
 
-//   contact: {
-//     badge: "Get In Touch",
-//     title: "Start Managing Your Finances with Flourish",
-//     description:
-//       "Join Flourish today to track, manage, and improve your financial life with AI assistance and goal tracking.",
-//     profile: {
-//       title: "About Flourish",
-//       description:
-//         "A personal finance platform that integrates transactions, portfolio tracking, goals, and AI-driven insights in one seamless experience.",
-//       expertise: [
-//         "Transaction Management",
-//         "Portfolio Tracking",
-//         "Goal Management",
-//         "AI Insights & Chat",
-//         "Cross-Platform Architecture",
-//       ],
-//       achievements: [
-//         "Expo React Native mobile app",
-//         "Bun + Hono backend with Plaid & OpenAI integration",
-//         "Vite + React web dashboard with charts and analytics",
-//         "Seamless AI-driven insights and real-time financial tracking",
-//       ],
-//     },
-//     contactInfo: {
-//       title: "Contact Information",
-//       description: "Reach out to discuss Flourish partnerships or feedback",
-//       links: [
-//         { icon: "Mail", label: "support@flourish.com", variant: "default" },
-//         { icon: "Linkedin", label: "LinkedIn Profile", variant: "default" },
-//         { icon: "Github", label: "GitHub Repositories", variant: "default" },
-//       ],
-//       availability: "Open to collaborations, partnerships, and beta users",
-//       status: "Active & Growing",
-//     },
-//   },
-// };
+  architecture: {
+    badge: "System Architecture",
+    title: "Cross-Platform Scalable Solution",
+    description:
+      "Flourish uses a modern architecture connecting mobile apps, backend APIs, and web dashboards seamlessly.",
+    overview: {
+      title: "System Overview",
+      description:
+        "Mobile, backend, and web dashboard communicate via API, AI services, and real-time updates.",
+    },
+    layers: [
+      {
+        title: "Mobile App Layer",
+        color: "blue-500",
+        components: [
+          {
+            title: "Expo React Native",
+            desc: "Cross-platform mobile application",
+          },
+          {
+            title: "React Query & Zustand",
+            desc: "State management and data fetching",
+          },
+          { title: "Nativewind / Tailwind", desc: "Styling and theming" },
+        ],
+      },
+      {
+        title: "Backend Services",
+        color: "green-500",
+        components: [
+          { title: "Bun + Hono", desc: "API server and business logic" },
+          {
+            title: "MongoDB + Mongoose",
+            desc: "Database for transactions & portfolio",
+          },
+          {
+            title: "Redis + Plaid + OpenAI + Svix",
+            desc: "Caching, banking, AI, and webhooks",
+          },
+        ],
+      },
+      {
+        title: "Web Dashboard",
+        color: "purple-500",
+        components: [
+          { title: "React + Vite", desc: "Web interface and dashboard" },
+          {
+            title: "ShadCN + Radix UI",
+            desc: "Accessible and modern UI components",
+          },
+          {
+            title: "Recharts & Chart.js",
+            desc: "Analytics and data visualization",
+          },
+        ],
+      },
+    ],
+  },
 
-const projectData = {
+  contact: {
+    badge: "Get In Touch",
+    title: "About Developer",
+    description:
+      "Imtiaz Nayeem Shawon Self-taught Full stack developer with 4 years of experience in product development and client services.",
+    profile: {
+      title: "About Developer",
+      description:
+        "Imtiaz Nayeem Shawon Self-taught Full stack developer with 4 years of experience in product development and client services.",
+      expertise: [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "C++",
+        "DSA",
+        "OOP",
+        "React",
+        "Next.js",
+        "React Native",
+        "Redux",
+        "Tailwind",
+        "Node.js",
+        "Express",
+        "GraphQL",
+        "REST APIs",
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "AWS",
+        "Docker",
+        "Nginx",
+        "CI/CD",
+        "Payment Gateway",
+        "GenAI Development",
+      ],
+      achievements: [
+        "Built cross-platform app with Expo",
+        "Laravel backend with Redis and AWS S3",
+        "Next.js dashboard with modern UI/UX",
+        "Seamless real-time chat and networking",
+      ],
+    },
+    contactInfo: {
+      title: "Contact Information",
+      description: "Ready to discuss opportunities with me?",
+      links: [
+        { icon: "Mail", label: "imtiaznayim95@gmail.com", variant: "default" },
+      ],
+      availability: "Contact with me for full-stack development ",
+      status: "Open for a position",
+    },
+  },
+};
+
+const conveyai = {
   projectInfo: {
     title: "Convey AI",
     subtitle: "All-in-One Conveyancing Platform",
     description:
       "Simplifying property transactions by connecting Vendors, Purchasers, Real Estate Agents, Conveyancers, and Mortgage Brokers into a single unified system.",
     badge: "Case Study",
+    metadata: [
+      {
+        title: "Components",
+        data: "300+",
+      },
+      {
+        title: "Technology used",
+        data: "50+",
+      },
+      {
+        title: "Typescript",
+        data: "100%",
+      },
+      {
+        title: "Optimized",
+        data: "99%",
+      },
+    ],
   },
 
   mockups: [
@@ -617,8 +783,8 @@ const projectData = {
       ],
     },
     stats: [
-      { icon: "Users", value: "1000+", label: "Active Users" },
-      { icon: "Clock", value: "12 Months", label: "Development Time" },
+      { icon: "Users", value: "350+", label: "Active Users" },
+      { icon: "Clock", value: "6.5 Months", label: "Development Time" },
       { icon: "Target", value: "100%", label: "Workflow Automation" },
       {
         icon: "TrendingUp",
@@ -662,6 +828,8 @@ const projectData = {
           { name: "Recharts", description: "Data visualization" },
           { name: "React Hook Form", description: "Form management" },
           { name: "Lucide-react", description: "Icons library" },
+          { name: "CompPDF", description: "PDF Editor" },
+          { name: "Dropbox sign", description: "E-signature management" },
         ],
       },
       {
@@ -674,7 +842,7 @@ const projectData = {
           { name: "Hono", description: "Server framework" },
           { name: "MongoDB", description: "Database for structured data" },
           {
-            name: "Redis + Kafka",
+            name: "Redis + BullMQ",
             description: "Websocket & notification pub/sub",
           },
           { name: "OpenAI API", description: "AI chatbot & document analysis" },
@@ -795,38 +963,54 @@ const projectData = {
 
   contact: {
     badge: "Get In Touch",
-    title: "Join Convey AI Today",
+    title: "About Developer",
     description:
-      "Experience seamless property transactions and real-time updates for all parties involved.",
+      "Imtiaz Nayeem Shawon Self-taught Full stack developer with 4 years of experience in product development and client services.",
     profile: {
-      title: "About Convey AI",
+      title: "About Developer",
       description:
-        "An all-in-one conveyancing platform connecting vendors, purchasers, agents, conveyancers, and mortgage brokers with AI assistance.",
+        "Imtiaz Nayeem Shawon Self-taught Full stack developer with 4 years of experience in product development and client services.",
       expertise: [
-        "Multi-party workflow automation",
-        "AI-powered contract review",
-        "Real-time notifications",
-        "Role-based permissions",
-        "Cross-platform solution",
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "C++",
+        "DSA",
+        "OOP",
+        "React",
+        "Next.js",
+        "React Native",
+        "Redux",
+        "Tailwind",
+        "Node.js",
+        "Express",
+        "GraphQL",
+        "REST APIs",
+        "MongoDB",
+        "PostgreSQL",
+        "Redis",
+        "AWS",
+        "Docker",
+        "Nginx",
+        "CI/CD",
+        "Payment Gateway",
+        "GenAI Development",
       ],
       achievements: [
-        "Mobile app with React Native and Expo",
-        "Web platform & admin dashboard with Next.js",
-        "Backend with Bun.js, Redis, Kafka, and MongoDB",
-        "AI chatbot & contract simplification",
+        "Built cross-platform app with Expo",
+        "Laravel backend with Redis and AWS S3",
+        "Next.js dashboard with modern UI/UX",
+        "Seamless real-time chat and networking",
       ],
     },
     contactInfo: {
       title: "Contact Information",
-      description: "Ready to discuss Convey AI partnership or implementation?",
+      description: "Ready to discuss opportunities with me?",
       links: [
-        { icon: "Mail", label: "support@conveyai.com", variant: "default" },
-        { icon: "Linkedin", label: "LinkedIn Profile", variant: "default" },
-        { icon: "Github", label: "GitHub Repositories", variant: "default" },
+        { icon: "Mail", label: "imtiaznayim95@gmail.com", variant: "default" },
       ],
-      availability:
-        "Open to partnerships, collaborations, and technical discussions",
-      status: "Active & Growing",
+      availability: "Contact with me for full-stack development ",
+      status: "Open for a position",
     },
   },
 };
@@ -848,7 +1032,16 @@ const iconMap = {
   Download,
 };
 
-const TaskFlowCaseStudy = () => {
+const TaskFlowCaseStudy = ({ params }) => {
+  const { name } = params;
+  const projects = [
+    { name: "vestornet", data: vestornet },
+    { name: "flourish", data: Flourish },
+    { name: "conveyai", data: conveyai },
+  ];
+  const projectData =
+    projects.find((project) => project.name === name)?.data || projectData;
+
   const [currentMockup, setCurrentMockup] = useState(0);
 
   const nextMockup = () => {
@@ -924,7 +1117,7 @@ const TaskFlowCaseStudy = () => {
   return (
     <div className="min-h-screen bg-[#101010]">
       {/* Hero Section */}
-      <HeroSection />
+      <HeroSection data={projectData?.projectInfo} />
 
       {/* Project Previews */}
       <section className="py-20 ">
@@ -1193,15 +1386,6 @@ const TaskFlowCaseStudy = () => {
           </div>
 
           <Tabs defaultValue="overview" className="w-full bg-transparent">
-            <TabsList className="grid w-full grid-cols-2 mb-12 bg-transparent">
-              <TabsTrigger variant="default" value="overview">
-                Feature Overview
-              </TabsTrigger>
-              <TabsTrigger variant="default" value="technical">
-                Technical Implementation
-              </TabsTrigger>
-            </TabsList>
-
             <TabsContent value="overview">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {projectData.features.featureList.map((feature, index) => {
@@ -1230,6 +1414,22 @@ const TaskFlowCaseStudy = () => {
                               className="flex items-center gap-2 text-sm"
                             >
                               <div className="w-1.5 h-1.5 rounded-full bg-primary/60"></div>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="18"
+                                height="18"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#60A5FA"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-milestone-icon lucide-milestone"
+                              >
+                                <path d="M12 13v8" />
+                                <path d="M12 3v3" />
+                                <path d="M4 6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h13a2 2 0 0 0 1.152-.365l3.424-2.317a1 1 0 0 0 0-1.635l-3.424-2.318A2 2 0 0 0 17 6z" />
+                              </svg>{" "}
                               {detail}
                             </li>
                           ))}
@@ -1379,7 +1579,7 @@ const TaskFlowCaseStudy = () => {
                     </div>
                   </div>
 
-                  <div>
+                  {/* <div>
                     <h4 className="font-semibold mb-3">Recent Achievements</h4>
                     <ul className="space-y-2 text-sm">
                       {projectData.contact.profile.achievements.map(
@@ -1391,7 +1591,7 @@ const TaskFlowCaseStudy = () => {
                         )
                       )}
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </CardContent>
             </Card>
