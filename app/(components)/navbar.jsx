@@ -38,9 +38,8 @@ export default function Navbar() {
     <div className={`${pathname == "/resume" && "hidden"}  `}>
       {/* Mobile navbar */}
       <div
-        className={`hidden fixed top-4 left-0 right-0 w-full z-40 max-md:flex flex-col p-2  bg-[#191919] border border-[#323233] shadow-sm   ${
-          open ? "rounded-xl " : "rounded-full"
-        }`}
+        className={`hidden fixed top-4 left-0 right-0 w-full z-40 max-md:flex flex-col p-2  bg-[#191919] border border-[#323233] shadow-sm   ${open ? "rounded-xl " : "rounded-full"
+          }`}
       >
         {/* Heading */}
         <div className="max-md:flex justify-between items-center">
@@ -96,6 +95,12 @@ export default function Navbar() {
               className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
             >
               Experiences
+            </button>
+            <button
+              onClick={() => handleNavigation("blogs")}
+              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
+            >
+              Blogs
             </button>
             <button
               onClick={() => handleNavigation("tech")}
@@ -159,6 +164,12 @@ export default function Navbar() {
               className="text-[14px] max-md:text-[10px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
             >
               Experiences
+            </button>
+            <button
+              onClick={() => handleNavigation("blogs")}
+              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
+            >
+              Blogs
             </button>
             <button
               onClick={() => handleNavigation("tech")}

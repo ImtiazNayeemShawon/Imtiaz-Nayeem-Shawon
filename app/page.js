@@ -9,6 +9,7 @@ import Contact from "./(components)/contact";
 import Footer from "./(components)/footer";
 import Experience from "./(components)/experience";
 import Navbar from "./(components)/navbar";
+import Blogs from "./(components)/blogs"
 
 export default function page() {
   const content = [
@@ -192,6 +193,7 @@ export default function page() {
         title="Experiences of Working as a Developer"
         description="After embarking on my coding journey, I have accumulated extensive experience as a developer through numerous freelance projects, various companies, and voluntary contributions."
       />
+      <Blogs/>
       <Contact />
       <Footer />
     </div>
