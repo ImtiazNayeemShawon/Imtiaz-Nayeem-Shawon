@@ -25,7 +25,7 @@ export default function footer() {
             </svg>
           </span>
         </a>
-        <a href="https://wa.link/og3i52" target="_blank">
+        <a href="https://wa.link/fsoe9n" target="_blank">
           <span className="[&>svg]:h-6 [&>svg]:w-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -12,8 +12,8 @@ export default function BackgroundBeamsDemo() {
           <p></p>
           <p className="text-neutral-500 max-w-lg mx-auto my-2 text-sm text-center relative z-10">
             If you have any further questions or queries, please contact me via
-            WhatsApp at <strong>+8801745927842</strong> or email at{" "}
-            <strong>imtiaznayim95@gmail.com</strong>.
+            WhatsApp at <strong>+8801796876012</strong> or email at{" "}
+            <strong>imtiaz@zippix.co</strong>.
           </p>
 
          

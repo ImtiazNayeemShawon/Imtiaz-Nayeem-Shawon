@@ -14,6 +14,33 @@ import Blogs from "./(components)/blogs"
 export default function page() {
   const content = [
     {
+      title: "Lead Software Engineer @ Aaladinai",
+      tag: "@aaladinai",
+      description: (
+        <ul className="list-disc">
+          
+          <li className="my-4">
+            Leading full-stack development initiatives, overseeing system architecture, implementation, and delivery of scalable web applications.
+          </li>
+          <li className="my-4">
+            Collaborating with the Project Manager and cross-functional teams to define project requirements and technical direction.
+          </li>
+          <li className="my-4">
+            Designing, developing, and maintaining high-quality, secure, and efficient code across both frontend and backend systems.
+          </li>
+          <li className="my-4">
+            Providing technical leadership and mentorship to junior developers, ensuring adherence to best practices and coding standards.
+          </li>
+          <li className="my-4">
+            Managing deployment processes, monitoring system performance, and optimizing application scalability.
+          </li>
+          <li className="my-4">
+            Ensuring confidentiality, compliance, and intellectual property protection as per company policies.
+          </li>
+        </ul>
+      ),
+    },
+    {
       title: "Co-Founder & CTO @ Zippix LTD ",
       tag: "@zippix ltd",
       description: (
@@ -193,7 +220,7 @@ export default function page() {
         title="Experiences of Working as a Developer"
         description="After embarking on my coding journey, I have accumulated extensive experience as a developer through numerous freelance projects, various companies, and voluntary contributions."
       />
-      <Blogs/>
+      <Blogs />
       <Contact />
       <Footer />
     </div>

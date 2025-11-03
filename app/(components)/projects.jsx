@@ -68,6 +68,7 @@ export default function projects() {
       url: true,
       image: SkyNetix,
     },
+    
   ];
 
   return (
@@ -112,7 +113,7 @@ export default function projects() {
                     as={Link}
                     href={""}
                     target="__blank"
-                    className="text-[14px]  w-fit border border-[#323233] flex     items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
+                    className="text-[14px] hidden w-fit border border-[#323233]      items-center gap-1 hover:gap-2 duration-300  font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full mt-4"
                   >
                     {data?.url ? "View Project" : "No Longer Active"}
                     {data?.url ? (
