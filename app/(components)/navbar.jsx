@@ -1,21 +1,31 @@
 "use client";
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 import Logo from "/public/logo.png";
 import Image from "next/image";
-import { Link as ScrollLink } from "react-scroll";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { Calendar, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
-  const [open, setOpen] = React.useState(false);
-  const menuVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -20 },
-  };
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const handleNavigation = (sectionId) => {
     setOpen(false);
     if (pathname !== "/") {
@@ -25,7 +35,7 @@ export default function Navbar() {
         if (section) {
           section.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100); // Delay to ensure the navigation is complete
+      }, 100);
     } else {
       const section = document.getElementById(sectionId);
       if (section) {
@@ -34,177 +44,107 @@ export default function Navbar() {
     }
   };
 
+  const navLinks = [
+    { name: "Home", id: "home" },
+    { name: "Work", id: "projects" },
+    { name: "Process", id: "process" },
+    { name: "Skills", id: "tech" },
+    { name: "Experience", id: "experince" },
+    { name: "Writing", id: "blogs" },
+    { name: "Contact", id: "contact" }
+  ];
+
   return (
-    <div className={`${pathname == "/resume" && "hidden"}  `}>
-      {/* Mobile navbar */}
-      <div
-        className={`hidden fixed top-4 left-0 right-0 w-full z-40 max-md:flex flex-col p-2  bg-[#191919] border border-[#323233] shadow-sm   ${open ? "rounded-xl " : "rounded-full"
-          }`}
-      >
-        {/* Heading */}
-        <div className="max-md:flex justify-between items-center">
-          <button
-            onClick={() => setOpen(!open)}
-            className="hover:bg-[#323131] rounded-full p-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="#fff" // stroke color
-              className="size-6 text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-              />
-            </svg>
-          </button>
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+        scrolled 
+          ? "bg-[#070A12]/75 backdrop-blur-md border-b border-white/5 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.3)]" 
+          : "bg-transparent py-6"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+        {/* Brand Logo */}
+        <Link href="/" className="flex items-center gap-2 group">
           <Image
             src={Logo}
             alt="Logo"
-            className="w-10 bg-[#efeff5] rounded-full "
+            className="w-10 h-10 bg-white/10 p-1.5 rounded-xl border border-white/10 group-hover:border-indigo-500/50 transition-all duration-300"
           />
+          <div className="flex flex-col">
+            <span className="text-white text-sm font-extrabold tracking-tight">IMTIAZ SHAWON</span>
+            <span className="text-[10px] text-indigo-400 font-bold tracking-wider uppercase codefont">SaaS & AI Architect</span>
+          </div>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-8 bg-white/5 border border-white/5 px-6 py-2 rounded-full backdrop-blur-md">
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => handleNavigation(link.id)}
+              className="text-[13px] font-semibold text-zinc-300 hover:text-white transition-colors capitalize"
+            >
+              {link.name}
+            </button>
+          ))}
+        </nav>
+
+        {/* Desktop CTA */}
+        <div className="hidden lg:block">
+          <a
+            href="https://cal.com/imtiaznayeem/30min?overlayCalendar=true"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white text-[13px] font-semibold px-5 py-2.5 rounded-full border border-indigo-500/30 hover:shadow-[0_0_20px_rgba(99,102,241,0.3)] transition-all duration-300"
+          >
+            <span>Book a Call</span>
+            <Calendar className="w-3.5 h-3.5 text-indigo-200" />
+          </a>
         </div>
-        {/* Navigation */}
+
+        {/* Mobile Toggle Button */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="lg:hidden text-zinc-300 hover:text-white p-2 border border-white/5 rounded-xl bg-white/5"
+        >
+          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </div>
+
+      {/* Mobile Drawer Menu */}
+      <AnimatePresence>
         {open && (
           <motion.div
-            className="flex flex-col items-center gap-4 my-4"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={menuVariants}
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="lg:hidden w-full bg-[#070A12] border-b border-white/5 absolute top-full left-0 right-0 overflow-hidden shadow-2xl"
           >
-            <button
-              onClick={() => handleNavigation("home")}
-              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => handleNavigation("projects")}
-              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => handleNavigation("experince")}
-              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Experiences
-            </button>
-            <button
-              onClick={() => handleNavigation("blogs")}
-              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Blogs
-            </button>
-            <button
-              onClick={() => handleNavigation("tech")}
-              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Skills
-            </button>
-            <Link
-              onClick={() => setOpen(false)}
-              href="/eca"
-              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              ECA Profile
-            </Link>
-            <Link
-              href="https://docs.google.com/document/d/1OkUC-uBpFHLvS_snV8p1VtwFmXLvihJZ/edit?usp=sharing&ouid=106823129058087044514&rtpof=true&sd=true"
-              target="_blank"
-              className="text-[14px] border border-[#9597f7] bg-[#6366F1] flex items-center gap-1 hover:gap-2 duration-300 font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
-            >
-              Get Resume{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-6"
+            <div className="px-6 py-8 flex flex-col gap-6 items-center">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => handleNavigation(link.id)}
+                  className="text-base font-medium text-zinc-300 hover:text-white transition-colors"
+                >
+                  {link.name}
+                </button>
+              ))}
+              <a
+                href="https://cal.com/imtiaznayeem/30min?overlayCalendar=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center inline-flex items-center justify-center gap-2 bg-indigo-600 text-white font-semibold text-sm px-6 py-3 rounded-full border border-indigo-500/20"
+                onClick={() => setOpen(false)}
               >
-                <path
-                  fillRule="evenodd"
-                  d="M15.28 9.47a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 1 1-1.06-1.06L13.69 10 9.97 6.28a.75.75 0 0 1 1.06-1.06l4.25 4.25ZM6.03 5.22l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L8.69 10 4.97 6.28a.75.75 0 0 1 1.06-1.06Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
+                <span>Book a Call</span>
+                <Calendar className="w-4 h-4 text-indigo-200" />
+              </a>
+            </div>
           </motion.div>
         )}
-      </div>
-      <div className="flex justify-around py-4 mt-8 max-md:mt-2   fixed w-full  z-40">
-        <div className="max-md:hidden">
-          <Image
-            src={Logo}
-            alt="Logo"
-            className="w-14 bg-[#efeff5] rounded-[20%] "
-          />
-        </div>
-        <div className={`max-md:hidden`}>
-          <div className="bg-[#191919] border border-[#323233] shadow-sm p-[5px] pl-5 rounded-full flex max-md:flex-col max-md:rounded-none items-center gap-10">
-            <button
-              onClick={() => handleNavigation("home")}
-              className="text-[14px] max-md:text-[10px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => handleNavigation("projects")}
-              className="text-[14px] max-md:text-[10px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Projects
-            </button>
-            <button
-              onClick={() => handleNavigation("experince")}
-              className="text-[14px] max-md:text-[10px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Experiences
-            </button>
-            <button
-              onClick={() => handleNavigation("blogs")}
-              className="text-[14px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Blogs
-            </button>
-            <button
-              onClick={() => handleNavigation("tech")}
-              className="text-[14px] max-md:text-[10px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              Skills
-            </button>
-            <Link
-              href="/eca"
-              className="text-[14px] max-md:text-[10px] font-semibold capitalize text-[#EAF3FB] hover:opacity-80"
-            >
-              ECA Profile
-            </Link>
-            <Link
-              href="https://docs.google.com/document/d/1OkUC-uBpFHLvS_snV8p1VtwFmXLvihJZ/edit?usp=sharing&ouid=106823129058087044514&rtpof=true&sd=true"
-              target="_blank"
-              className="text-[14px] max-md:text-[10px] border border-[#9597f7] bg-[#6366F1] flex items-center gap-1 hover:gap-2 duration-300 font-semibold capitalize text-[#feffff] hover:opacity-80 px-4 py-2 rounded-full"
-            >
-              Get Resume{" "}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-6"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M15.28 9.47a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 1 1-1.06-1.06L13.69 10 9.97 6.28a.75.75 0 0 1 1.06-1.06l4.25 4.25ZM6.03 5.22l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L8.69 10 4.97 6.28a.75.75 0 0 1 1.06-1.06Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </div>
+      </AnimatePresence>
+    </header>
   );
 }

@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #101010;
+  background-color: #070A12;
 }
 * {
   font-family: "Sora", sans-serif;
@@ -109,4 +109,92 @@ color: #2c2c2c52;
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Premium Hero Animations & Styles */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.5deg);
+  }
+}
+
+@keyframes float-medium {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-0.5deg);
+  }
+}
+
+@keyframes float-fast {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.15);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 6s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 5s ease-in-out infinite;
+}
+
+.animate-flow-line {
+  stroke-dasharray: 8, 4;
+  animation: flow-dash 1.5s linear infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(13, 13, 17, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-glow-teal {
+  box-shadow: 0 0 25px -5px rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.15);
+}
+
+.glass-card-glow-indigo {
+  box-shadow: 0 0 25px -5px rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+}
+
+.glass-card-glow-purple {
+  box-shadow: 0 0 25px -5px rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.15);
 }
