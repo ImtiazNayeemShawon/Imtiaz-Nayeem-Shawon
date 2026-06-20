@@ -1,23 +1,20 @@
-import { Sora } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"] });
 
 export const metadata = {
-  title: "Imtiaz Nayeem Shawon | AI Engineer & SaaS Product Builder",
-  description: "I build SaaS and AI products that solve real business problems. AI engineer, full-stack developer, and systems thinker focused on MVPs, agentic AI, automation, and scalable software.",
-  keywords: "AI Engineer, SaaS Developer, Full-Stack Developer, AI Product Builder, Agentic AI Developer, MVP Developer, Next.js Developer, AI Automation Developer, RAG Developer, LangGraph Developer, Software Engineer Bangladesh, Remote AI Engineer, SaaS Product Development",
+  title: "Imtiaz Nayeem Shawon | AI Engineer & Full-Stack Developer",
+  description:
+    "AI Engineer & Full-Stack Developer with 5+ years building production AI systems — RAG pipelines, multi-agent workflows (LangGraph), LLM-integrated platforms, scalable APIs, and RBAC-secured backends.",
+  keywords:
+    "AI Engineer, Full-Stack Developer, LangGraph, RAG, LLM, Python, FastAPI, NestJS, React, Next.js, Bangladesh, Remote",
 };
-
-import Navbar from "./(components)/navbar";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={sora.className}>
-        <Navbar />
-        {children}
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
