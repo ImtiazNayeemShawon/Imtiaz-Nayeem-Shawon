@@ -64,13 +64,13 @@ const EXPERIENCE = [
     date: "Aug – Sept 2025",
     desc: "Built Scalova AI — a full-stack agentic content platform using LangGraph, Claude, and Pinecone. Designed multi-step reasoning pipelines and stateful agent orchestration layers for AI content generation at scale.",
   },
-  {
-    role: "Co-Founder & CTO",
-    company: "Zippix LTD",
-    date: "Jan 2021 – Present",
-    desc: "Architected backend and full-stack systems for 50+ client projects across industries. Led engineering teams of 3–5 developers; defined code standards, system architecture, and delivery pipelines.",
-    current: true,
-  },
+  // {
+  //   role: "Co-Founder & CTO",
+  //   company: "Zippix LTD",
+  //   date: "Jan 2021 – Present",
+  //   desc: "Architected backend and full-stack systems for 50+ client projects across industries. Led engineering teams of 3–5 developers; defined code standards, system architecture, and delivery pipelines.",
+  //   current: true,
+  // },
   {
     role: "Full Stack Engineer",
     company: "PixiQor",
