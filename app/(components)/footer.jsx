@@ -84,7 +84,7 @@ export default function Footer() {
             <h4 className="text-white text-xs font-bold uppercase tracking-wider font-mono">// Channels</h4>
             <div className="flex flex-wrap gap-3">
               <a
-                href="https://x.com/imtiaz_zippix"
+                href="https://x.com/imtiaznayeemshawon"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-white/5 border border-white/5 text-zinc-400 hover:text-white hover:bg-white/10 transition-all duration-300"

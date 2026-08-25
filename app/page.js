@@ -64,13 +64,12 @@ const EXPERIENCE = [
     date: "Aug – Sept 2025",
     desc: "Built Scalova AI — a full-stack agentic content platform using LangGraph, Claude, and Pinecone. Designed multi-step reasoning pipelines and stateful agent orchestration layers for AI content generation at scale.",
   },
-  // {
-  //   role: "Co-Founder & CTO",
-  //   company: "Zippix LTD",
-  //   date: "Jan 2021 – Present",
-  //   desc: "Architected backend and full-stack systems for 50+ client projects across industries. Led engineering teams of 3–5 developers; defined code standards, system architecture, and delivery pipelines.",
-  //   current: true,
-  // },
+  {
+    role: "Freelance developer",
+    company: "Independent · Remote",
+    date: "Jan 2021 – Present",
+    desc: "Architected backend and full-stack systems for 50+ client projects across industries. Led engineering teams of 3–5 developers; defined code standards, system architecture, and delivery pipelines.",
+  },
   {
     role: "Full Stack Engineer",
     company: "PixiQor",
@@ -220,7 +219,7 @@ const ECA_ITEMS = [
   { cat: "awards", title: "Creative Junior Award", meta: "Cyber Teens · Batch Topper", desc: "Coding Batch Topper Award presented by Sadat Rahman (International Children's Peace Prize Winner) and Monir Hossain (CEO, Creative IT). First major recognition.", badge: "🏆 Award" },
   { cat: "awards", title: "NASA Space Apps — Galactic Problem Solver", meta: "NASA · Virtual Bangladesh 2023", desc: "Team AstroTots achieved the prestigious 'Galactic Problem Solver' position in NASA Space Apps Challenge Bangladesh through innovation and dedication.", badge: "🌍 NASA" },
   // Startups
-  { cat: "startups", title: "Zippix Limited, UK", meta: "Co-Founder & CTO · Jan 2021 – Present", desc: "UK-based software agency — custom websites, mobile apps, SaaS platforms, and AI tools for businesses of all sizes. 50+ client projects delivered.", badge: "🚀 Active" },
+  { cat: "startups", title: "Freelance developer", meta: "Jan 2021 – Present", desc: "Custom websites, mobile apps, SaaS platforms, and AI tools for businesses of all sizes. 50+ client projects delivered independently.", badge: "🚀 Active" },
   { cat: "startups", title: "ZippyAI", meta: "Co-Founder", desc: "LinkedIn Chrome extension that generates contextually relevant comments for LinkedIn posts to boost engagement and professional visibility on the platform.", badge: "Built" },
   { cat: "startups", title: "MindSpace AI", meta: "Co-Founder", desc: "AI-driven mental health support platform — personalized AI tools, community engagement features, and accessible resources for individuals dealing with mental health challenges.", badge: "Built" },
 ];
