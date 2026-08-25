@@ -28,8 +28,8 @@ export default function AuthorityStrip() {
     },
     {
       icon: <Users2 className="w-5 h-5 text-indigo-400" />,
-      title: "CTO Experience",
-      desc: "Engineering Leadership"
+      title: "Freelance developer",
+      desc: "Independent client work"
     }
   ];
 

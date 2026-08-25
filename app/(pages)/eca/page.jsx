@@ -73,8 +73,8 @@ export default function page() {
       ),
     },
     {
-      title: "Co-Founder & CTO @ Zippix LTD ",
-      tag: "@zippix ltd",
+      title: "Freelance developer",
+      tag: "@freelance",
       description: (
         <ul className="list-disc">
           <li className="my-4">
@@ -222,18 +222,17 @@ export default function page() {
   ];
   const startup = [
     {
-      title: "Zippix Limited, UK",
-      tag: "@cyberTeens",
+      title: "Freelance developer",
+      tag: "@freelance",
       description: (
         <p>
-          Zippix is a UK-based software agency that helps businesses grow with
-          smart, reliable digital solutions. Our expert team of developers,
-          designers, and tech experts work together to build custom websites,
-          mobile apps, and software that actually make a difference. We
-          specialize in things like full-stack development, AI-powered tools,
-          SaaS platforms, and tailored software that fits your business needs
-          whether you're just starting out or running a big company. Our goal is
-          simple: to build fast, easy-to-use, and future-ready digital products.
+          Independent freelance work helping businesses grow with smart, reliable
+          digital solutions. Building custom websites, mobile apps, and software
+          that actually make a difference — specializing in full-stack
+          development, AI-powered tools, SaaS platforms, and tailored software
+          that fits business needs, whether a startup or an established company.
+          The goal is simple: to build fast, easy-to-use, and future-ready
+          digital products.
         </p>
       ),
     },

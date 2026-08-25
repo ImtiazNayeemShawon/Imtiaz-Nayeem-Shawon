@@ -18,7 +18,7 @@ export default function SocialGrowth() {
       icon: <Twitter className="w-5 h-5 text-zinc-300" />,
       desc: "Daily thoughts on SaaS builds, AI engineering experiments, prompt patterns, and systems logic.",
       action: "Follow",
-      link: "https://x.com/imtiaz_zippix",
+      link: "https://x.com/imtiaznayeemshawon",
       borderHover: "hover:border-white/20"
     },
     {
