@@ -113,13 +113,6 @@ export const FEATURED = [
 
 export const NDA = ["Cosmpulse", "Ryun Shim Portfolio", "MZ Media Agency", "Zipbox Agency", "Frosty Icepod", "Skynetix"];
 
-/* Blog: replace href with the real post URL when it exists. */
-export const POSTS = [
-  { tag: "Security", date: "22.10.2026", title: "Your PHP patch is", em: "due", hl: "today", href: "#blog" },
-  { tag: "AI Infra", date: "21.10.2026", title: "Same model, different", em: "silicon", hl: "any chip", href: "#blog" },
-  { tag: "AI Security", date: "21.10.2026", title: "One hacker, zero", em: "hands", hl: "agent speed", href: "#blog" },
-];
-
 export const WINS = [
   { year: "2026", title: "International AI Olympiad", badge: "National Winner", lime: true },
   { year: "2025", title: "Bangladesh AI Olympiad", badge: "Regional Winner" },
