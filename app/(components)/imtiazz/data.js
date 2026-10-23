@@ -14,6 +14,7 @@ export const NAV = [
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Work" },
   { id: "projects", label: "Projects" },
+  { id: "content", label: "Content" },
   { id: "watch", label: "Watch" },
   { id: "blog", label: "Blog" },
   { id: "achievements", label: "Wins" },
@@ -21,12 +22,12 @@ export const NAV = [
 ];
 
 export const HERO = {
-  sub: "RAG pipelines, multi-agent systems and LLM-powered SaaS. Most recently led AI at ScaleBuild AI.",
+  sub: "RAG pipelines, multi-agent systems and LLM-powered SaaS. Now a Software Engineer at Oxale Infotech, focused on AI and backend.",
   stats: [
     { value: 5, suffix: "+", label: "Years building" },
     { value: 50, suffix: "+", label: "Projects shipped" },
     { text: "AI lead", label: "Ex-ScaleBuild AI" },
-    { text: "Remote", label: "Open to work", open: true },
+    { value: 2, suffix: "×", label: "AI Olympiad wins" },
   ],
   tags: ["Python", "LangGraph", "RAG", "FastAPI", "Next.js"],
 };
@@ -37,9 +38,12 @@ export const MARQUEE = [
 ];
 
 export const SERVICES = [
-  { icon: "bot", title: "AI", em: "agents", desc: "Multi-step agents that use your tools and get real work done." },
-  { icon: "search", title: "RAG &", em: "search", desc: "Accurate answers over your documents, data and knowledge base." },
-  { icon: "monitor", title: "SaaS", em: "MVPs", desc: "From idea to launched product: backend, frontend and deploy." },
+  { icon: "bot", title: "AI", em: "agents", desc: "Multi-step agents that plan, call your tools and APIs, and finish real tasks." },
+  { icon: "search", title: "RAG &", em: "search", desc: "Accurate, cited answers over your docs and data, with hybrid search and re-ranking." },
+  { icon: "plug", title: "LLM", em: "integration", desc: "Claude, GPT or Gemini added to your product with tool calling, streaming and guardrails." },
+  { icon: "server", title: "Scalable", em: "backends", desc: "FastAPI and NestJS APIs with auth, RBAC, queues and Redis caching, built for load." },
+  { icon: "activity", title: "LLMOps &", em: "cost", desc: "Evals, monitoring and semantic caching that cut latency and token spend in production." },
+  { icon: "monitor", title: "SaaS", em: "MVPs", desc: "Idea to launched product: backend, frontend, payments and deploy on AWS or Vercel." },
 ];
 
 export const SKILLS = {
@@ -51,6 +55,14 @@ export const SKILLS = {
 
 export const EXPERIENCE = [
   {
+    date: "Aug 2026 – Now",
+    ongoing: true,
+    role: "Software Engineer",
+    org: "Oxale Infotech",
+    desc: "Focused on AI and backend engineering: LLM-powered features, APIs and the services behind them, built for production.",
+    hl: "AI and backend",
+  },
+  {
     date: "Sep 2025 – Jun 2026",
     role: "Lead Software Engineer + Company Ops",
     org: "ScaleBuild AI · New York (Remote)",
@@ -58,8 +70,7 @@ export const EXPERIENCE = [
     hl: "40%",
   },
   {
-    date: "Jan 2021 – Now",
-    ongoing: true,
+    date: "Jan 2021 – Aug 2026",
     role: "Freelance Developer",
     org: "Independent · Remote",
     desc: "Architected backend and full-stack systems for 50+ client projects across industries. Led engineering teams of 3 to 5 developers and defined code standards, system architecture and delivery pipelines.",
@@ -132,4 +143,21 @@ export const ECA = [
   ["Technovation Hackathon 2025", "Top 10"],
   ["NHSPC 2025", "Regional Winner"],
   ["ZippyAI & MindSpace AI", "Co-founder"],
+];
+
+/* Social profiles: shown in the Content section, Contact and the footer. */
+export const SOCIALS = [
+  { key: "youtube", name: "YouTube", handle: "@Imtiaznayeemshawon", url: "https://www.youtube.com/@Imtiaznayeemshawon", what: "Explainers & long form" },
+  { key: "instagram", name: "Instagram", handle: "@imtiaz.shw", url: "https://www.instagram.com/imtiaz.shw/", what: "AI Made Simple reels" },
+  { key: "linkedin", name: "LinkedIn", handle: "Imtiaz Nayeem Shawon", url: "https://www.linkedin.com/in/imtiaz-nayeem-shawon-658525414/", what: "Daily brief posts" },
+  { key: "x", name: "X", handle: "@imtiaz_ns", url: "https://x.com/imtiaz_ns", what: "Daily brief & notes" },
+  { key: "facebook", name: "Facebook", handle: "imtiaznayeemshawon", url: "https://www.facebook.com/imtiaznayeemshawon", what: "Reels & updates" },
+];
+
+/* Content journey, in order. */
+export const JOURNEY = [
+  { when: "Before", title: "Random", em: "reels", desc: "Posted whatever caught my eye. Fun, but no thread tying it together." },
+  { when: "Oct 2026", title: "Daily", em: "brief", desc: "One poster a day on the AI and software news that matters, every morning." },
+  { when: "Oct 2026", title: "AI Made", em: "Simple", desc: "Reels that show how AI actually works, for normal people and fast learners." },
+  { when: "Next", title: "Build in", em: "public", desc: "Ship AI products and explain how they work while I build them.", next: true },
 ];
