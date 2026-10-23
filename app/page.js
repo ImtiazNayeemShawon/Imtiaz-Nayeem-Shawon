@@ -8,8 +8,9 @@ import Link from "next/link";
 import localFont from "next/font/local";
 import "./(components)/imtiazz/imtiazz.css";
 import {
-  LINKS, NAV, HERO, MARQUEE, SERVICES, SKILLS, EXPERIENCE, FEATURED, NDA, REELS, POSTS, WINS, SCORES, ECA, SOCIALS, JOURNEY,
+  LINKS, NAV, HERO, MARQUEE, SERVICES, SKILLS, EXPERIENCE, FEATURED, NDA, POSTS, WINS, SCORES, ECA, SOCIALS, JOURNEY,
 } from "./(components)/imtiazz/data";
+import VIDEOS from "@/data/videos.json";
 
 /* Same font files as the social-posts poster kit */
 const grotesk = localFont({ src: "./(components)/imtiazz/fonts/SpaceGrotesk.ttf", weight: "300 700", variable: "--font-grotesk", display: "swap" });
@@ -369,23 +370,70 @@ function Content() {
   );
 }
 
+/* ---------- videos (from data/videos.json) ---------- */
+function ytId(url = "") {
+  const m = url.match(/(?:shorts\/|youtu\.be\/|embed\/|[?&]v=)([\w-]{11})/);
+  return m ? m[1] : null;
+}
+const toVideos = (list = []) => list.map((v) => ({ ...v, id: ytId(v.url) })).filter((v) => v.id);
+
+/* Shows the thumbnail first and only loads the YouTube player when clicked (keeps the page fast). */
+function YtCard({ v, label, vertical }) {
+  const [play, setPlay] = useState(false);
+  return (
+    <article className={`yt ${vertical ? "vert" : "wide"}`}>
+      <div className="frame">
+        {play ? (
+          <iframe src={`https://www.youtube-nocookie.com/embed/${v.id}?autoplay=1&playsinline=1&rel=0`} title={v.title || label}
+            allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
+        ) : (
+          <button type="button" className="thumb" onClick={() => setPlay(true)} aria-label={`Play: ${v.title || label}`}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={`https://i.ytimg.com/vi/${v.id}/hqdefault.jpg`} alt="" loading="lazy" />
+            <span className="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg></span>
+          </button>
+        )}
+      </div>
+      <div className="rmeta"><span className="mono">{label}{v.date ? ` · ${v.date}` : ""}</span>{v.title && <b>{v.title}</b>}</div>
+    </article>
+  );
+}
+
 function Watch() {
+  const shorts = toVideos(VIDEOS.shorts);
+  const long = toVideos(VIDEOS.long);
+  const yt = SOCIALS.find((s) => s.key === "youtube")?.url;
+  const rail = useRef(null);
+  const scroll = (dir) => { const el = rail.current; if (el) el.scrollBy({ left: dir * el.clientWidth * 0.8, behavior: "smooth" }); };
   return (
     <section className="sec" id="watch">
       <SecHead kicker="WATCH" note="AI MADE SIMPLE" title="Reels &" em="videos"
-        action={<a className="visit" href="#watch">All episodes <Icon name="arrowUR" /></a>} />
-      <Reveal className="reels">
-        {REELS.map((r, i) => (
-          <article key={i} className={`reel ${r.src || r.embed ? "" : "soon"}`}>
-            <div className="frame">
-              {r.src ? <video src={r.src} poster={r.poster} controls playsInline preload="none" />
-                : r.embed ? <iframe src={r.embed} title={r.title} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen style={{ width: "100%", height: "100%", border: 0 }} />
-                : <div className="ph"><span className="mono">{r.slot || r.ep}</span><b>{r.long ? <>Long <i>form</i></> : <>Next <i>episode</i></>}</b><span className="mono">Embed slot</span></div>}
-            </div>
-            <div className="rmeta"><span className="mono">{r.ep}</span><b>{r.title}</b></div>
-          </article>
-        ))}
+        action={<a className="visit" href={yt} target="_blank" rel="noopener noreferrer">YouTube channel <Icon name="arrowUR" /></a>} />
+
+      <Reveal className="vhead">
+        <h3 className="mono">Shorts <span>{shorts.length}</span></h3>
+        <div className="vnav">
+          <button type="button" onClick={() => scroll(-1)} aria-label="Previous shorts"><svg className="ic" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg></button>
+          <button type="button" onClick={() => scroll(1)} aria-label="Next shorts"><svg className="ic" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></svg></button>
+        </div>
       </Reveal>
+      <div className="rail" ref={rail}>
+        {shorts.map((v, i) => <YtCard key={v.id} v={v} vertical label={`Short ${String(shorts.length - i).padStart(2, "0")}`} />)}
+      </div>
+
+      <Reveal className="vhead vhead-long">
+        <h3 className="mono">Long videos <span>{long.length}</span></h3>
+      </Reveal>
+      {long.length ? (
+        <Reveal className="longs">
+          {long.map((v, i) => <YtCard key={v.id} v={v} label={`Video ${String(long.length - i).padStart(2, "0")}`} />)}
+        </Reveal>
+      ) : (
+        <Reveal className="vempty">
+          <div><b>First long video is <i>on the way</i></b><p>Deeper walkthroughs of how real AI systems are built.</p></div>
+          <a className="btn ghost" href={yt} target="_blank" rel="noopener noreferrer">Subscribe on YouTube</a>
+        </Reveal>
+      )}
     </section>
   );
 }

@@ -1,0 +1,30 @@
+{
+  "_howto": "Paste YouTube links into 'shorts' (vertical) or 'long' (normal videos). Newest first. 'title' is optional but recommended. 'date' is optional (YYYY-MM-DD).",
+  "shorts": [
+    {
+      "url": "https://youtube.com/shorts/1bz2hEP6lJ4",
+      "title": "6 Free AI Tools That Do 8 Hours of Work in 10 Minutes"
+    },
+    {
+      "url": "https://youtube.com/shorts/DwukitZfIKw",
+      "title": "Google just gave AI its own email"
+    },
+    {
+      "url": "https://youtube.com/shorts/xt4CQZXyy8I",
+      "title": "Your AI Agent Forgets Everything? Vercel Drives Fixes It"
+    },
+    {
+      "url": "https://youtube.com/shorts/zDkGOvk_s5E",
+      "title": "The quiet hours build the loud results"
+    },
+    {
+      "url": "https://youtube.com/shorts/7tW_LtwlvSM",
+      "title": "Built in a weekend, broke in a week: 3 checks before you ship"
+    },
+    {
+      "url": "https://youtube.com/shorts/LX4Xj0a5eTA",
+      "title": "Production AI System আসলে কীভাবে কাজ করে?"
+    }
+  ],
+  "long": []
+}
