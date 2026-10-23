@@ -1,756 +1,475 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+/* Home page — "v2 Daily brief" design (paper, ink, lime). Styles: app/(components)/imtiazz/imtiazz.css
+   Content: app/(components)/imtiazz/data.js. The previous home page is kept in app/_legacy/OldHomePage.jsx. */
+
+import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
+import localFont from "next/font/local";
+import "./(components)/imtiazz/imtiazz.css";
+import {
+  LINKS, NAV, HERO, MARQUEE, SERVICES, SKILLS, EXPERIENCE, FEATURED, NDA, REELS, POSTS, WINS, SCORES, ECA,
+} from "./(components)/imtiazz/data";
 
-/* ══════════════════════════════════════════
-   DATA
-══════════════════════════════════════════ */
-const NAV_ITEMS = [
-  { id: "summary",      icon: "📋", label: "Summary",      kbd: "1" },
-  { id: "skills",       icon: "🛠️", label: "Skills",       kbd: "2" },
-  { id: "experience",   icon: "💼", label: "Experience",   kbd: "3" },
-  { id: "projects",     icon: "🚀", label: "Projects",     kbd: "4" },
-  { id: "achievements", icon: "🏆", label: "Achievements", kbd: "5" },
-  { id: "eca",          icon: "🎖️", label: "ECA",          kbd: "6" },
-  { id: "contact",      icon: "✉️", label: "Contact",      kbd: "7" },
-];
+/* Same font files as the social-posts poster kit */
+const grotesk = localFont({ src: "./(components)/imtiazz/fonts/SpaceGrotesk.ttf", weight: "300 700", variable: "--font-grotesk", display: "swap" });
+const iserif = localFont({ src: "./(components)/imtiazz/fonts/InstrumentSerif-Italic.ttf", weight: "400", style: "italic", variable: "--font-iserif", display: "swap" });
+const jbmono = localFont({ src: "./(components)/imtiazz/fonts/JetBrainsMono.ttf", weight: "100 800", variable: "--font-jbmono", display: "swap" });
 
-const SKILLS = [
-  {
-    cat: "AI / LLM",
-    chips: ["Python", "LangGraph", "RAG & Vector Search", "Agentic AI Workflows",
-      "Claude / GPT / Gemini / Groq", "Pinecone / pgvector / Qdrant",
-      "Prompt Engineering", "AI Microservices", "LLM Tool Calling",
-      "Multi-step Reasoning", "LLMOps", "Redis Semantic Cache"],
-  },
-  {
-    cat: "Backend",
-    chips: ["Node.js", "FastAPI", "NestJS", "Express.js",
-      "REST APIs", "GraphQL", "Microservices", "RBAC / JWT / OAuth2",
-      "Redis Caching", "Auth Systems", "WebSocket"],
-  },
-  {
-    cat: "Frontend / Mobile",
-    chips: ["React", "Next.js", "TypeScript", "Tailwind CSS",
-      "Redux Toolkit", "Zustand", "React Native", "Framer Motion"],
-  },
-  {
-    cat: "DevOps / DB",
-    chips: ["AWS (EC2, S3, Lambda)", "Docker", "MongoDB & Mongoose",
-      "PostgreSQL & Prisma", "Vercel / Railway / DigitalOcean",
-      "Nginx", "CI/CD Pipelines", "Cloudinary"],
-  },
-];
+/* ---------- icons (Lucide paths, drawn with currentColor) ---------- */
+const PATHS = {
+  arrowUR: <><path d="M7 7h10v10" /><path d="M7 17 17 7" /></>,
+  arrowR: <><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></>,
+  plus: <><path d="M12 5v14" /><path d="M5 12h14" /></>,
+  lock: <><rect width="18" height="11" x="3" y="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></>,
+  copy: <><rect width="14" height="14" x="8" y="8" rx="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></>,
+  bot: <><path d="M12 8V4H8" /><rect width="16" height="12" x="4" y="8" rx="2" /><path d="M2 14h2" /><path d="M20 14h2" /><path d="M15 13v2" /><path d="M9 13v2" /></>,
+  search: <><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /><path d="M8 11h6" /><path d="M11 8v6" /></>,
+  monitor: <><rect width="20" height="14" x="2" y="3" rx="2" /><path d="M8 21h8" /><path d="M12 17v4" /><path d="m7 10 2 2-2 2" /><path d="M11 14h5" /></>,
+};
+const Icon = ({ name, className = "ic" }) => <svg className={className} viewBox="0 0 24 24" aria-hidden="true">{PATHS[name]}</svg>;
+const GithubMark = () => (
+  <svg className="bic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" /></svg>
+);
 
-const FEATURED_SKILLS = [
-  "Python", "FastAPI", "LangGraph", "React", "Next.js",
-  "Node.js", "NestJS", "TypeScript", "MongoDB", "PostgreSQL",
-  "Redis", "RAG & Vector Search", "React Native", "AWS", "Docker",
-];
+/* ---------- small hooks ---------- */
+function useReducedMotion() {
+  const [r, setR] = useState(false);
+  useEffect(() => { setR(window.matchMedia("(prefers-reduced-motion: reduce)").matches); }, []);
+  return r;
+}
 
-const EXPERIENCE = [
-  // ── Current / Recent ──
-  {
-    role: "Lead Software Engineer + Lead, Company Operations",
-    company: "ScaleBuild AI · New York (Remote)",
-    date: "Sept 2025 – Present",
-    desc: "Led AI-powered SaaS platform end-to-end; architected Redis/queue infrastructure cutting response times by 40%. Promoted to Lead, Company Operations (Apr 2026) — overseeing strategy, hiring, and cross-team coordination for a 10+ person team.",
-    current: true,
-  },
-  {
-    role: "Lead Software Engineer",
-    company: "AaladinAI · Dhaka",
-    date: "Aug – Sept 2025",
-    desc: "Built Scalova AI — a full-stack agentic content platform using LangGraph, Claude, and Pinecone. Designed multi-step reasoning pipelines and stateful agent orchestration layers for AI content generation at scale.",
-  },
-  {
-    role: "Freelance developer",
-    company: "Independent · Remote",
-    date: "Jan 2021 – Present",
-    desc: "Architected backend and full-stack systems for 50+ client projects across industries. Led engineering teams of 3–5 developers; defined code standards, system architecture, and delivery pipelines.",
-  },
-  {
-    role: "Full Stack Engineer",
-    company: "PixiQor",
-    date: "Feb – Aug 2025",
-    desc: "Built REST APIs and React Native mobile apps shipped to App Store & Google Play. Integrated NestJS backend services, led mobile dev team, maintained 99.9% uptime.",
-  },
-  {
-    role: "Full Stack Engineer",
-    company: "OutNet · UK (Remote)",
-    date: "Sept 2024 – Jan 2025",
-    desc: "Engineered Node.js REST APIs, structured MongoDB schemas, integrated Next.js SSR pages achieving 60% faster load times. Participated in code reviews and collaborated with cross-functional teams.",
-  },
-  // ── Earlier roles ──
-  {
-    role: "Web Developer → IT Executive",
-    company: "Bangladesh Space Research Society (BSRS)",
-    date: "2022 – 2023",
-    desc: "Joined as a web developer designing web applications and dashboards for event management. Promoted to IT Executive for dedication and performance — managed the IT operations and digital presence of the society.",
-    earlier: true,
-  },
-  {
-    role: "Web Developer",
-    company: "Mental Health Care Bangladesh",
-    date: "2022 – 2023",
-    desc: "Contributed as web developer in the IT team — designed blogs, event management platforms, and organizational websites supporting mental health awareness initiatives across schools, colleges, and universities.",
-    earlier: true,
-  },
-  {
-    role: "IT Team Member",
-    company: "Aruddho Ekattor",
-    date: "2022 – 2023",
-    desc: "Worked in the IT team of this youth development non-profit. Designed and developed web applications and event management platforms, collaborating with senior members on digital strategy.",
-    earlier: true,
-  },
-  {
-    role: "Developer Volunteer",
-    company: "Cyber Teens Bangladesh",
-    date: "2022 – 2024",
-    desc: "Contributed as developer to make the internet safer for younger generations — combating cyberbullying, raising cyber security awareness, and teaching coding basics to junior participants.",
-    earlier: true,
-  },
-];
+/* Counts up once when scrolled into view. Renders the final number on the server and without JS. */
+function Count({ to }) {
+  const ref = useRef(null);
+  const [n, setN] = useState(to);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+    let raf;
+    const io = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now();
+      const step = (t) => { const p = Math.min(1, (t - t0) / 1100); setN(Math.round(to * (1 - Math.pow(1 - p, 3)))); if (p < 1) raf = requestAnimationFrame(step); };
+      setN(0); raf = requestAnimationFrame(step);
+    }, { threshold: 0.6 });
+    io.observe(el);
+    return () => { io.disconnect(); cancelAnimationFrame(raf); };
+  }, [to]);
+  return <span ref={ref}>{n}</span>;
+}
 
-export const PROJECTS = [
-  {
-    name: "Scalova AI",
-    cat: "AI SaaS Platform",
-    emoji: "🤖",
-    url: "https://scalova.ai",
-    desc: "Full-stack agentic content generation platform. LangGraph + Claude + Pinecone powering multi-agent workflows, semantic search over document indexes, and real-time output streaming. Built at AaladinAI.",
-    tags: ["LangGraph", "Claude API", "Pinecone", "FastAPI", "Next.js", "Redis"],
-    status: "Live",
-  },
-  {
-    name: "Dealer Nexus",
-    cat: "SaaS Platform",
-    emoji: "⚡",
-    url: "https://dealernexus.com",
-    desc: "Automotive dealership unified portal — custom dashboard, secure authentication flows, lead routing logic, and high-performance API integrations for coordinating complex dealer workflows and lead intake pipelines.",
-    tags: ["Next.js", "REST API", "Authentication", "Lead Routing", "Dashboard"],
-    status: "Live",
-  },
-  {
-    name: "Cosmpulse",
-    cat: "Productivity SaaS",
-    emoji: "✅",
-    desc: "Simplified habit tracking dashboard with interactive visual habit trackers and daily user logging systems. Built for consistent daily productivity workflows with lightweight Zustand state management.",
-    tags: ["React", "Zustand", "Dashboard", "User Tracking", "Visual Analytics"],
-    status: "Confidential",
-  },
-  {
-    name: "Ryun Shim Portfolio",
-    cat: "Academic Showcase",
-    emoji: "🎓",
-    desc: "Premium visual CV for a Cornell University graduate — minimal, high-speed profile with animated components, publication indexes, academic credential display, and contact integration.",
-    tags: ["Next.js", "Framer Motion", "Portfolio", "Performance"],
-    status: "Confidential",
-  },
-  {
-    name: "MZ Media Agency",
-    cat: "Digital Agency",
-    emoji: "📱",
-    desc: "High-converting agency website with optimized video case study players, client review widgets, performance-enhanced media delivery via Cloudinary, and lead capture systems for an established video agency.",
-    tags: ["Next.js", "Tailwind CSS", "SEO", "Lead Capture", "Cloudinary", "Video"],
-    status: "Confidential",
-  },
-  {
-    name: "Zipbox Agency",
-    cat: "Design & Dev Agency",
-    emoji: "🎨",
-    desc: "Visually outstanding portfolio showcase for a premium design agency — complex horizontal scroll components, custom micro-interactions, and a responsive bespoke grid layout capturing high-value design leads.",
-    tags: ["React", "Horizontal Scroll", "Tailwind CSS", "Micro-interactions"],
-    status: "Confidential",
-  },
-  {
-    name: "Frosty Icepod",
-    cat: "E-Commerce",
-    emoji: "🛒",
-    desc: "High-converting product e-commerce catalog for an ice pod retail brand — custom shopping cart engine, review system, Stripe checkout integration, and conversion-optimized landing and product pages.",
-    tags: ["Next.js", "Stripe API", "Cart System", "Conversion Optimization"],
-    status: "Confidential",
-  },
-  {
-    name: "Skynetix",
-    cat: "Marketing Agency",
-    emoji: "📢",
-    desc: "Premium multi-page marketing hub for a digital marketing firm — comprehensive service listings, client case studies, intake funnels, and fully responsive layout architecture built for authority and lead generation.",
-    tags: ["Next.js", "Lead Flow", "Marketing", "Multi-page", "Responsive"],
-    status: "Confidential",
-  },
-];
+/* Slides a block up as it enters the viewport. Content stays readable if JS never runs. */
+function Reveal({ as: Tag = "div", className = "", children, ...rest }) {
+  const ref = useRef(null);
+  const [pre, setPre] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+    if (el.getBoundingClientRect().top <= window.innerHeight) return;
+    setPre(true);
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setPre(false); io.disconnect(); } }, { rootMargin: "0px 0px -8% 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return <Tag ref={ref} className={`rv ${pre ? "pre" : ""} ${className}`} {...rest}>{children}</Tag>;
+}
 
-const ACHIEVEMENTS = [
-  { title: "International AI Olympiad",    sub: "National Winner · Training Camp at IIT, Univ. of Dhaka", year: "2026" },
-  { title: "Bangladesh AI Olympiad",       sub: "Regional Winner · National Round Qualifier",              year: "2025" },
-  { title: "NASA Space Apps Challenge",    sub: "Team Lead · AstroTots · Galactic Problem Solver",         year: "2023/24" },
-  { title: "LeetCode",                     sub: "55+ Problems Solved",                                     year: "Ongoing" },
-  { title: "CodeChef",                     sub: "Rating 273+",                                             year: "Ongoing" },
-];
+function SecHead({ kicker, note, title, em, action }) {
+  return (
+    <Reveal className="sec-head">
+      <div>
+        <div className="kicker mono"><b>{kicker}</b><span>// {note}</span></div>
+        <h2>{title} <i>{em}</i></h2>
+      </div>
+      {action}
+    </Reveal>
+  );
+}
 
-const ECA_CATS = [
-  { id: "all",          label: "All" },
-  { id: "volunteering", label: "Volunteering" },
-  { id: "hackathons",   label: "Hackathons" },
-  { id: "olympiads",    label: "Olympiads" },
-  { id: "awards",       label: "Awards" },
-  { id: "startups",     label: "Startups" },
-];
+/* ---------- sections ---------- */
+function Header({ active, onTheme }) {
+  const prog = useRef(null);
+  useEffect(() => {
+    const on = () => { const h = document.documentElement.scrollHeight - innerHeight; if (prog.current) prog.current.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`; };
+    addEventListener("scroll", on, { passive: true }); on();
+    return () => removeEventListener("scroll", on);
+  }, []);
+  return (
+    <header className="top mono">
+      <a className="brand" href="#summary"><i className="dot" aria-hidden="true" />IMTIAZZ / PORTFOLIO</a>
+      <nav className="nav" aria-label="Sections">
+        {NAV.map((n) => <a key={n.id} href={`#${n.id}`} className={active === n.id ? "on" : ""}>{n.label}</a>)}
+      </nav>
+      <div className="tools"><button className="theme mono" type="button" onClick={onTheme} aria-label="Toggle dark mode">Dark / Light</button></div>
+      <i className="progress" ref={prog} aria-hidden="true" />
+    </header>
+  );
+}
 
-const ECA_ITEMS = [
-  // Volunteering
-  { cat: "volunteering", title: "Bangladesh Space Research Society", meta: "Web Dev → IT Executive · 2022–2023", desc: "Joined as web developer, promoted to IT Executive. Designed web apps and dashboards for event management, managed digital presence.", badge: "Promoted" },
-  { cat: "volunteering", title: "Mental Health Care Bangladesh", meta: "Web Developer · IT Team · 2022–2023", desc: "Designed blogs, event management platforms, and organizational websites supporting mental health awareness in schools, colleges, and universities.", badge: "Volunteer" },
-  { cat: "volunteering", title: "Aruddho Ekattor", meta: "IT Team Member · 2022–2023", desc: "Youth development non-profit. Worked in IT team designing web applications and event management platforms for national youth initiatives.", badge: "Volunteer" },
-  { cat: "volunteering", title: "Cyber Teens Bangladesh", meta: "Developer Volunteer · 2022–2024", desc: "Contributed as developer to make the internet safer for younger generations — combating cyberbullying, raising awareness, teaching coding to juniors.", badge: "Volunteer" },
-  // Hackathons
-  { cat: "hackathons", title: "Technovation Hackathon 2025", meta: "Top 10 · Programming Hero", desc: "Built AI-powered crop market monitoring and plant disease detection tool. Implemented a chatbot interface providing timely plant health insights for farmers.", badge: "Top 10 🏅" },
-  { cat: "hackathons", title: "NASA Space Apps Challenge", meta: "Team Lead · AstroTots · 2023 & 2024", desc: "Led Team AstroTots to the 'Galactic Problem Solver' position. Developed and presented a space exploration project to NASA judges; built strong mentor network.", badge: "Galactic Problem Solver" },
-  // Olympiads
-  { cat: "olympiads", title: "International AI Olympiad", meta: "IAIO 2026 · IIT, University of Dhaka", desc: "Selected for training camp at the Institute of Information Technology (IIT), University of Dhaka. Two days of intensive AI learning and competitive problem solving.", badge: "Training Camp ✓" },
-  { cat: "olympiads", title: "Bangladesh AI Olympiad", meta: "BDAIO 2025 · National Round", desc: "Cleared preliminary and National rounds. Showcased AI skills at a national competitive level — remarkable experience in applied AI problem solving.", badge: "National Round" },
-  { cat: "olympiads", title: "National HS Programming Contest", meta: "NHSPC 2025 · Regional Winner", desc: "Won the regional round, received a medal and certificate. Selected for the national round in competitive programming.", badge: "Regional Winner 🥇" },
-  { cat: "olympiads", title: "Bangladesh Informatics Olympiad", meta: "BDOI 2024", desc: "Cleared first round, solved 2 of 5 problems. First-time participation in BDOI — great introduction to national-level competitive programming.", badge: "1st Round Cleared" },
-  { cat: "olympiads", title: "Bangladesh Junior Science Olympiad", meta: "BDJSO", desc: "Cleared divisional round. Traveled to Chittagong for the competition. Met notable individuals including Munir Chowdhury — valuable national academic experience.", badge: "Divisional Round" },
-  { cat: "olympiads", title: "ICT Olympiad Bangladesh", meta: "Multi-round Qualifier", desc: "Cleared selection, regional, and divisional rounds. Gained valuable competitive experience across multiple stages of this national ICT competition.", badge: "Divisional Round" },
-  // Awards
-  { cat: "awards", title: "Creative Junior Award", meta: "Cyber Teens · Batch Topper", desc: "Coding Batch Topper Award presented by Sadat Rahman (International Children's Peace Prize Winner) and Monir Hossain (CEO, Creative IT). First major recognition.", badge: "🏆 Award" },
-  { cat: "awards", title: "NASA Space Apps — Galactic Problem Solver", meta: "NASA · Virtual Bangladesh 2023", desc: "Team AstroTots achieved the prestigious 'Galactic Problem Solver' position in NASA Space Apps Challenge Bangladesh through innovation and dedication.", badge: "🌍 NASA" },
-  // Startups
-  { cat: "startups", title: "Freelance developer", meta: "Jan 2021 – Present", desc: "Custom websites, mobile apps, SaaS platforms, and AI tools for businesses of all sizes. 50+ client projects delivered independently.", badge: "🚀 Active" },
-  { cat: "startups", title: "ZippyAI", meta: "Co-Founder", desc: "LinkedIn Chrome extension that generates contextually relevant comments for LinkedIn posts to boost engagement and professional visibility on the platform.", badge: "Built" },
-  { cat: "startups", title: "MindSpace AI", meta: "Co-Founder", desc: "AI-driven mental health support platform — personalized AI tools, community engagement features, and accessible resources for individuals dealing with mental health challenges.", badge: "Built" },
-];
+function HeroDiagram() {
+  const nodes = [[20, 40, "RAG PIPELINES"], [340, 40, "MULTI-AGENT"], [20, 536, "LLM SAAS"], [340, 536, "SCALABLE APIS"]];
+  const routes = ["M120 104 C 120 170, 210 160, 222 226", "M440 104 C 440 170, 350 160, 338 226", "M120 536 C 120 470, 210 480, 222 414", "M440 536 C 440 470, 350 480, 338 414"];
+  return (
+    <figure className="fig">
+      <svg className="art" viewBox="0 0 560 640" role="img" aria-label="Diagram: RAG pipelines, multi-agent workflows, LLM SaaS and scalable APIs connect into one AI system">
+        <g className="draw">
+          {routes.map((d, i) => <path key={i} id={`zr${i}`} className="s" d={d} />)}
+          <path className="s" d="M168 320 H70" /><circle className="end" cx="60" cy="320" r="10" />
+          <path className="s" d="M392 320 H490" /><circle className="end" cx="500" cy="320" r="10" />
+          <rect className="f" x="168" y="220" width="224" height="200" rx="44" />
+        </g>
+        {nodes.map(([x, y, label]) => (
+          <g key={label} className="node"><rect className="f2" x={x} y={y} width="200" height="64" rx="32" /><text x={x + 100} y={y + 39}>{label}</text></g>
+        ))}
+        <rect className="dash marching" x="194" y="246" width="172" height="148" rx="28" />
+        <rect className="lime" x="214" y="282" width="132" height="78" rx="18" />
+        <rect className="ink eye" x="246" y="302" width="16" height="36" rx="8" />
+        <rect className="ink eye" x="298" y="302" width="16" height="36" rx="8" />
+        <circle className="ink" cx="206" cy="398" r="7" />
+        <g className="packets">
+          {routes.map((_, i) => (
+            <circle key={i} className="packet" r="8">
+              <animateMotion dur="2.6s" begin={`-${(i * 0.65).toFixed(2)}s`} repeatCount="indefinite" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines=".6 0 .3 1">
+                <mpath href={`#zr${i}`} />
+              </animateMotion>
+            </circle>
+          ))}
+        </g>
+      </svg>
+      <figcaption className="mono"><span>FIG. 01</span><span>What I build</span></figcaption>
+    </figure>
+  );
+}
 
-/* ══════════════════════════════════════════
-   COMPONENT
-══════════════════════════════════════════ */
+function Hero() {
+  return (
+    <section className="hero" id="summary">
+      <div className="left">
+        <div className="kicker mono"><b>AI ENGINEER</b><span>// FULL-STACK · DHAKA, BD</span></div>
+        <h1>I build AI<br />that <i>ships.</i></h1>
+        <p className="name">Imtiaz Nayeem Shawon <span>· AI Engineer &amp; Full-Stack Developer</span></p>
+        <p className="sub">{HERO.sub}</p>
+        <div className="stats" aria-label="At a glance">
+          {HERO.stats.map((s) => (
+            <div key={s.label}>
+              <b className={s.open ? "open" : ""}>{s.open && <i aria-hidden="true" />}{s.text ?? <span><Count to={s.value} />{s.suffix}</span>}</b>
+              <span className="mono">{s.label}</span>
+            </div>
+          ))}
+        </div>
+        <div className="tags">{HERO.tags.map((t) => <span key={t} className="pill">{t}</span>)}</div>
+        <div className="ctas">
+          <a className="btn primary" href={LINKS.call} target="_blank" rel="noopener noreferrer">Book a call →</a>
+          <a className="btn ghost" href="#projects">See projects</a>
+        </div>
+      </div>
+      <div className="right"><HeroDiagram /></div>
+    </section>
+  );
+}
+
+function Marquee() {
+  const row = (hidden) => MARQUEE.map(([t, serif], i) => <span key={`${hidden}${i}`} aria-hidden={hidden || undefined}>{serif ? <i>{t}</i> : t}</span>);
+  return <div className="marquee" aria-label="Tools I use"><div className="track">{row(false)}{row(true)}</div></div>;
+}
+
+function Services() {
+  return (
+    <section className="sec" id="services">
+      <SecHead kicker="SERVICES" note="HIRE ME FOR" title="How I can" em="help" />
+      <Reveal className="svc">
+        {SERVICES.map((s) => (
+          <a key={s.em} href={LINKS.call} target="_blank" rel="noopener noreferrer">
+            <span className="sic"><Icon name={s.icon} /></span>
+            <h3>{s.title} <i>{s.em}</i></h3>
+            <p>{s.desc}</p>
+            <span className="go mono">Discuss <Icon name="arrowR" /></span>
+          </a>
+        ))}
+      </Reveal>
+    </section>
+  );
+}
+
+function Skills() {
+  const keys = Object.keys(SKILLS);
+  const [tab, setTab] = useState("ai");
+  const tabRefs = useRef({});
+  const onKey = (e, i) => {
+    const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+    if (!d) return;
+    const k = keys[(i + d + keys.length) % keys.length];
+    setTab(k); tabRefs.current[k]?.focus();
+  };
+  return (
+    <section className="sec" id="skills">
+      <SecHead kicker="SKILLS" note="4 DOMAINS" title="The" em="stack" />
+      <Reveal>
+        <div className="tabs" role="tablist" aria-label="Skill domains">
+          {keys.map((k, i) => (
+            <button key={k} ref={(el) => (tabRefs.current[k] = el)} id={`tab-${k}`} className="tab" role="tab" type="button"
+              aria-selected={tab === k} tabIndex={tab === k ? 0 : -1} onClick={() => setTab(k)} onKeyDown={(e) => onKey(e, i)}>
+              {SKILLS[k].label}<span>{SKILLS[k].items.length}</span>
+            </button>
+          ))}
+        </div>
+        <div className="panel" role="tabpanel" aria-labelledby={`tab-${tab}`} key={tab}>
+          {SKILLS[tab].items.map((t, i) => <span key={t} className="chip" style={{ animationDelay: `${i * 0.04}s` }}>{t}</span>)}
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function highlight(text, hl) {
+  if (!hl || !text.includes(hl)) return text;
+  const [a, b] = text.split(hl);
+  return <>{a}<b>{hl}</b>{b}</>;
+}
+
+function Experience() {
+  const [open, setOpen] = useState(0);
+  return (
+    <section className="sec" id="experience">
+      <SecHead kicker="EXPERIENCE" note="2021 → NOW" title="Where I've" em="worked" />
+      <Reveal className="xp">
+        {EXPERIENCE.map((x, i) => {
+          const isOpen = open === i;
+          return (
+            <div key={x.role + x.date} className="xrow" data-open={isOpen}>
+              <button type="button" className="summary" aria-expanded={isOpen} aria-controls={`xp-${i}`} onClick={() => setOpen(isOpen ? -1 : i)}>
+                <span className="when mono">{x.date}{x.ongoing && <span className="pill lime sm">Ongoing</span>}</span>
+                <span className="role">{x.role}</span>
+                <span className="org">{x.org}</span>
+                <span className="tog"><Icon name="plus" /></span>
+              </button>
+              {isOpen && <div className="desc" id={`xp-${i}`}><p>{highlight(x.desc, x.hl)}</p></div>}
+            </div>
+          );
+        })}
+      </Reveal>
+    </section>
+  );
+}
+
+function ProjectArt({ kind }) {
+  if (kind === "car") return (
+    <svg className="art" viewBox="0 0 420 220" role="img" aria-label="Line drawing: a car connected to a dealership dashboard">
+      <path className="f" d="M30 150 V120 L70 78 H190 L232 120 V150 Z" />
+      <path className="dash" d="M84 92 H176 L204 120 H62 Z" />
+      <circle className="f" cx="80" cy="154" r="22" /><circle className="f" cx="184" cy="154" r="22" />
+      <circle className="ink" cx="80" cy="154" r="6" /><circle className="ink" cx="184" cy="154" r="6" />
+      <path className="s" d="M232 120 H262" />
+      <rect className="f2" x="262" y="34" width="134" height="150" rx="14" />
+      <path className="s" d="M262 64 H396" style={{ strokeWidth: 5 }} />
+      <rect className="lime" x="282" y="84" width="40" height="78" rx="8" style={{ strokeWidth: 5 }} />
+      <rect className="f2" x="334" y="110" width="40" height="52" rx="8" />
+      <circle className="end" cx="40" cy="200" r="9" /><path className="s" d="M49 200 H380" /><circle className="end" cx="390" cy="200" r="9" />
+    </svg>
+  );
+  return (
+    <svg className="art" viewBox="0 0 420 220" role="img" aria-label="Line drawing: a content agent writing posts">
+      <rect className="f" x="20" y="24" width="150" height="150" rx="34" />
+      <rect className="dash" x="40" y="44" width="110" height="110" rx="22" />
+      <rect className="lime" x="56" y="72" width="78" height="52" rx="14" />
+      <rect className="ink eye" x="76" y="86" width="11" height="24" rx="5" /><rect className="ink eye" x="103" y="86" width="11" height="24" rx="5" />
+      <path className="s" d="M170 70 H230" /><path className="s" d="M170 100 H230" /><path className="s" d="M170 130 H230" />
+      <rect className="f2" x="236" y="40" width="160" height="56" rx="12" /><path className="s" d="M256 60 H350" style={{ strokeWidth: 6 }} /><path className="dash" d="M256 78 H376" />
+      <rect className="f2" x="236" y="104" width="160" height="56" rx="12" /><path className="s" d="M256 124 H330" style={{ strokeWidth: 6 }} /><path className="dash" d="M256 142 H376" />
+      <circle className="end" cx="40" cy="200" r="9" /><path className="s" d="M49 200 H380" /><circle className="end" cx="390" cy="200" r="9" />
+    </svg>
+  );
+}
+
+function Projects() {
+  return (
+    <section className="sec" id="projects">
+      <SecHead kicker="PROJECTS" note={`${FEATURED.length} LIVE · ${NDA.length} NDA`} title="Things I've" em="shipped"
+        action={<Link className="visit" href="/projects">All projects <Icon name="arrowUR" /></Link>} />
+      <Reveal className="feat">
+        {FEATURED.map((p) => (
+          <article key={p.host} className="proj">
+            <figure className="fig shot">
+              <ProjectArt kind={p.art} />
+              <figcaption className="mono"><span>{p.fig}</span><span>{p.figLabel}</span></figcaption>
+            </figure>
+            <div className="body">
+              <h3>{p.name} <i>{p.em}</i></h3>
+              <p>{p.cat}</p>
+              <div className="chips">{p.tags.map((t) => <span key={t} className="pill sm">{t}</span>)}</div>
+              <div className="row"><span className="pill ink sm">Live</span>
+                <a className="visit" href={p.url} target="_blank" rel="noopener noreferrer">{p.host} <Icon name="arrowUR" /></a></div>
+            </div>
+          </article>
+        ))}
+      </Reveal>
+      <Reveal className="nda-head mono">Client work <span>Under NDA</span></Reveal>
+      <Reveal className="nda">
+        {NDA.map((n) => <div key={n}><b>{n}</b><span className="mono"><Icon name="lock" />NDA</span></div>)}
+      </Reveal>
+    </section>
+  );
+}
+
+function Watch() {
+  return (
+    <section className="sec" id="watch">
+      <SecHead kicker="WATCH" note="AI MADE SIMPLE" title="Reels &" em="videos"
+        action={<a className="visit" href="#watch">All episodes <Icon name="arrowUR" /></a>} />
+      <Reveal className="reels">
+        {REELS.map((r, i) => (
+          <article key={i} className={`reel ${r.src || r.embed ? "" : "soon"}`}>
+            <div className="frame">
+              {r.src ? <video src={r.src} poster={r.poster} controls playsInline preload="none" />
+                : r.embed ? <iframe src={r.embed} title={r.title} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen style={{ width: "100%", height: "100%", border: 0 }} />
+                : <div className="ph"><span className="mono">{r.slot || r.ep}</span><b>{r.long ? <>Long <i>form</i></> : <>Next <i>episode</i></>}</b><span className="mono">Embed slot</span></div>}
+            </div>
+            <div className="rmeta"><span className="mono">{r.ep}</span><b>{r.title}</b></div>
+          </article>
+        ))}
+      </Reveal>
+    </section>
+  );
+}
+
+function Blog() {
+  return (
+    <section className="sec" id="blog">
+      <SecHead kicker="BLOG" note="DAILY BRIEF" title="Notes from the" em="build"
+        action={<a className="visit" href="#blog">All posts <Icon name="arrowUR" /></a>} />
+      <Reveal className="posts">
+        {POSTS.map((p) => (
+          <a key={p.title} className="post" href={p.href}>
+            <span className="pmeta mono"><b>{p.tag}</b>{p.date}</span>
+            <h3>{p.title} <i>{p.em}</i></h3>
+            <span className="pfoot"><em>{p.hl}</em><Icon name="arrowUR" /></span>
+          </a>
+        ))}
+      </Reveal>
+    </section>
+  );
+}
+
+function Wins() {
+  return (
+    <section className="sec" id="achievements">
+      <SecHead kicker="ACHIEVEMENTS" note="OLYMPIADS · ECA" title="Wins &" em="ranks"
+        action={<Link className="visit" href="/eca">All ECA <Icon name="arrowUR" /></Link>} />
+      <Reveal className="two">
+        <div>
+          <ul className="wins">
+            {WINS.map((w) => (
+              <li key={w.title}><span className="yr mono">{w.year}</span><span className="t">{w.title}</span><span className={`pill sm ${w.lime ? "lime" : ""}`}>{w.badge}</span></li>
+            ))}
+          </ul>
+          <div className="scores">
+            {SCORES.map((s) => <div key={s.label} className="score"><b><Count to={s.value} />+</b><span className="mono">{s.label}</span></div>)}
+          </div>
+        </div>
+        <div className="eca" id="eca">
+          <h3 className="mono">Extracurricular <span>ECA</span></h3>
+          <ul>{ECA.map(([t, r]) => <li key={t}>{t}<span>{r}</span></li>)}</ul>
+          <div className="edu"><span className="pill sm">Education</span><b>A Levels · Maths &amp; CS</b><p>Capstone School International</p></div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+function CopyRow({ label, value }) {
+  const [ok, setOk] = useState(false);
+  const ref = useRef(null);
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(value); setOk(true); setTimeout(() => setOk(false), 1600); }
+    catch { const r = document.createRange(); r.selectNodeContents(ref.current); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  };
+  return (
+    <div className="line">
+      <span className="k mono">{label}</span><span className="v" ref={ref}>{value}</span>
+      <button className={`copy ${ok ? "ok" : ""}`} type="button" onClick={copy}><Icon name="copy" /><span>{ok ? "Copied" : "Copy"}</span></button>
+    </div>
+  );
+}
+
+function Contact() {
+  return (
+    <section className="sec" id="contact">
+      <Reveal className="contact">
+        <div>
+          <div className="kicker mono"><b>CONTACT</b><span>// OPEN TO REMOTE WORK</span></div>
+          <h2>Let&apos;s build<br />something that <span className="hlb">ships.</span></h2>
+          <div className="ctas" style={{ marginTop: 44 }}><a className="btn primary" href={LINKS.call} target="_blank" rel="noopener noreferrer">Book a 30-min call →</a></div>
+        </div>
+        <div className="lines">
+          <CopyRow label="Email" value={LINKS.email} />
+          <CopyRow label="Phone" value={LINKS.phone} />
+          <div className="line"><span className="k mono">GitHub</span><a className="v" href={LINKS.github} target="_blank" rel="noopener noreferrer">ImtiazNayeemShawon</a><GithubMark /></div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+/* ---------- page ---------- */
 export default function Page() {
-  const [active, setActive]              = useState("summary");
-  const [theme, setTheme]                = useState("dark");
-  const [sidebarOpen, setSidebar]        = useState(false);
-  const [showKbdHint, setKbdHint]        = useState(true);
-  const [ecaTab, setEcaTab]              = useState("all");
-  const [contextMenu, setContextMenu]    = useState(null);
-  const [peekProject, setPeekProject]    = useState(null);
-  const [peekPos, setPeekPos]            = useState({ x: 300, y: 200 });
-  const [fullscreenProject, setFullscreen] = useState(null);
+  const [theme, setTheme] = useState(null); // null = follow the system setting
+  const [active, setActive] = useState("summary");
 
-  const dragRef = useRef({ active: false, startX: 0, startY: 0, winX: 0, winY: 0 });
-  const mainRef = useRef(null);
-
-  /* ── Theme persistence ── */
-  useEffect(() => {
-    try { const s = localStorage.getItem("p-theme"); if (s) setTheme(s); } catch {}
-  }, []);
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    try { localStorage.setItem("p-theme", theme); } catch {}
-  }, [theme]);
-
-  /* ── Kbd hint auto-hide ── */
-  useEffect(() => { const t = setTimeout(() => setKbdHint(false), 7000); return () => clearTimeout(t); }, []);
-
-  /* ── Scroll-spy ── */
-  useEffect(() => {
-    const obs = new IntersectionObserver(
-      (entries) => entries.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); }),
-      { rootMargin: "-30% 0px -55% 0px" }
-    );
-    NAV_ITEMS.forEach(({ id }) => { const el = document.getElementById(id); if (el) obs.observe(el); });
-    return () => obs.disconnect();
-  }, []);
-
-  /* ── Drag handling (peek window) ── */
-  useEffect(() => {
-    const onMove = (e) => {
-      if (!dragRef.current.active) return;
-      const dx = e.clientX - dragRef.current.startX;
-      const dy = e.clientY - dragRef.current.startY;
-      setPeekPos({
-        x: Math.max(0, Math.min(window.innerWidth - 400, dragRef.current.winX + dx)),
-        y: Math.max(0, Math.min(window.innerHeight - 120, dragRef.current.winY + dy)),
-      });
-    };
-    const onUp = () => { dragRef.current.active = false; };
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("mouseup", onUp);
-    return () => { window.removeEventListener("mousemove", onMove); window.removeEventListener("mouseup", onUp); };
-  }, []);
-
-  /* ── Close context menu on click outside ── */
-  useEffect(() => {
-    if (!contextMenu) return;
-    const close = () => setContextMenu(null);
-    const t = setTimeout(() => window.addEventListener("click", close), 10);
-    return () => { clearTimeout(t); window.removeEventListener("click", close); };
-  }, [contextMenu]);
-
-  const scrollTo = useCallback((id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setSidebar(false);
-  }, []);
-
-  /* ── Keyboard navigation ── */
-  useEffect(() => {
-    const handler = (e) => {
-      if (e.key === "Escape") { setContextMenu(null); setPeekProject(null); setFullscreen(null); return; }
-      const tag = e.target?.tagName?.toLowerCase();
-      if (tag === "input" || tag === "textarea" || tag === "select") return;
-      if (e.key >= "1" && e.key <= "7" && !e.ctrlKey && !e.metaKey) {
-        const item = NAV_ITEMS[parseInt(e.key, 10) - 1];
-        if (item) scrollTo(item.id);
-      }
-      if ((e.key === "j" || e.key === "k") && !e.ctrlKey && !e.metaKey) {
-        const idx = NAV_ITEMS.findIndex((n) => n.id === active);
-        scrollTo(NAV_ITEMS[e.key === "j" ? Math.min(idx + 1, NAV_ITEMS.length - 1) : Math.max(idx - 1, 0)].id);
-      }
-      if (e.key === "t" && !e.ctrlKey && !e.metaKey) setTheme((p) => p === "dark" ? "light" : "dark");
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
-  }, [active, scrollTo]);
-
-  /* ── Context menu ── */
-  const handleContextMenu = (e, project) => {
-    e.preventDefault();
-    setContextMenu({
-      x: Math.min(e.clientX, window.innerWidth - 200),
-      y: Math.min(e.clientY, window.innerHeight - 150),
-      project,
+  useEffect(() => { try { const s = localStorage.getItem("imtiazz-theme"); if (s) setTheme(s); } catch {} }, []);
+  const toggleTheme = useCallback(() => {
+    setTheme((cur) => {
+      const now = cur || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const next = now === "dark" ? "light" : "dark";
+      try { localStorage.setItem("imtiazz-theme", next); } catch {}
+      return next;
     });
-  };
+  }, []);
 
-  const openPeek = (project, cx, cy) => {
-    setPeekPos({ x: Math.max(10, Math.min(cx - 200, window.innerWidth - 410)), y: Math.max(10, Math.min(cy - 60, window.innerHeight - 500)) });
-    setPeekProject(project);
-  };
+  /* nav highlight */
+  useEffect(() => {
+    const on = () => {
+      const y = scrollY + 160; let c = NAV[0].id;
+      NAV.forEach(({ id }) => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top + scrollY <= y) c = id; });
+      setActive(c);
+    };
+    addEventListener("scroll", on, { passive: true }); on();
+    return () => removeEventListener("scroll", on);
+  }, []);
 
-  const onPeekMouseDown = (e) => {
-    dragRef.current = { active: true, startX: e.clientX, startY: e.clientY, winX: peekPos.x, winY: peekPos.y };
-  };
-
-  const isLight = theme === "light";
-  const filteredECA = ecaTab === "all" ? ECA_ITEMS : ECA_ITEMS.filter((i) => i.cat === ecaTab);
+  /* keyboard: 1–9 jump to a section, T toggles theme */
+  useEffect(() => {
+    const onKey = (e) => {
+      const tag = e.target?.tagName?.toLowerCase();
+      if (e.ctrlKey || e.metaKey || e.altKey || tag === "input" || tag === "textarea") return;
+      if (e.key >= "1" && e.key <= "9") { const n = NAV[+e.key - 1]; if (n) document.getElementById(n.id)?.scrollIntoView({ behavior: "smooth" }); }
+      if (e.key === "t" || e.key === "T") toggleTheme();
+    };
+    addEventListener("keydown", onKey);
+    return () => removeEventListener("keydown", onKey);
+  }, [toggleTheme]);
 
   return (
-    <>
-      {/* ── Mobile top bar ── */}
-      <div className="mobile-bar">
-        <span className="mobile-bar-name">Imtiaz Nayeem</span>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <button onClick={() => setTheme((p) => p === "dark" ? "light" : "dark")}
-            style={{ fontSize: 16, padding: "2px 8px", borderRadius: 6, background: "var(--input-bg)", border: "1px solid var(--border)" }}>
-            {isLight ? "🌙" : "☀️"}
-          </button>
-          <div className="hamburger" onClick={() => setSidebar((o) => !o)}>
-            <span /><span /><span />
-          </div>
-        </div>
+    <div className={`imz ${grotesk.variable} ${iserif.variable} ${jbmono.variable}`} data-imz={theme || undefined}>
+      <div className="grain" aria-hidden="true" />
+      <div className="wrap">
+        <Header active={active} onTheme={toggleTheme} />
+        <Hero />
+        <Marquee />
+        <Services />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Watch />
+        <Blog />
+        <Wins />
+        <Contact />
+        <footer className="foot mono">
+          <span className="site">{LINKS.site}</span>
+          <button className="totop mono" type="button" onClick={() => scrollTo({ top: 0, behavior: "smooth" })}>Back to top ↑</button>
+        </footer>
       </div>
-
-      <div className={`sidebar-overlay${sidebarOpen ? " open" : ""}`} onClick={() => setSidebar(false)} />
-
-      <div className="layout">
-        {/* ════════ SIDEBAR ════════ */}
-        <aside className={`sidebar${sidebarOpen ? " open" : ""}`}>
-          <div className="sb-profile">
-            <div className="sb-avatar">👨‍💻</div>
-            <div>
-              <p className="sb-name">Imtiaz Nayeem</p>
-              <p className="sb-role">AI Engineer</p>
-            </div>
-          </div>
-          <p className="nav-section-label">Portfolio</p>
-          <nav className="sidebar-nav">
-            {NAV_ITEMS.map((item) => (
-              <button key={item.id} onClick={() => scrollTo(item.id)}
-                className={`nav-item${active === item.id ? " active" : ""}`}>
-                <span className="nav-item-left">
-                  <span className="nav-icon">{item.icon}</span>
-                  {item.label}
-                </span>
-                <span className="nav-kbd">{item.kbd}</span>
-              </button>
-            ))}
-          </nav>
-          <div className="sb-bottom">
-            <button className="theme-toggle" onClick={() => setTheme((p) => p === "dark" ? "light" : "dark")}>
-              <div className={`toggle-track${isLight ? " on" : ""}`}><div className="toggle-knob" /></div>
-              <span>{isLight ? "Light mode" : "Dark mode"}</span>
-              <span style={{ marginLeft: "auto", fontSize: 11, opacity: 0.45 }}>T</span>
-            </button>
-            <a href="mailto:hello@imtiazz.me" className="sb-link"><span>✉</span> hello@imtiazz.me</a>
-            <a href="https://github.com/ImtiazNayeemShawon" target="_blank" rel="noopener noreferrer" className="sb-link">
-              <span>⌥</span> github.com/ImtiazNayeemShawon
-            </a>
-            <a href="https://cal.com/imtiaznayeem/30min" target="_blank" rel="noopener noreferrer" className="sb-cta">
-              Book a call →
-            </a>
-          </div>
-        </aside>
-
-        {/* ════════ MAIN ════════ */}
-        <main className="main-content" ref={mainRef}>
-          <div className="bento-grid">
-
-            {/* HERO */}
-            <section id="summary" className="bento-card b-hero">
-              <div className="hero-badge"><span className="hero-badge-dot" />Available for opportunities</div>
-              <h1 className="hero-name">Imtiaz Nayeem Shawon</h1>
-              <p className="hero-title">AI Engineer &amp; Full-Stack Developer · Dhaka, Bangladesh</p>
-              <p className="hero-summary">
-                5+ years building production AI systems — RAG pipelines, multi-agent workflows (LangGraph), and
-                LLM-integrated SaaS platforms — backed by strong full-stack and backend engineering (Python, Node.js,
-                scalable APIs, RBAC, Redis). Currently leading AI product development and company operations at ScaleBuild AI.
-              </p>
-              <div className="hero-tags">
-                {["Python", "LangGraph", "RAG", "FastAPI", "Next.js", "React", "NestJS", "AWS", "Redis"].map((t) => (
-                  <span key={t} className="hero-tag">{t}</span>
-                ))}
-              </div>
-            </section>
-
-            {/* STATUS */}
-            <div className="bento-card b-status">
-              <div className="status-hdr"><span className="status-dot" />Open to work</div>
-              <div className="info-table">
-                {[["Location","Dhaka, BD"],["Experience","5+ years"],["Current","ScaleBuild AI"],
-                  ["Projects","50+ delivered"],["Remote","Available"],["Phone","+880 1796 876012"]].map(([l, v]) => (
-                  <div key={l} className="info-row">
-                    <span className="info-label">{l}</span>
-                    <span className="info-value">{v}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* SKILLS */}
-            <section id="skills" className="bento-card b-skills">
-              <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: 18 }}>
-                <p className="card-label" style={{ margin: 0 }}>🛠️ Skills &amp; Capabilities</p>
-                <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
-                  {SKILLS.reduce((acc, g) => acc + g.chips.length, 0)} skills &middot; {SKILLS.length} domains
-                </span>
-              </div>
-
-              {/* Featured primary stack */}
-              <div className="skills-featured">
-                {FEATURED_SKILLS.map((s) => (
-                  <span key={s} className="skills-feat-chip">{s}</span>
-                ))}
-              </div>
-
-              {/* 4-col category grid */}
-              <div className="skills-cats-grid">
-                {SKILLS.map((g) => (
-                  <div key={g.cat} className="skills-cat-col">
-                    <p className="skills-cat-label">{g.cat}</p>
-                    <div className="skills-chips">
-                      {g.chips.map((c) => <span key={c} className="skill-chip">{c}</span>)}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* EXPERIENCE */}
-            <section id="experience" className="bento-card b-experience">
-              <p className="card-label">💼 Experience</p>
-              <div className="exp-list">
-                <div className="exp-section-divider">
-                  <span>Current &amp; Recent</span>
-                </div>
-                {EXPERIENCE.filter((e) => !e.earlier).map((e, i) => (
-                  <div key={i} className={`exp-item${e.current ? " is-current" : ""}`}>
-                    <div className="exp-top">
-                      <span className="exp-role">{e.role}</span>
-                      <span className="exp-date">{e.date}</span>
-                    </div>
-                    <span className="exp-company">{e.company}</span>
-                    <p className="exp-desc">{e.desc}</p>
-                  </div>
-                ))}
-                <div className="exp-section-divider" style={{ marginTop: 8 }}>
-                  <span>Earlier Roles</span>
-                </div>
-                {EXPERIENCE.filter((e) => e.earlier).map((e, i) => (
-                  <div key={i} className="exp-item is-earlier">
-                    <div className="exp-top">
-                      <span className="exp-role">{e.role}</span>
-                      <span className="exp-date">{e.date}</span>
-                    </div>
-                    <span className="exp-company">{e.company}</span>
-                    <p className="exp-desc">{e.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* ACHIEVEMENTS */}
-            <section id="achievements" className="bento-card b-achieve">
-              <p className="card-label">🏆 Achievements</p>
-              <div className="achieve-list">
-                {ACHIEVEMENTS.map((a) => (
-                  <div key={a.title} className="achieve-item">
-                    <div>
-                      <div className="achieve-title">{a.title}</div>
-                      <div className="achieve-sub-text">{a.sub}</div>
-                    </div>
-                    <span className="achieve-badge">{a.year}</span>
-                  </div>
-                ))}
-              </div>
-              <div style={{ marginTop: 16, paddingTop: 14, borderTop: "1px solid var(--border)" }}>
-                <p className="card-label">📝 Also</p>
-                <p style={{ fontSize: 12, color: "var(--text-muted)", lineHeight: 1.65 }}>
-                  Participated in numerous local exams, events, and competitions. Worked with robotics at the DC Office
-                  Robotics Lab and taught robotics basics to students, furthering my passion for technology and education.
-                </p>
-              </div>
-            </section>
-
-            {/* PROJECTS */}
-            <section id="projects" className="bento-card b-projects">
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 16 }}>
-                <p className="card-label" style={{ margin: 0 }}>🚀 Projects — {PROJECTS.length} Total</p>
-                <Link href="/projects" className="projects-cta" style={{ marginTop: 0, padding: "5px 12px", fontSize: 12 }}>
-                  View all in detail →
-                </Link>
-              </div>
-
-              <div className="projects-grid">
-                {PROJECTS.map((p) => (
-                  <div key={p.name} className="proj-card" onContextMenu={(e) => handleContextMenu(e, p)}>
-                    <div className="proj-card-top">
-                      <div>
-                        <p className="proj-cat">{p.cat}</p>
-                        <p className="proj-name">{p.name}</p>
-                      </div>
-                      {p.url
-                        ? <a href={p.url} target="_blank" rel="noopener noreferrer" className="proj-ext" title="View live" onClick={(e) => e.stopPropagation()}>↗</a>
-                        : <span className="proj-ext" style={{ cursor: "default", opacity: 0.3 }}>🔒</span>}
-                    </div>
-                    <p className="proj-desc">{p.desc}</p>
-                    <div className="proj-tags">{p.tags.map((t) => <span key={t} className="proj-tag">{t}</span>)}</div>
-                    <div className="proj-status-row">
-                      <span className="proj-status">{p.status === "Live" ? "✓ Live" : "🔒 Confidential"}</span>
-                    </div>
-                    <p className="proj-ctx-hint">⋮ right-click for options</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="nda-notice">
-                🔒 <strong>NDA Note:</strong> Several client projects, backend systems, and agentic workflows cannot be
-                shown publicly due to confidentiality agreements. Architecture decisions and coding execution remain
-                consistent across all delivery cycles.
-              </div>
-            </section>
-
-            {/* ECA */}
-            <section id="eca" className="bento-card b-eca">
-              <p className="card-label">🎖️ Extra-Curricular Activities</p>
-              <div className="eca-tabs">
-                {ECA_CATS.map((c) => (
-                  <button key={c.id} onClick={() => setEcaTab(c.id)}
-                    className={`eca-tab${ecaTab === c.id ? " active" : ""}`}>
-                    {c.label}
-                    <span style={{ marginLeft: 5, fontSize: 10, opacity: 0.55 }}>
-                      {c.id === "all" ? ECA_ITEMS.length : ECA_ITEMS.filter((i) => i.cat === c.id).length}
-                    </span>
-                  </button>
-                ))}
-              </div>
-              <div className="eca-grid">
-                {filteredECA.map((item) => (
-                  <div key={item.title} className="eca-item">
-                    <p className="eca-item-title">{item.title}</p>
-                    <p className="eca-item-meta">{item.meta}</p>
-                    <p className="eca-item-desc">{item.desc}</p>
-                    <span className="eca-item-badge">{item.badge}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* CONTACT */}
-            <section id="contact" className="bento-card b-contact">
-              <div className="contact-grid">
-                <div>
-                  <p className="contact-section-label">🎓 Education</p>
-                  <p className="edu-line">A Levels — Mathematics &amp; Computer Science</p>
-                  <p className="edu-school">Capstone School International, Dhaka</p>
-                  <p className="contact-section-label" style={{ marginTop: 18 }}>📍 Location</p>
-                  <p className="edu-line">Dhaka, Bangladesh</p>
-                  <p className="edu-school">Available for Remote &amp; On-site roles</p>
-                </div>
-                <div>
-                  <p className="contact-section-label">✉️ Contact</p>
-                  <div className="contact-links">
-                    <a href="mailto:hello@imtiazz.me" className="c-link"><span>✉</span> hello@imtiazz.me</a>
-                    <a href="tel:+8801796876012" className="c-link"><span>📞</span> +880 1796 876012</a>
-                    <a href="https://github.com/ImtiazNayeemShawon" target="_blank" rel="noopener noreferrer" className="c-link">
-                      <span>⌥</span> github.com/ImtiazNayeemShawon
-                    </a>
-                    <a href="https://cal.com/imtiaznayeem/30min" target="_blank" rel="noopener noreferrer" className="cta-btn">
-                      Book a 30-min call →
-                    </a>
-                  </div>
-                </div>
-                <div>
-                  <p className="contact-section-label">⌨️ Keyboard Shortcuts</p>
-                  <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
-                    {[
-                      { keys: ["1", "–", "7"], desc: "Jump to section" },
-                      { keys: ["J"], desc: "Next section" },
-                      { keys: ["K"], desc: "Previous section" },
-                      { keys: ["T"], desc: "Toggle dark / light" },
-                      { keys: ["Esc"], desc: "Close popups" },
-                    ].map((s, i) => (
-                      <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12 }}>
-                        <span style={{ display: "inline-flex", gap: 3, alignItems: "center", flexShrink: 0 }}>
-                          {s.keys.map((k, ki) =>
-                            k === "–" ? (
-                              <span key={ki} style={{ color: "var(--text-muted)", fontSize: 11 }}>–</span>
-                            ) : (
-                              <span key={ki} className="kbd">{k}</span>
-                            )
-                          )}
-                        </span>
-                        <span style={{ color: "var(--text-muted)" }}>{s.desc}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div style={{ marginTop: 16, padding: "10px 12px", borderRadius: 7, background: "var(--input-bg)", border: "1px solid var(--border)", fontSize: 11.5, color: "var(--text-muted)", lineHeight: 1.6 }}>
-                    💡 <strong>Tip:</strong> Right-click any project card for a quick peek or fullscreen view.
-                  </div>
-                </div>
-              </div>
-            </section>
-
-          </div>
-        </main>
-      </div>
-
-      {/* ════════ CONTEXT MENU ════════ */}
-      {contextMenu && (
-        <div className="ctx-menu" style={{ left: contextMenu.x, top: contextMenu.y }} onClick={(e) => e.stopPropagation()}>
-          <button className="ctx-item" onClick={() => { openPeek(contextMenu.project, contextMenu.x, contextMenu.y); setContextMenu(null); }}>
-            <span className="ctx-icon">👁</span> Quick Peek
-          </button>
-          <button className="ctx-item" onClick={() => { setFullscreen(contextMenu.project); setContextMenu(null); }}>
-            <span className="ctx-icon">⛶</span> View Fullscreen
-          </button>
-          <div className="ctx-divider" />
-          <Link href="/projects" className="ctx-item" onClick={() => setContextMenu(null)}>
-            <span className="ctx-icon">↗</span> View All Projects
-          </Link>
-        </div>
-      )}
-
-      {/* ════════ PEEK WINDOW ════════ */}
-      {peekProject && (
-        <div className="peek-window" style={{ left: peekPos.x, top: peekPos.y }}>
-          <div className="peek-header" onMouseDown={onPeekMouseDown}>
-            <div className="peek-win-controls">
-              <button className="peek-ctrl close-btn" onClick={() => setPeekProject(null)} title="Close (Esc)" />
-              <button className="peek-ctrl expand-btn"
-                onClick={() => { setFullscreen(peekProject); setPeekProject(null); }}
-                title="Fullscreen" />
-            </div>
-            <span className="peek-window-title">{peekProject.name}</span>
-            <span className="peek-drag-hint">drag to move</span>
-          </div>
-          <div className="peek-body">
-            <p className="peek-proj-cat">{peekProject.cat}</p>
-            <p className="peek-proj-name">{peekProject.emoji} {peekProject.name}</p>
-            <p className="peek-proj-desc">{peekProject.desc}</p>
-            <div className="peek-proj-tags">
-              {peekProject.tags.map((t) => <span key={t} className="peek-proj-tag">{t}</span>)}
-            </div>
-            {peekProject.url && (
-              <a href={peekProject.url} target="_blank" rel="noopener noreferrer" className="peek-proj-link">
-                View live ↗
-              </a>
-            )}
-            <p className="peek-proj-status">
-              {peekProject.status === "Live" ? "✓ Live project" : "🔒 Confidential / Client Portal"}
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* ════════ FULLSCREEN MODAL ════════ */}
-      {fullscreenProject && (
-        <div className="fullscreen-overlay" onClick={() => setFullscreen(null)}>
-          <div className="fullscreen-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="fullscreen-header">
-              <div className="fullscreen-controls">
-                <button className="peek-ctrl close-btn" onClick={() => setFullscreen(null)} title="Close (Esc)" />
-              </div>
-              <span className="fullscreen-title">{fullscreenProject.name}</span>
-              <span className="fullscreen-cat-badge">{fullscreenProject.cat}</span>
-            </div>
-            <div className="fullscreen-body">
-              <span className="fullscreen-proj-icon">{fullscreenProject.emoji}</span>
-              <h2 className="fullscreen-proj-title">{fullscreenProject.name}</h2>
-              <p className="fullscreen-proj-desc">{fullscreenProject.desc}</p>
-
-              <div className="fullscreen-props">
-                <div className="fullscreen-prop">
-                  <span className="fullscreen-prop-key">Category</span>
-                  <span className="fullscreen-prop-val">{fullscreenProject.cat}</span>
-                </div>
-                <div className="fullscreen-prop">
-                  <span className="fullscreen-prop-key">Status</span>
-                  <span className="fullscreen-prop-val">
-                    {fullscreenProject.status === "Live" ? "✓ Live / Public" : "🔒 Confidential — NDA"}
-                  </span>
-                </div>
-                <div className="fullscreen-prop">
-                  <span className="fullscreen-prop-key">Stack</span>
-                  <div className="fullscreen-tags">
-                    {fullscreenProject.tags.map((t) => <span key={t} className="fullscreen-tag">{t}</span>)}
-                  </div>
-                </div>
-              </div>
-
-              {fullscreenProject.url && (
-                <a href={fullscreenProject.url} target="_blank" rel="noopener noreferrer" className="fullscreen-link-btn">
-                  View Live Project ↗
-                </a>
-              )}
-              {!fullscreenProject.url && (
-                <div style={{ padding: "12px 16px", borderRadius: 8, background: "var(--input-bg)", border: "1px solid var(--border)", fontSize: 13, color: "var(--text-muted)", marginTop: 16 }}>
-                  🔒 This project is under NDA. Architecture decisions, system design patterns, and technical execution
-                  are consistent with my publicly visible work. Available for discussion in a call.
-                </div>
-              )}
-              <div style={{ marginTop: 20 }}>
-                <Link href="/projects" style={{ fontSize: 13, color: "var(--accent-text)", display: "inline-flex", alignItems: "center", gap: 6 }}>
-                  ← View all {PROJECTS.length} projects in detail
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ════════ KBD HINT TOAST ════════ */}
-      <div className={`kbd-toast${showKbdHint ? "" : " hidden"}`}>
-        <span>Press</span>
-        <span className="kbd">1</span><span>–</span><span className="kbd">7</span>
-        <span>to jump ·</span>
-        <span className="kbd">J</span><span className="kbd">K</span>
-        <span>to move ·</span>
-        <span className="kbd">T</span>
-        <span>theme ·</span>
-        <span style={{ fontStyle: "italic", fontSize: 11 }}>right-click projects</span>
-        <button onClick={() => setKbdHint(false)} style={{ marginLeft: 4, fontSize: 12, opacity: 0.4 }}>✕</button>
-      </div>
-    </>
+    </div>
   );
 }
