@@ -8,7 +8,7 @@ import Link from "next/link";
 import localFont from "next/font/local";
 import "./(components)/imtiazz/imtiazz.css";
 import {
-  LINKS, NAV, HERO, MARQUEE, SERVICES, SKILLS, EXPERIENCE, FEATURED, NDA, POSTS, WINS, SCORES, ECA, SOCIALS, JOURNEY,
+  LINKS, NAV, HERO, MARQUEE, SERVICES, SKILLS, EXPERIENCE, FEATURED, NDA, WINS, SCORES, ECA, SOCIALS, JOURNEY,
 } from "./(components)/imtiazz/data";
 import VIDEOS from "@/data/videos.json";
 
@@ -438,20 +438,94 @@ function Watch() {
   );
 }
 
+/* ---------- blog (Daily brief posts from GitHub via /api/brief) ---------- */
+/* Poster copy can contain <br>, <i>, <em>. Render it as text with italic serif accents, nothing else. */
+function RichText({ html = "" }) {
+  const clean = html.replace(/<br\s*\/?>/gi, " ").replace(/<(?!\/?(i|em)>)[^>]+>/gi, "");
+  const parts = clean.split(/<(?:i|em)>(.*?)<\/(?:i|em)>/gi);
+  return <>{parts.map((t, k) => (k % 2 ? <i key={k}>{t}</i> : t))}</>;
+}
+
+function PostModal({ post, onClose }) {
+  const closeRef = useRef(null);
+  useEffect(() => {
+    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    addEventListener("keydown", onKey);
+    closeRef.current?.focus();
+    const prev = document.body.style.overflow; document.body.style.overflow = "hidden";
+    return () => { removeEventListener("keydown", onKey); document.body.style.overflow = prev; };
+  }, [onClose]);
+  const li = SOCIALS.find((s) => s.key === "linkedin")?.url;
+  return (
+    <div className="pmodal" role="dialog" aria-modal="true" aria-label="Post" onClick={onClose}>
+      <div className="pbox" onClick={(e) => e.stopPropagation()}>
+        <button ref={closeRef} type="button" className="pclose" onClick={onClose} aria-label="Close"><Icon name="plus" /></button>
+        {post.image && (
+          <div className="pimg">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={post.image} alt={post.headline.replace(/<[^>]+>/g, " ")} />
+          </div>
+        )}
+        <div className="ptext">
+          <span className="pmeta mono"><b>{post.kicker}</b>{post.date}</span>
+          <h3><RichText html={post.headline} /></h3>
+          {post.highlight && <span className="pfoot">{post.old && <s>{post.old}</s>}<em>{post.highlight}</em></span>}
+          {post.subline && <p className="psub"><RichText html={post.subline} /></p>}
+          {post.topic && <p className="ptopic">{post.topic}</p>}
+          <div className="pacts">
+            {post.source && <a className="visit" href={post.source} target="_blank" rel="noopener noreferrer">Source <Icon name="arrowUR" /></a>}
+            {li && <a className="btn primary" href={li} target="_blank" rel="noopener noreferrer">Follow on LinkedIn</a>}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Blog() {
+  const [state, setState] = useState({ loading: true, posts: [] });
+  const [all, setAll] = useState(false);
+  const [open, setOpen] = useState(null);
+  const li = SOCIALS.find((s) => s.key === "linkedin")?.url;
+  useEffect(() => {
+    let alive = true;
+    fetch("/api/brief").then((r) => r.json()).then((d) => { if (alive) setState({ loading: false, posts: d.posts || [] }); })
+      .catch(() => { if (alive) setState({ loading: false, posts: [] }); });
+    return () => { alive = false; };
+  }, []);
+  const posts = all ? state.posts : state.posts.slice(0, 6);
   return (
     <section className="sec" id="blog">
       <SecHead kicker="BLOG" note="DAILY BRIEF" title="Notes from the" em="build"
-        action={<a className="visit" href="#blog">All posts <Icon name="arrowUR" /></a>} />
-      <Reveal className="posts">
-        {POSTS.map((p) => (
-          <a key={p.title} className="post" href={p.href}>
-            <span className="pmeta mono"><b>{p.tag}</b>{p.date}</span>
-            <h3>{p.title} <i>{p.em}</i></h3>
-            <span className="pfoot"><em>{p.hl}</em><Icon name="arrowUR" /></span>
-          </a>
-        ))}
-      </Reveal>
+        action={li && <a className="visit" href={li} target="_blank" rel="noopener noreferrer">Follow on LinkedIn <Icon name="arrowUR" /></a>} />
+      {state.loading ? (
+        <div className="posts" aria-busy="true">{[0, 1, 2].map((k) => <div key={k} className="post skel"><span /><span /><span /></div>)}</div>
+      ) : state.posts.length === 0 ? (
+        <div className="vempty"><div><b>Posts are <i>on the way</i></b><p>New daily briefs land on LinkedIn every morning.</p></div>
+          {li && <a className="btn ghost" href={li} target="_blank" rel="noopener noreferrer">Read on LinkedIn</a>}</div>
+      ) : (
+        <>
+          <Reveal className="posts">
+            {posts.map((p) => (
+              <button key={p.slug} type="button" className="post" onClick={() => setOpen(p)}>
+                {p.image && (
+                  <span className="pthumb">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.image} alt="" loading="lazy" />
+                  </span>
+                )}
+                <span className="pmeta mono"><b>{p.kicker}</b>{p.date}</span>
+                <h3><RichText html={p.headline} /></h3>
+                <span className="pfoot">{p.highlight ? <em>{p.highlight}</em> : <span />}<Icon name="arrowUR" /></span>
+              </button>
+            ))}
+          </Reveal>
+          {state.posts.length > 6 && !all && (
+            <div className="pmore"><button type="button" className="btn ghost" onClick={() => setAll(true)}>Show more posts</button></div>
+          )}
+        </>
+      )}
+      {open && <PostModal post={open} onClose={() => setOpen(null)} />}
     </section>
   );
 }
