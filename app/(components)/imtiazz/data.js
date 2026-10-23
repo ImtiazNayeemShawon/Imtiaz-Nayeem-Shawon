@@ -113,14 +113,6 @@ export const FEATURED = [
 
 export const NDA = ["Cosmpulse", "Ryun Shim Portfolio", "MZ Media Agency", "Zipbox Agency", "Frosty Icepod", "Skynetix"];
 
-/* Reels: set `src` to a file in /public/reels, or `embed` to a YouTube/Instagram embed URL. */
-export const REELS = [
-  { ep: "EP. 001", title: "Google gave AI its own email", src: "/reels/ep001.mp4", poster: "/reels/ep001.jpg" },
-  { ep: "EP. 002", title: "Coming soon" },
-  { ep: "EP. 003", title: "Coming soon" },
-  { ep: "Video", title: "Coming soon", slot: "YouTube", long: true },
-];
-
 /* Blog: replace href with the real post URL when it exists. */
 export const POSTS = [
   { tag: "Security", date: "22.10.2026", title: "Your PHP patch is", em: "due", hl: "today", href: "#blog" },
