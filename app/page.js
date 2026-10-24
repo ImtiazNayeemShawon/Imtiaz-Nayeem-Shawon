@@ -608,7 +608,7 @@ export default function Page() {
   /* nav highlight */
   useEffect(() => {
     const on = () => {
-      const y = scrollY + 160; let c = NAV[0].id;
+      const y = scrollY + 160; let c = "";
       NAV.forEach(({ id }) => { const el = document.getElementById(id); if (el && el.getBoundingClientRect().top + scrollY <= y) c = id; });
       setActive(c);
     };

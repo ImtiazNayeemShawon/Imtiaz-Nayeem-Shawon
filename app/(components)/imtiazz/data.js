@@ -9,15 +9,10 @@ export const LINKS = {
 };
 
 export const NAV = [
-  { id: "summary", label: "Summary" },
   { id: "services", label: "Services" },
-  { id: "skills", label: "Skills" },
   { id: "experience", label: "Work" },
   { id: "projects", label: "Projects" },
-  { id: "content", label: "Content" },
-  { id: "watch", label: "Watch" },
   { id: "blog", label: "Blog" },
-  { id: "achievements", label: "Wins" },
   { id: "contact", label: "Contact" },
 ];
 
