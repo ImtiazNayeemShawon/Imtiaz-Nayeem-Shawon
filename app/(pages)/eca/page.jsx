@@ -1,455 +1,160 @@
 "use client";
-import React from "react";
-import Navbar from "@/app/(components)/navbar";
-import Link from "next/link";
-import Experience from "@/app/(components)/experience";
-import Footer from "@/app/(components)/footer";
-import SideNav from "@/app/(components)/sidenav"; // Import the new component
 
-export default function page() {
-  // Navigation sections configuration
-  const navSections = [
-    { id: "volunteering", title: "Volunteering" },
-    { id: "experiences", title: "Work Experience" },
-    { id: "awards", title: "Awards" },
-    { id: "startups", title: "Startups" },
-    { id: "hackathons", title: "Hackathons" },
-    { id: "olympiads", title: "Olympiads" },
-  ];
+/* Wins, ECA and volunteering — v3 "Systems" design. Shared frame: app/(components)/imtiazz/ui.jsx
+   Work history comes from EXPERIENCE in data.js so it always matches the home page. */
 
-  const Jobs = [
-    {
-      title: "Software Engineer @ Scalebuild LLC",
-      tag: "@Scalebuild LLC",
-      description: (
-        <ul className="list-disc">
-          
-          <li className="my-4">
-            Leading full-stack development initiatives, overseeing system architecture, implementation, and delivery of scalable web applications.
-          </li>
-          <li className="my-4">
-            Collaborating with the Project Manager and cross-functional teams to define project requirements and technical direction.
-          </li>
-          <li className="my-4">
-            Designing, developing, and maintaining high-quality, secure, and efficient code across both frontend and backend systems.
-          </li>
-          <li className="my-4">
-            Providing technical leadership and mentorship to junior developers, ensuring adherence to best practices and coding standards.
-          </li>
-          <li className="my-4">
-            Managing deployment processes, monitoring system performance, and optimizing application scalability.
-          </li>
-          <li className="my-4">
-            Ensuring confidentiality, compliance, and intellectual property protection as per company policies.
-          </li>
-        </ul>
-      ),
-    },
-    {
-      title: "Lead Software Engineer @ Aaladinai",
-      tag: "@aaladinai",
-      description: (
-        <ul className="list-disc">
+import { useEffect, useState } from "react";
+import { Frame, PageHead, Reveal, glow, Icon } from "@/app/(components)/imtiazz/ui";
+import { EXPERIENCE, WINS, SCORES } from "@/app/(components)/imtiazz/data";
 
-          <li className="my-4">
-            Leading full-stack development initiatives, overseeing system architecture, implementation, and delivery of scalable web applications.
-          </li>
-          <li className="my-4">
-            Collaborating with the Project Manager and cross-functional teams to define project requirements and technical direction.
-          </li>
-          <li className="my-4">
-            Designing, developing, and maintaining high-quality, secure, and efficient code across both frontend and backend systems.
-          </li>
-          <li className="my-4">
-            Providing technical leadership and mentorship to junior developers, ensuring adherence to best practices and coding standards.
-          </li>
-          <li className="my-4">
-            Managing deployment processes, monitoring system performance, and optimizing application scalability.
-          </li>
-          <li className="my-4">
-            Ensuring confidentiality, compliance, and intellectual property protection as per company policies.
-          </li>
-        </ul>
-      ),
-    },
-    {
-      title: "Freelance developer",
-      tag: "@freelance",
-      description: (
-        <ul className="list-disc">
-          <li className="my-4">
-            Designed, developed, and deployed scalable full stack web,mobile
-            applications, ensuring high performance and security .
-          </li>
-          <li className="my-4">
-            Led teams and managed client relations, successfully delivering
-            projects for over 30 clients.{" "}
-          </li>
-          <li className="my-4">
-            Spearheaded product development initiatives, driving innovation and
-            achieving project goals.
-          </li>
-        </ul>
-      ),
-    },
-    {
-      title: "MERN stack developer @outnet",
-      tag: "@outnet",
-      description: (
-        <ul className="list-disc">
-          <li className="my-4">
-            Develop and maintain the backend services and APIs using Node.js and
-            Express.js.
-          </li>
-          <li className="my-4">
-            Design and implement scalable and efficient database schemas using
-            MongoDB.
-          </li>
-          <li className="my-4">
-            Work with the Next.js framework to build and optimize server-side
-            rendered and statically generated React applications.
-          </li>
-          <li className="my-4">
-            Collaborate with front-end developers to integrate user-facing
-            elements with server-side logic.
-          </li>
-          <li className="my-4">
-            Participate in code reviews and provide constructive feedback.
-          </li>
-          <li className="my-4">
-            Write clean, maintainable, and well-documented code.
-          </li>
-        </ul>
-      ),
-    },
-    {
-      title: "Full stack developer @PixiQor",
-      tag: "@pixiqor",
-      description: (
-        <ul className="list-disc">
-          <li className="my-4">
-            Develop and maintain the backend services and APIs using Node.js and
-            Express.js, Nest JS and React native applicationð
-          </li>
-          <li className="my-4">
-            Deploy projects on server and run applications on liveó
-          </li>
-          <li className="my-4">
-            Troubleshoot and debug issues in both backend and frontend codeb
-          </li>
-          <li className="my-4">
-            Lead development team for deliver projects in right time
-          </li>
-        </ul>
-      ),
-    },
-  ];
-  const volunteer = [
-    {
-      title: "Cyber Teens Bangladesh",
-      tag: "@cyberTeens",
-      description: (
-        <p>
-          Working at <b>Cyber Teens</b> to make the internet safer for the
-          younger generation. We focus on combating cyberbullying and helping
-          people overcome related problems. I contribute as a developer in this
-          initiative.
-        </p>
-      ),
-    },
-    {
-      title: "Aruddho 71",
-      tag: "@A71",
-      description: (
-        <p>
-          <b>Aruddho 71</b> is a non-profit organization focused on youth
-          development. I worked in the IT team and gained valuable experience
-          and networking opportunities.
-        </p>
-      ),
-    },
-    {
-      title: "Mental Health Care Bangladesh",
-      tag: "@MHCBD",
-      description: (
-        <p>
-          This organization focuses on mental health and well-being by providing
-          support to students and young individuals. They arrange sessions in
-          various schools, colleges, and universities. I contributed as a web
-          developer in their IT team.
-        </p>
-      ),
-    },
-    {
-      title: "Bangladesh Space Research Society (BSRS)",
-      tag: "@BSRS",
-      description: (
-        <p>
-          I joined BSRS as a web developer in September and worked diligently
-          with the organization. My dedication led to a promotion to IT
-          Executive. I am immensely grateful to the organization for providing
-          me with this opportunity to grow and advance in my career.
-        </p>
-      ),
-    },
-  ];
-  const awards = [
-    {
-      title: "Creative Junior Award",
-      tag: "@cyberTeens",
-      description: (
-        <p>
-          The first such great achievement of my life! An Experience of Taking a
-          coding for juniors Batch Topper Award from Cyber ​​Teens Founder Sadat
-          Rahman (International Children's Peace Prize Winner) and Monir Hossain
-          (CEO of Creative IT).
-        </p>
-      ),
-    },
-    {
-      title: "NASA Space Apps Challenge - Galactic Problem Solver",
-      tag: "@cyberTeens",
-      description: (
-        <p>
-          Our team was honored to be selected for virtual participation in the
-          NASA Space Apps Challenge Bangladesh 2023. Through dedication and
-          innovation, we achieved the prestigious "Galactic Problem Solver"
-          position, showcasing our ability to tackle complex space-related
-          challenges.
-        </p>
-      ),
-    },
-  ];
-  const startup = [
-    {
-      title: "Freelance developer",
-      tag: "@freelance",
-      description: (
-        <p>
-          Independent freelance work helping businesses grow with smart, reliable
-          digital solutions. Building custom websites, mobile apps, and software
-          that actually make a difference — specializing in full-stack
-          development, AI-powered tools, SaaS platforms, and tailored software
-          that fits business needs, whether a startup or an established company.
-          The goal is simple: to build fast, easy-to-use, and future-ready
-          digital products.
-        </p>
-      ),
-    },
-    {
-      title: "ZippyAI",
-      tag: "@cyberTeens",
-      description: (
-        <p>
-          ZippyAI is a LinkedIn extension that generates comments for LinkedIn
-          posts to increase engagement. Users can generate relevant comments to
-          gain more visibility and interactions on the platform.
-        </p>
-      ),
-    },
-    {
-      title: "MindSpace AI",
-      tag: "@cyberTeens",
-      description: (
-        <p>
-          To provide accessible, personalized, and scalable mental health
-          support using AI-driven tools and community engagement. This platform
-          serves as a community for individuals dealing with mental health
-          issues, enabling them to share their thoughts and access AI-driven
-          tools for support.
-        </p>
-      ),
-    },
-  ];
-  const Hackathons = [
-    {
-      title: "Top 10 team @Technovation Hackathon 2025 by Programming hero",
-      tag: "@MHCBD",
-      description: ( 
-        <ul className="list-disc">
-          <li className="my-4">
-            Developed an AI-powered market monitoring and data analysis tool specifically for crops, allowing real-time insights and smarter agricultural decision making.
-          </li>
-          <li className="my-4">
-            Implemented data retrieval systems and created a chatbot interface that provides timely information about various plant diseases to users.
-          </li>
-          <li className="my-4">
-            Built and deployed a plant leaf disease detection model that accurately diagnoses plant health through image analysis, aiding farmers in early identification and treatment.
-          </li>
-        </ul>
-      ),
-    },
-    {
-      title: "Team Leader @AstroTots NASA space app challenge 2023 & 2024",
-      tag: "@MHCBD",
-      description: (
-        <ul className="list-disc">
-          <li className="my-4">
-            Developed and introduced our space exploration project to NASA Space
-            Apps Challenge judges.
-          </li>
-          <li className="my-4">
-            Collaborated with teams, met with seniors, received guidance, and
-            built a strong network.
-          </li>
-          <li className="my-4">
-            we achieved the prestigious "Galactic Problem Solver" position
-          </li>
-        </ul>
-      ),
-    },
-  ];
-  const Olympiad = [
-    {
-      title: "International Artificial intelligence Olympiad",
-      tag: "@bdaio",
-      description: (
-        <p>
-          participated in the IAIO 2026 and was selected for the training camp held at the Institute of Information Technology (IIT), University of Dhaka, where I spent two days learning and gaining valuable experience.
-        </p>
-      ),
-    },
-    {
-      title: "Bangladesh Artificial intelligence Olympiad",
-      tag: "@bdaio",
-      description: (
-        <p>
-          Participated in the BDAIO 2025, successfully cleared the preliminary
-          round, and National Round. It was a remarkable experience to showcase
-          my skills in AI and compete at a national level.
-        </p>
-      ),
-    },
-    {
-      title: "National high school programming contest",
-      tag: "@nhspc",
-      description: (
-        <p>
-          Participated in the NHSPC 2025, won the regional round, received a
-          medal and certificate, and was selected for the national round.
-        </p>
-      ),
-    },
-    {
-      title: "Bangladesh Informatics Olympiad",
-      tag: "@cyberTeens",
-      description: (
-        <p>
-          Participated in BDOI 2024 and solved 2 out of 5 problems. I cleared
-          the first round, and it was a great experience to participate in BDOI
-          as it was my first time.
-        </p>
-      ),
-    },
-    {
-      title: "Bangladesh Junior Science Olympiad",
-      tag: "@cyberTeens",
-      description: (
-        <p>
-          I participated in BDJSO and traveled to Chittagong, where I cleared
-          the divisional round. Unfortunately, I wasn't selected for the next
-          final round. However, I met some notable individuals like Munir
-          Chowdhury, which made the experience worthwhile.
-        </p>
-      ),
-    },
-    {
-      title: "ICT Olympiad Bangladesh",
-      tag: "@cyberTeens",
-      description: (
-        <p>
-          Cleared the selection round, regional round, and divisional round but
-          was not selected for the next round. It was an unfortunate outcome,
-          but I gained valuable experience.
-        </p>
-      ),
-    },
-  ];
+const SECTIONS = [
+  {
+    id: "olympiads",
+    title: "Olympiads",
+    note: "National-level olympiads in AI, programming and science.",
+    items: [
+      { title: "International Artificial Intelligence Olympiad", when: "2026", badge: "Training camp",
+        text: "Took part in IAIO 2026 and was selected for the training camp at the Institute of Information Technology (IIT), University of Dhaka: two days of learning and hands-on work." },
+      { title: "Bangladesh Artificial Intelligence Olympiad", when: "2025", badge: "National round",
+        text: "Cleared the preliminary round and competed in the national round of BDAIO 2025." },
+      { title: "National High School Programming Contest", when: "2025", badge: "Regional winner",
+        text: "Won the regional round of NHSPC 2025 with a medal and certificate, and was selected for the national round." },
+      { title: "Bangladesh Informatics Olympiad", when: "2024", badge: "Round 1 cleared",
+        text: "First time at BDOI: solved 2 of 5 problems and cleared the first round." },
+      { title: "Bangladesh Junior Science Olympiad", when: "", badge: "Divisional round",
+        text: "Travelled to Chittagong and cleared the divisional round, meeting people like Munir Chowdhury along the way." },
+      { title: "ICT Olympiad Bangladesh", when: "", badge: "Divisional round",
+        text: "Cleared the selection, regional and divisional rounds." },
+    ],
+  },
+  {
+    id: "hackathons",
+    title: "Hackathons",
+    note: "Building under pressure, usually as team lead.",
+    items: [
+      { title: "Technovation Hackathon 2025 · Programming Hero", when: "2025", badge: "Top 10",
+        points: [
+          "Built an AI-powered market monitoring and data analysis tool for crops, giving real-time insights for farming decisions.",
+          "Added data retrieval and a chatbot that answers questions about plant diseases.",
+          "Trained and deployed a plant-leaf disease detection model that diagnoses plant health from photos.",
+        ] },
+      { title: "NASA Space Apps Challenge · Team AstroTots", when: "2023 & 2024", badge: "Galactic Problem Solver",
+        points: [
+          "Led the team and presented our space exploration project to the judges.",
+          "Earned the “Galactic Problem Solver” position.",
+          "Worked with mentors and seniors and built a strong network.",
+        ] },
+    ],
+  },
+  {
+    id: "awards",
+    title: "Awards",
+    items: [
+      { title: "NASA Space Apps Challenge Bangladesh", when: "2023", badge: "Galactic Problem Solver",
+        text: "Selected for virtual participation and awarded the “Galactic Problem Solver” position for our solution to a space challenge." },
+      { title: "Creative Junior Award · Cyber Teens", when: "2023", badge: "Batch topper",
+        text: "My first big award: batch topper in coding for juniors, presented by Cyber Teens founder Sadat Rahman (International Children's Peace Prize winner) and Monir Hossain (CEO, Creative IT)." },
+    ],
+  },
+  {
+    id: "startups",
+    title: "Startups",
+    note: "Products I started outside of client work.",
+    items: [
+      { title: "ZippyAI", when: "", badge: "Co-founder",
+        text: "A LinkedIn extension that writes relevant comments on posts so users get more visibility and engagement." },
+      { title: "MindSpace AI", when: "", badge: "Co-founder",
+        text: "A community for people dealing with mental health issues, with AI tools for accessible, personal support." },
+    ],
+  },
+  {
+    id: "volunteering",
+    title: "Volunteering",
+    note: "Tech work for non-profits focused on internet safety, youth and mental health.",
+    items: [
+      { title: "Bangladesh Space Research Society (BSRS)", when: "", badge: "IT Executive",
+        text: "Joined as a web developer and was promoted to IT Executive, running the society's IT operations and digital presence." },
+      { title: "Cyber Teens Bangladesh", when: "", badge: "Developer",
+        text: "Helping make the internet safer for young people by fighting cyberbullying; I contribute as a developer." },
+      { title: "Mental Health Care Bangladesh", when: "", badge: "Web developer",
+        text: "Supports students' mental health through sessions at schools, colleges and universities. I worked in the IT team." },
+      { title: "Aruddho 71", when: "", badge: "IT team",
+        text: "A non-profit for youth development, where I worked in the IT team." },
+    ],
+  },
+  {
+    id: "work",
+    title: "Work experience",
+    note: "The same history as on the home page.",
+    items: EXPERIENCE.map((x) => ({ title: x.role, org: x.org, when: x.date, badge: x.ongoing ? "Now" : "", text: x.desc, now: x.ongoing })),
+  },
+];
+
+export default function EcaPage() {
+  const [active, setActive] = useState(SECTIONS[0].id);
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      (es) => es.forEach((e) => { if (e.isIntersecting) setActive(e.target.id); }),
+      { rootMargin: "-30% 0px -60% 0px" }
+    );
+    SECTIONS.forEach((s) => { const el = document.getElementById(s.id); if (el) obs.observe(el); });
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <div>
-      {/* Side Navigation */}
-
-      {/* Main Content */}
-      <div className="max-md:hidden">
-        <SideNav sections={navSections} />
-      </div>
-      <div className="ml-0 md:ml-8">
-        {/* Volunteering experience */}
-        <div id="volunteering" className="pt-40 scroll-mt-24">
-          <Experience
-            content={volunteer}
-            title="Volunteering"
-            description={
-              "This section covers my contributions to several organizations where I worked to bring about positive change in society. It demonstrates my commitment to social causes, including internet safety, youth development, mental health awareness, and space research."
-            }
-          />
+    <Frame active="eca">
+      <PageHead eyebrow="Recognition · Olympiads · ECA" title={<>Wins, ranks &amp; <span className="h1-2">side quests.</span></>}
+        lead="Olympiads, hackathons, startups and volunteering: the work that happened alongside the day job.">
+        <div className="head-stats">
+          <div><b>{WINS.length}</b><span>Major wins</span></div>
+          {SCORES.map((s) => <div key={s.label}><b>{s.value}+</b><span>{s.label}</span></div>)}
+          <div><b>{SECTIONS[0].items.length}</b><span>Olympiads</span></div>
         </div>
+      </PageHead>
 
-        {/* Job  */}
-        <div id="experiences" className="scroll-mt-24">
-          <Experience
-            content={Jobs}
-            title="Experiences of Working as a Developer"
-            description="After embarking on my coding journey, I have accumulated extensive experience as a developer through numerous freelance projects, various companies, and voluntary contributions."
-          />
-        </div>
+      <Reveal className="win-strip">
+        {WINS.map((w) => (
+          <div key={w.title} className={`win ${w.lime ? "hot" : ""}`} onMouseMove={glow}>
+            <span className="yr">{w.year}</span><b>{w.title}</b><span className={`badge ${w.lime ? "lime" : ""}`}>{w.badge}</span>
+          </div>
+        ))}
+      </Reveal>
 
-        {/* Awards */}
-        <div id="awards" className="scroll-mt-24">
-          <Experience
-            content={awards}
-            title="Awards and Achievements"
-            description={
-              "This section showcases the recognition I have received for my efforts and achievements. It reflects my dedication and excellence in the fields of coding and innovation."
-            }
-          />
-        </div>
-
-        {/* Startup and business */}
-        <div id="startups" className="scroll-mt-24">
-          <Experience
-            content={startup}
-            title="Startups and Businesses"
-            description={
-              "This section highlights my entrepreneurial ventures and projects, focusing on the development and delivery of technology-driven solutions. It showcases my leadership, technical expertise, and commitment to innovation and impact."
-            }
-          />
-        </div>
-
-        {/* Hackathons */}
-        <div id="hackathons" className="scroll-mt-24">
-          <Experience
-            content={Hackathons}
-            title="Hackathons"
-            description={""}
-          />
-        </div>
-
-        {/* Olympiad */}
-        <div id="olympiads" className="scroll-mt-24">
-          <Experience
-            content={Olympiad}
-            title="Olympiads"
-            description={
-              "This section highlights my participation in various national-level Olympiads, showcasing my academic and problem-solving abilities. It reflects my enthusiasm for competitive programming and science, along with the experiences gained from these events."
-            }
-          />
-        </div>
-
-        <div className="pt-4 mt-20">
-          <p className="text-sm text-white my-10 w-[70%] m-auto text-center">
-            In addition to these achievements, I participated in numerous local
-            exams, events, and competitions, gaining valuable experience and
-            building a strong network. I also had the opportunity to work with
-            robotics at the DC Office Robotics Lab, also I taught some students
-            the basics of robotics, further fueling my passion for technology
-            and education.
-          </p>
+      <div className="plist-wrap">
+        <nav className="pindex" aria-label="Sections">
+          {SECTIONS.map((s, i) => (
+            <a key={s.id} href={`#${s.id}`} className={active === s.id ? "on" : ""}><span>{String(i + 1).padStart(2, "0")}</span>{s.title}</a>
+          ))}
+        </nav>
+        <div className="eca-secs">
+          {SECTIONS.map((s) => (
+            <section key={s.id} id={s.id} className="eca-sec">
+              <Reveal className="eca-head">
+                <h2>{s.title}</h2>
+                {s.note && <p className="sec-note">{s.note}</p>}
+              </Reveal>
+              <Reveal as="ol" className="tl">
+                {s.items.map((it) => (
+                  <li key={it.title + it.when} className={it.now ? "now" : ""}>
+                    <span className="tl-dot" aria-hidden="true" />
+                    <div className="tl-top">
+                      <h3>{it.title}</h3>
+                      {it.badge && <span className={`badge ${it.now ? "lime" : ""}`}>{it.badge}</span>}
+                    </div>
+                    {(it.when || it.org) && <p className="case-meta">{[it.org, it.when].filter(Boolean).join(" · ")}</p>}
+                    {it.text && <p className="tl-text">{it.text}</p>}
+                    {it.points && <ul className="phl">{it.points.map((p) => <li key={p}><Icon name="check" />{p}</li>)}</ul>}
+                  </li>
+                ))}
+              </Reveal>
+            </section>
+          ))}
+          <Reveal as="p" className="eca-foot">
+            I also took part in many local exams, events and competitions, worked in the robotics lab at the DC Office,
+            and taught students the basics of robotics.
+          </Reveal>
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </Frame>
   );
 }

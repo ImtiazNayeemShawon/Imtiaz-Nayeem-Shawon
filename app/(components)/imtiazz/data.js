@@ -9,27 +9,32 @@ export const LINKS = {
 };
 
 export const NAV = [
+  { id: "about", label: "About" },
   { id: "services", label: "Services" },
-  { id: "experience", label: "Work" },
-  { id: "projects", label: "Projects" },
-  { id: "blog", label: "Blog" },
+  { id: "projects", label: "Work" },
+  { id: "experience", label: "Experience" },
   { id: "contact", label: "Contact" },
 ];
 
 export const HERO = {
+  hi: "Hi, I'm Imtiaz",
+  handle: "imtiazz",
+  title: ["I'm an AI", "Systems Engineer."],
+  lead: "One engineer. From model to production.",
+  meta: ["5+ years experience", "Agents · RAG · LLMOps", "Dhaka · Remote worldwide"],
   sub: "RAG pipelines, multi-agent systems and LLM-powered SaaS. Now a Software Engineer at Oxale Infotech, focused on AI and backend.",
   stats: [
     { value: 5, suffix: "+", label: "Years building" },
-    { value: 50, suffix: "+", label: "Projects shipped" },
-    { text: "AI lead", label: "Ex-ScaleBuild AI" },
+    { value: 2, suffix: " yrs", label: "Focused on AI & LLM products" },
+    { value: 3, suffix: "", label: "AI SaaS products orchestrated" },
     { value: 2, suffix: "×", label: "AI Olympiad wins" },
   ],
-  tags: ["Python", "LangGraph", "RAG", "FastAPI", "Next.js"],
+  tags: ["TypeScript", "LangGraph", "RAG", "NestJS", "Next.js"],
 };
 
 export const MARQUEE = [
-  ["LangGraph"], ["Claude", true], ["FastAPI"], ["Next.js"], ["Pinecone", true], ["NestJS"],
-  ["Redis"], ["Gemini", true], ["PostgreSQL"], ["AWS"], ["React Native", true], ["Docker"],
+  ["LangGraph"], ["Claude"], ["NestJS"], ["Next.js"], ["Pinecone"], ["BullMQ"], ["Hono.js"],
+  ["Redis"], ["Gemini"], ["PostgreSQL"], ["AWS"], ["React Native"], ["Docker"], ["MCP"],
 ];
 
 export const SERVICES = [
@@ -42,10 +47,10 @@ export const SERVICES = [
 ];
 
 export const SKILLS = {
-  ai: { label: "AI / LLM", items: ["Python", "LangGraph", "RAG & Vector Search", "Agentic AI Workflows", "Claude / GPT / Gemini / Groq", "Pinecone / pgvector / Qdrant", "Prompt Engineering", "AI Microservices", "LLM Tool Calling", "Multi-step Reasoning", "LLMOps", "Redis Semantic Cache"] },
-  be: { label: "Backend", items: ["Node.js", "FastAPI", "NestJS", "Express.js", "REST APIs", "GraphQL", "Microservices", "RBAC / JWT / OAuth2", "Redis Caching", "Auth Systems", "WebSocket"] },
-  fe: { label: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Zustand", "React Native", "Framer Motion"] },
-  ops: { label: "DevOps / DB", items: ["AWS (EC2, S3, Lambda)", "Docker", "MongoDB & Mongoose", "PostgreSQL & Prisma", "Vercel / Railway / DigitalOcean", "Nginx", "CI/CD Pipelines", "Cloudinary"] },
+  ai: { label: "Backend / AI", items: ["TypeScript", "Python", "Node.js", "NestJS", "Express", "Hono.js", "LangGraph", "LangChain", "RAG", "Multi-Agent Systems", "Claude / GPT / Gemini", "Pinecone", "MCP", "REST APIs", "Microservices"] },
+  sys: { label: "System design & data", items: ["Redis", "BullMQ", "Message Queues", "Event-Driven Architecture", "Async Processing", "PostgreSQL", "MongoDB", "TypeORM", "Schema Design", "Query Optimization"] },
+  fe: { label: "Frontend", items: ["Next.js (SSR/SSG)", "React", "React Native", "Zustand", "Recharts", "Responsive UI"] },
+  ops: { label: "Security, DevOps & integrations", items: ["RBAC / ABAC", "JWT / OAuth2", "Secure API Design", "AWS", "Docker", "Nginx", "GitHub Actions", "CI/CD", "Stripe", "Plaid", "Dropbox Sign", "Meta Graph API", "APNs", "Firebase"] },
 };
 
 export const EXPERIENCE = [
@@ -58,53 +63,71 @@ export const EXPERIENCE = [
     hl: "AI and backend",
   },
   {
-    date: "Sep 2025 – Jun 2026",
-    role: "Lead Software Engineer + Company Ops",
+    date: "Sep 2025 – Jul 2026",
+    role: "Software Engineer",
     org: "ScaleBuild AI · New York (Remote)",
-    desc: "Led an AI-powered SaaS platform end to end and architected Redis and queue infrastructure that cut response times by 40%. Promoted to Lead, Company Operations in April 2026, overseeing strategy, hiring and cross-team coordination for a 10+ person team.",
-    hl: "40%",
-  },
-  {
-    date: "Jan 2021 – Aug 2026",
-    role: "Freelance Developer",
-    org: "Independent · Remote",
-    desc: "Architected backend and full-stack systems for 50+ client projects across industries. Led engineering teams of 3 to 5 developers and defined code standards, system architecture and delivery pipelines.",
-    hl: "50+ client projects",
+    desc: "Designed and built backend services and APIs for a production SaaS platform, including service architecture, background jobs and third-party integrations. Built event-driven architecture, Redis caching and queue-based processing that cut average response times by around 40%, and developed AI orchestration across 3 successful SaaS products.",
+    hl: "around 40%",
   },
   {
     date: "Aug – Sep 2025",
-    role: "Lead Software Engineer",
-    org: "AaladinAI · Dhaka",
-    desc: "Built Scalova AI, a full-stack agentic content platform using LangGraph, Claude and Pinecone. Designed multi-step reasoning pipelines and stateful agent orchestration for AI content generation at scale.",
-    hl: "Scalova AI",
+    role: "Backend Engineer",
+    org: "AaladinAI · Dhaka (Contract)",
+    desc: "Built the backend architecture for Scalova using Python and Pinecone, including multi-LLM integrations and orchestration for AI workflows. Designed REST APIs with JWT and RBAC, added Redis caching, and set up Docker, GitHub Actions and AWS infrastructure for production.",
+    hl: "Scalova",
   },
   {
-    date: "Feb – Aug 2025",
+    date: "Mar – Aug 2025",
     role: "Full Stack Engineer",
-    org: "PixiQor",
-    desc: "Built REST APIs and React Native apps shipped to the App Store and Google Play. Integrated NestJS backend services, led the mobile dev team and maintained 99.9% uptime.",
+    org: "PixiQor · Dhaka (Remote)",
+    desc: "Built production REST APIs with Node.js and Express and React Native features for apps published on the App Store and Google Play. Deployed and maintained backend services with monitoring, keeping 99.9% uptime across production apps.",
     hl: "99.9% uptime",
   },
   {
-    date: "Sep 2024 – Jan 2025",
+    date: "Sep 2024 – Feb 2025",
     role: "Full Stack Engineer",
     org: "OutNet · UK (Remote)",
-    desc: "Engineered Node.js REST APIs and MongoDB schemas, and integrated Next.js SSR pages for 60% faster load times. Took part in code reviews and worked with cross-functional teams.",
-    hl: "60% faster",
+    desc: "Built full-stack features with MongoDB, REST APIs and Next.js, improving page load times by around 60%. Integrated payment systems, fixed critical production issues and contributed to code reviews.",
+    hl: "around 60%",
   },
   {
-    date: "2022 – 2024",
-    role: "Web Developer → IT Executive",
-    org: "BSRS · Mental Health Care BD · Aruddho Ekattor · Cyber Teens BD",
-    desc: "Built web apps, dashboards and event platforms for non-profits and a research society. Promoted to IT Executive at the Bangladesh Space Research Society, managing its IT operations and digital presence.",
-    hl: "IT Executive",
+    date: "Aug 2023 – Aug 2024",
+    role: "Full Stack Engineer",
+    org: "Freelance · Remote",
+    desc: "Built full-stack applications and APIs for 10+ client projects, including products with AI features and automation. Contributed to technical standards around testing, security and code quality across projects.",
+    hl: "10+ client projects",
   },
 ];
 
 export const FEATURED = [
-  { name: "Scalova", em: "AI", fig: "FIG. 02", figLabel: "Agentic content", art: "agent", cat: "AI SaaS platform", tags: ["LangGraph", "Claude API", "Pinecone", "FastAPI"], url: "https://scalova.ai", host: "scalova.ai" },
-  { name: "Dealer", em: "Nexus", fig: "FIG. 03", figLabel: "Dealership portal", art: "car", cat: "Automotive dealership portal", tags: ["Next.js", "REST API", "Lead Routing"], url: "https://dealernexus.com", host: "dealernexus.com" },
+  { name: "Eva", em: "CMO", role: "Lead Engineer", year: "Live", headline: "EVA, an AI CMO that runs paid ads on autopilot",
+    desc: "A secure backend with RBAC, MCP, Meta Ads API integrations, Redis caching and asynchronous workflows for an AI marketing automation platform, plus the orchestration layer for the LLM agents that run campaign automation and marketing insights.",
+    art: "ads", cat: "AI Chief Marketing Officer", tags: ["Multi-agent orchestration", "MCP", "Meta Ads API", "RBAC", "Redis", "Async workflows"], url: "https://hyperscalerai.co", host: "hyperscalerai.co", study: "/project/hyperscaler" },
+  { name: "IOMI", em: "", role: "Full Stack Engineer", year: "Live", headline: "An AI wealth OS that plans a founder's next move",
+    desc: "A NestJS, PostgreSQL and TypeORM backend with Redis, JWT, Google OAuth2 and Plaid for secure financial data sync, and a Next.js frontend with Zustand and Recharts for financial dashboards and AI-powered recommendations.",
+    art: "wealth", cat: "AI Wealth OS for Entrepreneurs", tags: ["NestJS", "PostgreSQL", "Plaid", "OAuth2", "Next.js", "Recharts"], url: "https://iomifinance.com", host: "iomifinance.com", study: "/project/iomi" },
+  { name: "VestorNet", em: "", role: "Lead Full Stack Engineer", year: "2025", headline: "Where mortgage pros connect and close deals",
+    desc: "Led full-stack development of a React Native and Next.js platform with a Laravel backend: verified profiles, real-time chat, search and a personalized newsfeed, with notifications on APNs and Firebase.",
+    art: "img", img: "https://res.cloudinary.com/dif5pfkci/image/upload/v1756140509/Device_Mockup_Aug_25_2025_2_dyipfy.png", cat: "Mortgage networking platform", tags: ["React Native", "Next.js", "Laravel", "Real-time chat", "Redis", "Firebase"], url: "https://vestornet.com", host: "vestornet.com", study: "/project/vestornet" },
+  { name: "Scalova", em: "AI", role: "Backend Engineer", year: "2025", headline: "The backend for an agentic content platform",
+    desc: "Built at AaladinAI: the backend architecture in Python and Pinecone, with multi-LLM integrations and orchestration for AI workflows, REST APIs with JWT and RBAC, Redis caching, and Docker, GitHub Actions and AWS for production.",
+    art: "agent", cat: "AI content platform", tags: ["Python", "Pinecone", "Multi-LLM", "Redis", "Docker", "AWS"], url: "https://scalova.ai", host: "scalova.ai" },
 ];
+
+/* About section on the home page (from the resume summary). */
+export const ABOUT = {
+  lead: "I'm a full-stack engineer with 5+ years of building production systems in TypeScript, Node.js, NestJS and Next.js. For the last 2 years I've focused on AI and LLM products.",
+  body: [
+    "I build LangGraph multi-agent workflows, RAG pipelines and integrations with Claude, GPT and Gemini, and the backend that keeps them fast and safe: queues, caching, event-driven services and secure APIs.",
+    "I like owning features end to end, from database design and APIs to frontend, testing and deployment. Outside client work I compete in AI olympiads and explain AI simply on social media.",
+  ],
+  facts: [
+    ["Based in", "Dhaka, Bangladesh · open to remote"],
+    ["Focus", "AI agents, RAG, LLM-powered SaaS"],
+    ["Core stack", "TypeScript · NestJS · Next.js · Python"],
+    ["Education", "A Levels, Mathematics & Computer Science"],
+  ],
+};
 
 export const NDA = ["Cosmpulse", "Ryun Shim Portfolio", "MZ Media Agency", "Zipbox Agency", "Frosty Icepod", "Skynetix"];
 
@@ -116,7 +139,7 @@ export const WINS = [
 
 export const SCORES = [
   { value: 55, label: "LeetCode solved" },
-  { value: 273, label: "CodeChef rating" },
+  { value: 273, label: "CodeChef solved" },
 ];
 
 export const ECA = [
